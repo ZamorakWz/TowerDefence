@@ -55,7 +55,7 @@ public class SupriseBoxManager : MonoBehaviour
 
         Time.timeScale = 1.0f;
 
-        Destroy(supriseBoxPrefab);
+        //Destroy(supriseBoxPrefab);
     }
 
     public void OnClickedToSupriseBox()

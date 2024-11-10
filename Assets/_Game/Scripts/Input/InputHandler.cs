@@ -72,10 +72,22 @@ public class InputHandler : MonoBehaviour
 
                 if (isClickedToSupriseBox)
                 {
+                    Debug.Log("isClickedToSupriseBox is true, attempting to call OnClickedToTower");
                     AbstractBaseTower tower = hitObject.GetComponent<AbstractBaseTower>();
-                    Debug.Log("SupriseBoxManager.Instance exists, calling OnClickedToTower.");
-                    supriseBoxManager.OnClickedToTower(tower);
-                    isClickedToSupriseBox = false;
+                    if (tower != null)
+                    {
+                        Debug.Log("Tower component found, calling OnClickedToTower.");
+                        supriseBoxManager.OnClickedToTower(tower);
+                        isClickedToSupriseBox = false;
+                    }
+                    else
+                    {
+                        Debug.LogError("Tower component is null, can't call OnClickedToTower.");
+                    }
+                }
+                else
+                {
+                    Debug.Log("isClickedToSupriseBox is false, skipping OnClickedToTower.");
                 }
                 break;
             case "SupriseBox":

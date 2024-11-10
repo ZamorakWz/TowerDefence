@@ -5,7 +5,12 @@ using UnityEngine;
 public class EnemySupriseBoxDrop : MonoBehaviour
 {
     [SerializeField] private float supriseBoxDropChance = 0.15f;
-    [SerializeField] private SupriseBoxManager supriseBoxManager;
+    private SupriseBoxManager supriseBoxManager;
+
+    private void Start()
+    {
+        supriseBoxManager = FindAnyObjectByType<SupriseBoxManager>();
+    }
 
     public void TryDropSupriseBox()
     {
