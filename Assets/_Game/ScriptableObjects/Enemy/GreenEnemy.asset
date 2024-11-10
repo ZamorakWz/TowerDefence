@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b414847685097574085879a25b670e6a, type: 3}
+  m_Name: GreenEnemy
+  m_EditorClassIdentifier: 
+  typePrefab: {fileID: 7611756579546102484, guid: 732dac1f51c810b42a812e1a1f493670, type: 3}
+  typeName: GreenEnemy
+  typeSpeed: 4
+  typeMaxHealth: 100
+  typeDamage: 8
+  typeGold: 8

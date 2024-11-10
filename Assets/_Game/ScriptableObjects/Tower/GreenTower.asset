@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e376ab04d17207543a4f80efcfad5240, type: 3}
+  m_Name: GreenTower
+  m_EditorClassIdentifier: 
+  towerName: GreenTower
+  towerPrefab: {fileID: 2393573489250764481, guid: 30ac78cf450be7f4587b87a0ed75e32f, type: 3}
+  towerCost: 0
+  towerRange: 10
+  towerDamage: 10
+  towerFireRate: 3
+  towerAOERadius: 0
+  towerBulletData:
+    bulletSpeed: 5
+    bulletPrefab: {fileID: 2165294548058768490, guid: 69690e466662e2041951f64941d910aa, type: 3}

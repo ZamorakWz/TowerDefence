@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b414847685097574085879a25b670e6a, type: 3}
+  m_Name: WhiteEnemy
+  m_EditorClassIdentifier: 
+  typePrefab: {fileID: 3239203202804841009, guid: 15216bfbb5b7e3c498142e6ea8199e84, type: 3}
+  typeName: WhiteEnemy
+  typeSpeed: 12
+  typeMaxHealth: 75
+  typeDamage: 4
+  typeGold: 4

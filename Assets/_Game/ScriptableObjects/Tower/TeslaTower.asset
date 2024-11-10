@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e376ab04d17207543a4f80efcfad5240, type: 3}
+  m_Name: TeslaTower
+  m_EditorClassIdentifier: 
+  towerName: TeslaTower
+  towerPrefab: {fileID: 5812643004807113662, guid: c637d97fe14f07544b178edf51058d41, type: 3}
+  towerCost: 0
+  towerRange: 7
+  towerDamage: 5
+  towerFireRate: 5
+  towerAOERadius: 0
+  towerBulletData:
+    bulletPrefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
