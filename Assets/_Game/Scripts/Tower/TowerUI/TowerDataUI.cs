@@ -94,18 +94,21 @@ public class TowerDataUI : MonoBehaviour
         button.GetComponentInChildren<TextMeshProUGUI>().text = "x1.1";
     }
 
+    //Bind to button
     public void OnDamageUpgrade()
     {
         tower.UpgradeDamage();
         UpdateTowerUI();
     }
 
+    //Bind to button
     public void OnRangeUpgrade()
     {
         tower.UpgradeRange();
         UpdateTowerUI();
     }
 
+    //Bind to button
     public void OnFireRateUpgrade()
     {
         tower.UpgradeFireRate();
@@ -167,6 +170,7 @@ public class TowerDataUI : MonoBehaviour
         strategyDropdown.value = currentStrategyIndex;
     }
 
+    //Bind to dropdown
     public void OnStrategyChanged(int index)
     {
         List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();

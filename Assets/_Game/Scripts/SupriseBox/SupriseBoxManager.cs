@@ -8,15 +8,6 @@ public class SupriseBoxManager : MonoBehaviour
     [SerializeField] private GameObject supriseBoxPrefab;
     private GameObject currentSupriseBox;
 
-    private float effectAmount;
-    private float effectDuration;
-
-    private void Awake()
-    {
-        effectAmount = Random.Range(-8f, 12f);
-        effectDuration = Random.Range(4f, 12f);
-    }
-
     public void SpawnSupriseBox(Vector3 position)
     {
         currentSupriseBox = Instantiate(supriseBoxPrefab, position, Quaternion.identity);
@@ -24,44 +15,32 @@ public class SupriseBoxManager : MonoBehaviour
 
     private void ChooseSupriseRandomly(AbstractBaseTower tower)
     {
+        int effectAmount = Random.Range(-8, 12);
+        int effectDuration = Random.Range(4, 12);
+
         int randomAttribute = Random.Range(0, 3);
 
         switch (randomAttribute)
         {
             case 0:
-                tower.ModifyDamage(effectAmount, effectDuration);
+                StartCoroutine(tower.ModifyDamageTemporarily(effectAmount, effectDuration));
+                StartCoroutine(tower.ShowEffectText("Damage", effectAmount, effectDuration));
                 break;
             case 1:
-                tower.ModifyRange(effectAmount, effectDuration);
+                StartCoroutine(tower.ModifyRangeTemporarily(effectAmount, effectDuration));
+                StartCoroutine(tower.ShowEffectText("Range", effectAmount, effectDuration));
                 break;
             case 2:
-                tower.ModifyFireRate(effectAmount, effectDuration);
+                StartCoroutine(tower.ModifyFireRateTemporarily(effectAmount, effectDuration));
+                StartCoroutine(tower.ShowEffectText("Fire Rate", effectAmount, effectDuration));
                 break;
         }
     }
 
     public void OnClickedToTower(AbstractBaseTower tower)
     {
-        Debug.Log("OnClickedToTower is called from SupriseBoxManager.");
-        if (tower == null)
-        {
-            Debug.LogError("Tower passed to OnClickedToTower is null!");
-            return;
-        }
-
         ChooseSupriseRandomly(tower);
 
         Time.timeScale = 1.0f;
-
-        Destroy(currentSupriseBox);
-    }
-
-    public void OnClickedToSupriseBox()
-    {
-        Time.timeScale = 0.25f;
-
-        //make indicator somehow?
-
-        Debug.Log($"Clicked to SupriseBox!");
     }
 }

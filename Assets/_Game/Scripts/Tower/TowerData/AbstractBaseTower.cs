@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -9,11 +10,17 @@ public abstract class AbstractBaseTower : MonoBehaviour
 {
     [SerializeField] protected TowerTypeSO towerData;
     [SerializeField] protected Transform firePoint;
+    [SerializeField] private TextMeshProUGUI effectText;
 
     //Attributes for each tower
     public float towerDamage { get; private set; }
     public float towerFireRate { get; private set; }
     public float towerRange { get; private set; }
+
+    //Temporary attributes
+    private float temporaryTowerDamage;
+    private float temporaryTowerFireRate;
+    private float temporaryTowerRange;
 
     //Upgrade levels for each property
     public int damageUpgradeLevel { get; private set; } = 0;
@@ -22,7 +29,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     private int baseUpgradeCost = 4;
 
-    protected float lastAttackTime;
+    private float lastAttackTime;
 
     protected IAttackStrategy attackStrategy;
     protected ITargetDetector targetDetector;
@@ -82,12 +89,6 @@ public abstract class AbstractBaseTower : MonoBehaviour
         int cost = (int)GetUpgradeCost(rangeUpgradeLevel);
         if (GoldManager.Instance.GetCurrentGold() >= cost)
         {
-            if (towerRangeVisualizer == null)
-            {
-                Debug.LogError("towerRangeVisualizer (ITowerRangeUpdater) is null!");
-                return;
-            }
-
             GoldManager.Instance.RemoveGold(cost);
             rangeUpgradeLevel++;
             towerRange *= 1.1f;
@@ -190,12 +191,6 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     protected virtual void HandleTowerPlaced(GameObject tower)
     {
-        if (tower == null)
-        {
-            Debug.LogError("The tower object has already been destroyed.");
-            return;
-        }
-
         if (tower != null && tower.activeInHierarchy && tower == this.gameObject)
         {
             isTowerPlaced = true;
@@ -212,26 +207,85 @@ public abstract class AbstractBaseTower : MonoBehaviour
     #endregion
 
     #region ------------------------------TOWER SUPRISEBOX ATTRIBUTE CHANGE------------------------------
-    private IEnumerator ModifyAttributeTemporarily(System.Action applyEffect, System.Action revertEffect, float duration)
+    //private IEnumerator ModifyAttributeTemporarily(System.Action applyEffect, System.Action revertEffect, float duration)
+    //{
+    //    applyEffect();
+    //    yield return new WaitForSeconds(duration);
+    //    revertEffect();
+    //}
+
+    //public void ModifyDamage(float amount, float duration)
+    //{
+    //    StartCoroutine(ModifyAttributeTemporarily(() => towerDamage += amount, () => towerDamage -= amount, duration));
+    //}
+
+    //public void ModifyRange(float amount, float duration)
+    //{
+    //    StartCoroutine(ModifyAttributeTemporarily(() => towerRange += amount, () => towerRange -= amount, duration));
+    //}
+
+    //public void ModifyFireRate(float amount, float duration)
+    //{
+    //    StartCoroutine(ModifyAttributeTemporarily(() => towerFireRate += amount, () => towerFireRate -= amount, duration));
+    //}
+
+    public IEnumerator ModifyDamageTemporarily(float amount, float duration)
     {
-        applyEffect();
+        if (temporaryTowerDamage == 0) temporaryTowerDamage = towerDamage;
+        towerDamage += amount;
+        Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
+
         yield return new WaitForSeconds(duration);
-        revertEffect();
+
+        towerDamage = temporaryTowerDamage;
+        temporaryTowerDamage = 0;
+        Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
     }
 
-    public void ModifyDamage(float amount, float duration)
+    public IEnumerator ModifyRangeTemporarily(float amount, float duration)
     {
-        StartCoroutine(ModifyAttributeTemporarily(() => towerDamage += amount, () => towerDamage -= amount, duration));
+        if (temporaryTowerRange == 0) temporaryTowerRange = towerRange;
+        towerRange += amount;
+        Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
+
+        yield return new WaitForSeconds(duration);
+
+        towerRange = temporaryTowerRange;
+        temporaryTowerRange = 0;
+        Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
     }
 
-    public void ModifyRange(float amount, float duration)
+    public IEnumerator ModifyFireRateTemporarily(float amount, float duration)
     {
-        StartCoroutine(ModifyAttributeTemporarily(() => towerRange += amount, () => towerRange -= amount, duration));
+        if (temporaryTowerFireRate == 0) temporaryTowerFireRate = towerFireRate;
+        towerFireRate += amount;
+        Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
+
+
+        yield return new WaitForSeconds(duration);
+
+        towerFireRate = temporaryTowerFireRate;
+        temporaryTowerFireRate = 0;
+        Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
+
     }
 
-    public void ModifyFireRate(float amount, float duration)
+    public IEnumerator ShowEffectText(string effectType, int amount, int duration)
     {
-        StartCoroutine(ModifyAttributeTemporarily(() => towerFireRate += amount, () => towerFireRate -= amount, duration));
+        int remainingDuration = duration;
+
+        effectText.gameObject.SetActive(true);
+
+        while (remainingDuration > 0)
+        {
+            effectText.text = $"{effectType} {(amount > 0 ? "+" : "")}{amount} for {remainingDuration} seconds";
+
+            yield return new WaitForSeconds(1f);
+
+            remainingDuration -= 1;
+        }
+
+        effectText.gameObject.SetActive(false);
     }
     #endregion
 

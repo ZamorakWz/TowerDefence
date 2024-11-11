@@ -7,7 +7,7 @@ public class InputHandler : MonoBehaviour
 {
     [Inject] private TowerDataPanelManager towerDataPanelManager;
 
-    [SerializeField] private bool isClickedToSupriseBox = false;
+    private bool isClickedToSupriseBox = false;
     [SerializeField] private SupriseBoxManager supriseBoxManager;
 
     void Update()
@@ -83,7 +83,8 @@ public class InputHandler : MonoBehaviour
                 break;
 
             case "SupriseBox":
-                supriseBoxManager.OnClickedToSupriseBox();
+                SupriseBoxController supriseBoxController = hitObject.GetComponent<SupriseBoxController>();
+                supriseBoxController.OnClickedToSupriseBox();
                 isClickedToSupriseBox = true;
                 break;
             default:

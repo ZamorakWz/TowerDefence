@@ -11603,7 +11603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217289ebaaa5d124ca1c343162c6b8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClickedToSupriseBox: 0
   supriseBoxManager: {fileID: 100669164}
 --- !u!1 &1133286395
 GameObject:
@@ -15746,6 +15745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a9fca56e92a6d4dae299f2c5df3320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rayDistance: 5
 --- !u!114 &1641236002
 MonoBehaviour:
   m_ObjectHideFlags: 0
