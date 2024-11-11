@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SupriseBoxManager : MonoBehaviour
 {
     [SerializeField] private GameObject supriseBoxPrefab;
-    [SerializeField] private Canvas indicatorPanelUI;
+    private GameObject currentSupriseBox;
 
     private float effectAmount;
     private float effectDuration;
@@ -19,7 +19,7 @@ public class SupriseBoxManager : MonoBehaviour
 
     public void SpawnSupriseBox(Vector3 position)
     {
-        Instantiate(supriseBoxPrefab, position, Quaternion.identity);
+        currentSupriseBox = Instantiate(supriseBoxPrefab, position, Quaternion.identity);
     }
 
     private void ChooseSupriseRandomly(AbstractBaseTower tower)
@@ -51,21 +51,16 @@ public class SupriseBoxManager : MonoBehaviour
 
         ChooseSupriseRandomly(tower);
 
-        indicatorPanelUI.gameObject.SetActive(false);
-
         Time.timeScale = 1.0f;
 
-        //Destroy(supriseBoxPrefab);
+        Destroy(currentSupriseBox);
     }
 
     public void OnClickedToSupriseBox()
     {
         Time.timeScale = 0.25f;
 
-        if (indicatorPanelUI != null)
-        {
-            indicatorPanelUI.gameObject.SetActive(true);
-        }
+        //make indicator somehow?
 
         Debug.Log($"Clicked to SupriseBox!");
     }
