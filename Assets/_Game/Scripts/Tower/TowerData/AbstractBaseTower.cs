@@ -50,6 +50,14 @@ public abstract class AbstractBaseTower : MonoBehaviour
         towerDataUI = GetComponent<TowerDataUI>();
     }
 
+    private void LateUpdate()
+    {
+        if (effectText.gameObject.activeSelf)
+        {
+            effectText.gameObject.transform.rotation = Camera.main.transform.rotation;
+        }
+    }
+
     protected virtual void OnEnable()
     {
         SubscribeEvent();
