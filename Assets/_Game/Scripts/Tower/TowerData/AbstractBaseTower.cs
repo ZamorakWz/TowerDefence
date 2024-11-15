@@ -52,10 +52,10 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (effectText.gameObject.activeSelf)
-        {
-            effectText.gameObject.transform.rotation = Camera.main.transform.rotation;
-        }
+        //if (effectText.gameObject.activeSelf)
+        //{
+        //    effectText.gameObject.transform.rotation = Camera.main.transform.rotation;
+        //}
     }
 
     protected virtual void OnEnable()
@@ -241,41 +241,40 @@ public abstract class AbstractBaseTower : MonoBehaviour
     {
         if (temporaryTowerDamage == 0) temporaryTowerDamage = towerDamage;
         towerDamage += amount;
-        Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
+        //Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
 
         yield return new WaitForSeconds(duration);
 
         towerDamage = temporaryTowerDamage;
         temporaryTowerDamage = 0;
-        Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
+        //Debug.Log($"Tower Damage Changed: towerdamage{towerDamage}, mocktowerdamage{temporaryTowerDamage}");
     }
 
     public IEnumerator ModifyRangeTemporarily(float amount, float duration)
     {
         if (temporaryTowerRange == 0) temporaryTowerRange = towerRange;
         towerRange += amount;
-        Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
+        //Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
 
         yield return new WaitForSeconds(duration);
 
         towerRange = temporaryTowerRange;
         temporaryTowerRange = 0;
-        Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
+        //Debug.Log($"Tower range Changed: towerrange{towerRange}, temprange{temporaryTowerRange}");
     }
 
     public IEnumerator ModifyFireRateTemporarily(float amount, float duration)
     {
         if (temporaryTowerFireRate == 0) temporaryTowerFireRate = towerFireRate;
         towerFireRate += amount;
-        Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
+        //Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
 
 
         yield return new WaitForSeconds(duration);
 
         towerFireRate = temporaryTowerFireRate;
         temporaryTowerFireRate = 0;
-        Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
-
+        //Debug.Log($"Tower firerate Changed: twfirerate{towerFireRate}, tempfirerate{temporaryTowerFireRate}");
     }
 
     public IEnumerator ShowEffectText(string effectType, int amount, int duration)
