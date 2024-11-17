@@ -7,6 +7,7 @@ using UnityEngine.TestTools;
 public class AbstractBaseTowerBuffTests
 {
     private AbstractBaseTower tower;
+    private SupriseBoxManager supriseBoxManager;
 
     [SetUp]
     public void Setup()

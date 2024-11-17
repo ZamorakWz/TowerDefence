@@ -15,6 +15,11 @@ public class SupriseBoxManager : MonoBehaviour
 
     private void ChooseSupriseRandomly(AbstractBaseTower tower)
     {
+        if (tower.isBuffActive)
+        {
+            return;
+        }
+
         int effectAmount = Random.Range(-8, 12);
         int effectDuration = Random.Range(4, 12);
 

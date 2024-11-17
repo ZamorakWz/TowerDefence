@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae431065fb98f0e47a42164104797ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supriseBoxDropChance: 0.15
+  supriseBoxDropChance: 0.5
 --- !u!1 &7861124322494490025
 GameObject:
   m_ObjectHideFlags: 0
