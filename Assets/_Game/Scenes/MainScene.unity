@@ -15766,7 +15766,7 @@ MonoBehaviour:
     towerPrefab: {fileID: 21637770964391972, guid: 59c3015705096dc47b82f1a7dfa0c6dd, type: 3}
     towerData: {fileID: 11400000, guid: e2a2ca856b3c0c54ca57180e9ee38eda, type: 2}
   - towerType: TeslaTower
-    towerPrefab: {fileID: 6381432414312223321, guid: cc56b0a27f5d7e441b973ae097d19110, type: 3}
+    towerPrefab: {fileID: 8651312074908895980, guid: cc56b0a27f5d7e441b973ae097d19110, type: 3}
     towerData: {fileID: 11400000, guid: 58b81202838dbc343a5a25f43d376b59, type: 2}
 --- !u!1 &1641249856
 GameObject:

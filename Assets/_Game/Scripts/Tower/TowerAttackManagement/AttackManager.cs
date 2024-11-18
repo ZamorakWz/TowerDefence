@@ -10,6 +10,7 @@ public class AttackManager : IAttackManager
     private float _lastAttackTime;
     private Transform _firePoint;
     private GameObject _tower;
+    private AbstractBaseTower _towerComponent;
 
     public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower)
     {
@@ -18,6 +19,7 @@ public class AttackManager : IAttackManager
         _damage = damage;
         _firePoint = firePoint;
         _tower = tower;
+        _towerComponent = _tower.GetComponent<AbstractBaseTower>();
     }
 
     public void UpdateDamage(float newDamage)
@@ -37,13 +39,18 @@ public class AttackManager : IAttackManager
             foreach (var target in targets)
             {
                 FireBullet(target);
-                if (target is IPositionProvider positionProvider)
+                if (CheckIsLookAtTower() && target is IPositionProvider positionProvider)
                 {
                     _tower.transform.LookAt(positionProvider.GetPosition(), Vector3.up);
                 }
             }
             _lastAttackTime = Time.time;
         }
+    }
+
+    public bool CheckIsLookAtTower()
+    {
+        return _towerComponent.GetTowerData().isLookAtTower ? true : false;
     }
 
     private void FireBullet(IAttackable target)

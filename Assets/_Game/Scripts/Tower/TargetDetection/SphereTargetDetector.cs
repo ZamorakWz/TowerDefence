@@ -7,7 +7,6 @@ using Zenject;
 public class SphereTargetDetector : MonoBehaviour, ITargetDetector
 {
     private SphereCollider _detectionCollider;
-    //[SerializeField] private List<IAttackable> _targetsInRange = new List<IAttackable>();
     [SerializeField] private HashSet<IAttackable> _targetsInRange = new HashSet<IAttackable>();
 
     private void OnEnable()
@@ -34,27 +33,16 @@ public class SphereTargetDetector : MonoBehaviour, ITargetDetector
 
     public List<IAttackable> GetTargetsInRange()
     {
-        //return _targetsInRange;
         return new List<IAttackable>(_targetsInRange);
     }
 
     public void AddTarget(IAttackable target)
     {
-        //if (!_targetsInRange.Contains(target))
-        //{
-        //    _targetsInRange.Add(target);
-        //}
-
         _targetsInRange.Add(target);
     }
 
     public void RemoveTarget(IAttackable target)
     {
-        //if (_targetsInRange.Contains(target))
-        //{
-        //    _targetsInRange.Remove(target);
-        //}
-
         _targetsInRange.Remove(target);
     }
 

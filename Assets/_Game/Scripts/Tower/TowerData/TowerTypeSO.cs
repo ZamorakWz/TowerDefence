@@ -12,4 +12,5 @@ public class TowerTypeSO : ScriptableObject
     public float towerFireRate;
     public float towerAOERadius;
     public BulletData towerBulletData;
+    public bool isLookAtTower;
 }

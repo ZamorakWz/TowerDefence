@@ -21,3 +21,4 @@ MonoBehaviour:
   towerAOERadius: 5
   towerBulletData:
     bulletPrefab: {fileID: 110726954416850335, guid: 569f43d6813425c4bb213f3083c4f7aa, type: 3}
+  isLookAtTower: 1
