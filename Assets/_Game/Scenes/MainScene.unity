@@ -12436,14 +12436,14 @@ MonoBehaviour:
   waveConfigs:
   - enemyConfigs:
     - enemyType: 0
-      spawnCount: 3
+      spawnCount: 5
       spawnInterval: 1
     - enemyType: 1
-      spawnCount: 1
+      spawnCount: 5
       spawnInterval: 2
   - enemyConfigs:
     - enemyType: 1
-      spawnCount: 4
+      spawnCount: 2
       spawnInterval: 1.5
   - enemyConfigs:
     - enemyType: 2
@@ -15760,13 +15760,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerInfoList:
   - towerType: GreenTower
-    towerPrefab: {fileID: 2393573489250764481, guid: 30ac78cf450be7f4587b87a0ed75e32f, type: 3}
+    towerPrefab: {fileID: 8417100427490335222, guid: 472412284212371498424bad1c8a1ce6, type: 3}
     towerData: {fileID: 11400000, guid: 15a9f9bdfcd45fc47a0201e5716a4b04, type: 2}
   - towerType: BlueTower
     towerPrefab: {fileID: 21637770964391972, guid: 59c3015705096dc47b82f1a7dfa0c6dd, type: 3}
     towerData: {fileID: 11400000, guid: e2a2ca856b3c0c54ca57180e9ee38eda, type: 2}
   - towerType: TeslaTower
-    towerPrefab: {fileID: 5812643004807113662, guid: c637d97fe14f07544b178edf51058d41, type: 3}
+    towerPrefab: {fileID: 6381432414312223321, guid: cc56b0a27f5d7e441b973ae097d19110, type: 3}
     towerData: {fileID: 11400000, guid: 58b81202838dbc343a5a25f43d376b59, type: 2}
 --- !u!1 &1641249856
 GameObject:
@@ -27346,13 +27346,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pools:
   - _enemyPrefab: {fileID: 7611756579546102484, guid: 732dac1f51c810b42a812e1a1f493670, type: 3}
-    _pooledEnemySize: 10
+    _pooledEnemySize: 25
   - _enemyPrefab: {fileID: 4442690739926472982, guid: e58d5f4f78701c64985420fe4c214375, type: 3}
-    _pooledEnemySize: 10
+    _pooledEnemySize: 25
   - _enemyPrefab: {fileID: 910603429181921328, guid: de76a59f93d6b614f9a75cc8063270d2, type: 3}
-    _pooledEnemySize: 10
+    _pooledEnemySize: 25
   - _enemyPrefab: {fileID: 3239203202804841009, guid: 15216bfbb5b7e3c498142e6ea8199e84, type: 3}
-    _pooledEnemySize: 10
+    _pooledEnemySize: 25
 --- !u!1 &2028637859
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: GreenTower
   m_EditorClassIdentifier: 
   towerName: GreenTower
-  towerPrefab: {fileID: 2393573489250764481, guid: 30ac78cf450be7f4587b87a0ed75e32f, type: 3}
+  towerPrefab: {fileID: 8417100427490335222, guid: 472412284212371498424bad1c8a1ce6, type: 3}
   towerCost: 0
-  towerRange: 10
+  towerRange: 5
   towerDamage: 10
   towerFireRate: 3
   towerAOERadius: 0
   towerBulletData:
-    bulletSpeed: 5
     bulletPrefab: {fileID: 2165294548058768490, guid: 69690e466662e2041951f64941d910aa, type: 3}

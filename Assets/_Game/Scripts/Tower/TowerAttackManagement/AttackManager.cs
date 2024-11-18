@@ -9,13 +9,15 @@ public class AttackManager : IAttackManager
     private float _damage;
     private float _lastAttackTime;
     private Transform _firePoint;
+    private GameObject _tower;
 
-    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint)
+    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower)
     {
         _attackStrategy = attackStrategy;
         _fireRate = fireRate;
         _damage = damage;
         _firePoint = firePoint;
+        _tower = tower;
     }
 
     public void UpdateDamage(float newDamage)
@@ -35,6 +37,10 @@ public class AttackManager : IAttackManager
             foreach (var target in targets)
             {
                 FireBullet(target);
+                if (target is IPositionProvider positionProvider)
+                {
+                    _tower.transform.LookAt(positionProvider.GetPosition(), Vector3.up);
+                }
             }
             _lastAttackTime = Time.time;
         }

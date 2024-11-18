@@ -10,7 +10,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
 {
     [SerializeField] protected TowerTypeSO towerData;
     [SerializeField] protected Transform firePoint;
-    [SerializeField] private TextMeshProUGUI effectText;
+    [SerializeField] private TextMeshProUGUI buffText;
 
     //Attributes for each tower
     public float towerDamage { get; private set; }
@@ -54,9 +54,9 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (effectText.gameObject.activeSelf)
+        if (buffText.gameObject.activeSelf)
         {
-            effectText.gameObject.transform.rotation = Camera.main.transform.rotation;
+            buffText.gameObject.transform.rotation = Camera.main.transform.rotation;
         }
     }
 
@@ -180,7 +180,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
         //Setup attackmanager
         attackManager = new AttackManager(attackStrategy,
              towerFireRate,
-             towerDamage, firePoint);
+             towerDamage, firePoint, gameObject);
     }
 
     protected abstract void InitializeAttackStrategy();
@@ -319,18 +319,18 @@ public abstract class AbstractBaseTower : MonoBehaviour
     {
         int remainingDuration = duration;
 
-        effectText.gameObject.SetActive(true);
+        buffText.gameObject.SetActive(true);
 
         while (remainingDuration > 0)
         {
-            effectText.text = $"{effectType} {(amount > 0 ? "+" : "")}{amount} for {remainingDuration} seconds";
+            buffText.text = $"{effectType} {(amount > 0 ? "+" : "")}{amount} for {remainingDuration} seconds";
 
             yield return new WaitForSeconds(1f);
 
             remainingDuration -= 1;
         }
 
-        effectText.gameObject.SetActive(false);
+        buffText.gameObject.SetActive(false);
     }
     #endregion
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RedEnemy
   m_EditorClassIdentifier: 
   typePrefab: {fileID: 910603429181921328, guid: de76a59f93d6b614f9a75cc8063270d2, type: 3}
+  enemyType: 2
   typeName: RedEnemy
   typeSpeed: 6
   typeMaxHealth: 175

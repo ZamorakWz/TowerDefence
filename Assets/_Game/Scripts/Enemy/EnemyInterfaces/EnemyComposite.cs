@@ -2,27 +2,27 @@ using UnityEngine;
 
 public class EnemyComposite : MonoBehaviour, IAttackable, IPositionProvider, IHealthProvider
 {
-    private EnemyHealthController _healthController;
-    private EnemyMovement _movement;
+    private EnemyHealthController healthController;
+    private EnemyMovement movement;
 
     void Awake()
     {
-        _healthController = GetComponent<EnemyHealthController>();
-        _movement = GetComponent<EnemyMovement>();
+        healthController = GetComponent<EnemyHealthController>();
+        movement = GetComponent<EnemyMovement>();
     }
 
     public void TakeDamage(float amount)
     {
-        _healthController?.TakeDamage(amount);
+        healthController?.TakeDamage(amount);
     }
 
     public Vector3 GetPosition()
     {
-        return _movement?.GetPosition() ?? Vector3.zero;
+        return movement?.GetPosition() ?? Vector3.zero;
     }
 
     public float GetHealth()
     {
-        return _healthController?.GetHealth() ?? 0f;
+        return healthController?.GetHealth() ?? 0f;
     }
 }

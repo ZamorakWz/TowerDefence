@@ -730,6 +730,7 @@ GameObject:
   - component: {fileID: 5294605251030940731}
   - component: {fileID: -7386458126975074799}
   - component: {fileID: -2368156916207805949}
+  - component: {fileID: -7089955996192450200}
   m_Layer: 6
   m_Name: GreenTower
   m_TagString: Tower
@@ -931,7 +932,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6635
+  m_VersionIndex: 6638
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1202,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerData: {fileID: 11400000, guid: 15a9f9bdfcd45fc47a0201e5716a4b04, type: 2}
   firePoint: {fileID: 7203005517491170069}
-  effectText: {fileID: 1043700668716019398}
+  buffText: {fileID: 0}
 --- !u!114 &5294605251030940731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1254,24 @@ MonoBehaviour:
   strategyText: {fileID: 3187536289765292502}
   strategyDropdown: {fileID: 8184726312656625725}
   youCantMakeTargetSelectionText: {fileID: 0}
+--- !u!114 &-7089955996192450200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393573489250764481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2867476418487026489
 GameObject:
   m_ObjectHideFlags: 0

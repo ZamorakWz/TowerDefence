@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static EnemySpawnController;
 
 public class EnemySpawnController : MonoBehaviour
 {
@@ -54,7 +53,7 @@ public class EnemySpawnController : MonoBehaviour
     {
         [Header("Enemy Type That Will Spawn GreenEnemy/BlueEnemy/RedEnemy/WhiteEnemy")]
         public EnemyObjectPool.EnemyType enemyType;
-        [Header("Enemy Count On Level")]
+        [Header("Enemy Count On Wave")]
         public int spawnCount;
         [Header("Enemies Spawn Interval")]
         public float spawnInterval;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlueEnemy
   m_EditorClassIdentifier: 
   typePrefab: {fileID: 4442690739926472982, guid: e58d5f4f78701c64985420fe4c214375, type: 3}
+  enemyType: 1
   typeName: BlueEnemy
   typeSpeed: 6
   typeMaxHealth: 125

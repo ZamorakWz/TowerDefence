@@ -45,7 +45,7 @@ public class EnemyObjectPool : MonoBehaviour
     }
 
     [System.Serializable]
-    public struct Pool
+    public class Pool
     {
         public Queue<GameObject> _pooledEnemies;
         public GameObject _enemyPrefab;
