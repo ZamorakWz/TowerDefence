@@ -47,7 +47,7 @@ public class TowerPlacementManager : MonoBehaviour
 
     private void UpdatePrefabPlacement()
     {
-        if (TryGetPlacementPosition(out Vector3? hitPoint))
+        if (TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
             _selectedTowerPrefab.SetActive(true);
             _selectedTowerPrefab.transform.position = hitPoint.Value;
@@ -61,11 +61,12 @@ public class TowerPlacementManager : MonoBehaviour
 
     private void PlaceTower()
     {
-        if (isCanPlaceHere && TryGetPlacementPosition(out Vector3? hitPoint))
+        if (isCanPlaceHere && TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
             if (_selectedTowerPrefab != null)
             {
                 _selectedTowerPrefab.transform.position = hitPoint.Value;
+                _selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 
                 if (_selectedTowerPrefab != null)
                 {
@@ -74,7 +75,6 @@ public class TowerPlacementManager : MonoBehaviour
 
                 _selectedTowerPrefab = null;
             }
-
         }
     }
 
@@ -95,15 +95,16 @@ public class TowerPlacementManager : MonoBehaviour
     //    }
     //}
 
-    private bool TryGetPlacementPosition(out Vector3? hitPoint)
+    private bool TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo)
     {
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _placementLayer))
+        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, _placementLayer))
         {
-            hitPoint = hit.point;
+            hitPoint = hitInfo.point;
             return true;
         }
         hitPoint = null;
+        hitInfo = default;
         return false;
     }
 

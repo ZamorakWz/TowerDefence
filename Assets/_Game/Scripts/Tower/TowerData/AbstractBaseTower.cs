@@ -46,6 +46,8 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     public bool isBuffActive { get; private set; }
 
+    public bool isTowerInitialize { get; private set; }
+
     #region ------------------------------MONOBEHAVIOURS------------------------------
     private void Awake()
     {
@@ -181,6 +183,8 @@ public abstract class AbstractBaseTower : MonoBehaviour
         attackManager = new AttackManager(attackStrategy,
              towerFireRate,
              towerDamage, firePoint, gameObject);
+
+        isTowerInitialize = true;
     }
 
     protected abstract void InitializeAttackStrategy();
