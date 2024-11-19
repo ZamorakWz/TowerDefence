@@ -9,21 +9,21 @@ public class TowerPlacementManager : MonoBehaviour
     public static Action<GameObject> OnTowerSelected;
     public static Action<GameObject> OnTowerPlaced;
 
-    private Camera _mainCamera;
-    [SerializeField] private LayerMask _placementLayer;
-    private GameObject _selectedTowerPrefab;
+    private Camera mainCamera;
+    [SerializeField] private LayerMask placementLayer;
+    private GameObject selectedTowerPrefab;
     private bool isCanPlaceHere;
 
     [Inject] PlacedTowerManager placedTowerManager;
 
     private void Start()
     {
-        _mainCamera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     void Update()
     {
-        if (_selectedTowerPrefab != null)
+        if (selectedTowerPrefab != null)
         {
             UpdatePrefabPlacement();
 
@@ -36,13 +36,13 @@ public class TowerPlacementManager : MonoBehaviour
 
     public void SelectTower(GameObject tower)
     {
-        if (_selectedTowerPrefab != null)
+        if (selectedTowerPrefab != null)
         {
-            Destroy(_selectedTowerPrefab);
+            Destroy(selectedTowerPrefab);
         }
 
-        _selectedTowerPrefab = tower;
-        Debug.Log("Selected tower prefab: " + _selectedTowerPrefab.gameObject.name);
+        selectedTowerPrefab = tower;
+        Debug.Log("Selected tower prefab: " + selectedTowerPrefab.gameObject.name);
 
         OnTowerSelected?.Invoke(tower);
         placedTowerManager.ActivateRangeVisualForAllTowers();
@@ -52,13 +52,13 @@ public class TowerPlacementManager : MonoBehaviour
     {
         if (TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
-            _selectedTowerPrefab.SetActive(true);
-            _selectedTowerPrefab.transform.position = hitPoint.Value;
+            selectedTowerPrefab.SetActive(true);
+            selectedTowerPrefab.transform.position = hitPoint.Value;
             isCanPlaceHere = CanPlaceHere(hitPoint.Value);
         }
         else
         {
-            _selectedTowerPrefab.SetActive(false);
+            selectedTowerPrefab.SetActive(false);
         }
     }
 
@@ -66,25 +66,25 @@ public class TowerPlacementManager : MonoBehaviour
     {
         if (isCanPlaceHere && TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
-            if (_selectedTowerPrefab != null)
+            if (selectedTowerPrefab != null)
             {
-                _selectedTowerPrefab.transform.position = hitPoint.Value;
-                _selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                selectedTowerPrefab.transform.position = hitPoint.Value;
+                selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 
-                OnTowerPlaced?.Invoke(_selectedTowerPrefab);
+                OnTowerPlaced?.Invoke(selectedTowerPrefab);
 
-                placedTowerManager.AddTowerToList(gameObject.GetComponent<AbstractBaseTower>());
+                placedTowerManager.AddTowerToList(selectedTowerPrefab.GetComponent<AbstractBaseTower>());
                 placedTowerManager.DeactivateRangeVisualForAllTowers();
 
-                _selectedTowerPrefab = null;
+                selectedTowerPrefab = null;
             }
         }
     }
 
     private bool TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo)
     {
-        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, _placementLayer))
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, placementLayer))
         {
             hitPoint = hitInfo.point;
             return true;
@@ -103,7 +103,7 @@ public class TowerPlacementManager : MonoBehaviour
         }
 
         bool isOnValidGround = GroundValidator.Instance.CheckGroundValidity(position);
-        bool isNotOverlapping = OverlapValidator.Instance.CheckOverlapping(position, _selectedTowerPrefab);
+        bool isNotOverlapping = OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
 
         return isOnValidGround && isNotOverlapping;
     }

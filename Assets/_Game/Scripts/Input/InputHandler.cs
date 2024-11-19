@@ -2,14 +2,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using Zenject;
+using UnityEditor.Experimental.GraphView;
 
 public class InputHandler : MonoBehaviour
 {
-    [Inject] private TowerDataPanelManager towerDataPanelManager;
 
     private bool isClickedToSupriseBox = false;
     [SerializeField] private SupriseBoxManager supriseBoxManager;
 
+    [Inject] private TowerDataPanelManager towerDataPanelManager;
+    [Inject] private PlacedTowerManager placedTowerManager;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -49,11 +51,13 @@ public class InputHandler : MonoBehaviour
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
                 Debug.Log($"Raycast hit: {hitObject.name} with tag {hitObject.tag}");
+
                 ProcessHitObject(hitObject);
             }
             else
             {
                 towerDataPanelManager.CloseAllPanels();
+                placedTowerManager.DeactivateRangeVisualForAllTowers();
             }
         }
     }
@@ -63,6 +67,12 @@ public class InputHandler : MonoBehaviour
         switch (hitObject.tag)
         {
             case "Tower":
+                TowerRangeVisualizer towerRangeVisualizer = hitObject.gameObject.GetComponent<TowerRangeVisualizer>();
+                if (towerRangeVisualizer != null)
+                {
+                    towerRangeVisualizer.ToggleRangeVisualization(true);
+                }
+
                 TowerDataUI towerDataUI = hitObject.GetComponent<TowerDataUI>();
                 if (towerDataUI != null)
                 {
@@ -79,14 +89,12 @@ public class InputHandler : MonoBehaviour
                     }
                 }
                 break;
-
             case "SupriseBox":
                 SupriseBoxController supriseBoxController = hitObject.GetComponent<SupriseBoxController>();
                 supriseBoxController.OnClickedToSupriseBox();
                 isClickedToSupriseBox = true;
                 break;
             default:
-                towerDataPanelManager.CloseAllPanels();
                 break;
         }
     }
