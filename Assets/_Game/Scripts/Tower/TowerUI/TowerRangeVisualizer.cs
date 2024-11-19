@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
 {
-    [SerializeField] private GameObject rangeSpherePrefab;
+    //[SerializeField] private GameObject rangeSpherePrefab;
     private float towerRange;
-    private GameObject rangeSphere;
+    [SerializeField] private GameObject rangeSphere;
 
     private void Awake()
     {
-        rangeSphere = Instantiate(rangeSpherePrefab, gameObject.transform);
-        rangeSphere.transform.localPosition = Vector3.zero;
-        rangeSphere.SetActive(false);
+        //rangeSphere = Instantiate(rangeSpherePrefab, gameObject.transform);
+        //rangeSphere.transform.localPosition = Vector3.zero;
+        //rangeSphere.SetActive(false);
     }
 
     private void OnEnable()
     {
+        towerRange = GetCurrentTowerRange();
+
         TowerPlacementManager.OnTowerSelected += HandleTowerRange;
     }
 
@@ -25,39 +27,35 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
 
     public void HandleTowerRange(GameObject tower)
     {
-        if (tower != gameObject) return;
-
-        AbstractBaseTower baseTower = gameObject.GetComponent<AbstractBaseTower>();
-
-        float towerRange;
-        bool isTowerInitialize = baseTower.isTowerInitialize;
-
-        if (!isTowerInitialize)
-        {
-            TowerTypeSO towerData = gameObject.GetComponent<AbstractBaseTower>().GetTowerData();
-            towerRange = towerData.towerRange;
-        }
-        else
-        {
-            towerRange = baseTower.towerDamage;
-        }
-
-        UpdateTowerRangeVisualization(towerRange);
         ToggleRangeVisualization(true);
-    }
-
-    public void UpdateTowerRangeVisualization(float newRange)
-    {
-        if (rangeSphere == null) return;
-
-        Debug.Log($"newRange is: {newRange}");
-
-        rangeSphere.transform.localScale = new Vector3(newRange * 2f, newRange * 2f, newRange * 2f);
     }
 
     public void ToggleRangeVisualization(bool show)
     {
         if (rangeSphere == null) return;
+
+        UpdateTowerRangeVisualization(towerRange);
         rangeSphere.SetActive(show);
+    }
+
+    private float GetCurrentTowerRange()
+    {
+        AbstractBaseTower baseTower = gameObject.GetComponent<AbstractBaseTower>();
+
+        if (!baseTower.isTowerInitialize)
+        {
+            TowerTypeSO towerData = baseTower.GetTowerData();
+            return towerData.towerRange;
+        }
+        else
+        {
+            return baseTower.towerRange;
+        }
+    }
+
+    public void UpdateTowerRangeVisualization(float newRange)
+    {
+        float currentRange = GetCurrentTowerRange();
+        rangeSphere.transform.localScale = new Vector3(currentRange * 2f, currentRange * 2f, currentRange * 2f);
     }
 }

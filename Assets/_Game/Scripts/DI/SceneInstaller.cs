@@ -8,5 +8,8 @@ public class SceneInstaller : MonoInstaller
     {
         //Non-Mono
         Container.Bind<TowerDataPanelManager>().AsSingle().NonLazy();
+
+        //Mono
+        Container.Bind<PlacedTowerManager>().FromComponentInHierarchy().AsSingle();
     }
 }

@@ -14,6 +14,8 @@ public class TowerPlacementManager : MonoBehaviour
     private GameObject _selectedTowerPrefab;
     private bool isCanPlaceHere;
 
+    [Inject] PlacedTowerManager placedTowerManager;
+
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -43,6 +45,7 @@ public class TowerPlacementManager : MonoBehaviour
         Debug.Log("Selected tower prefab: " + _selectedTowerPrefab.gameObject.name);
 
         OnTowerSelected?.Invoke(tower);
+        placedTowerManager.ActivateRangeVisualForAllTowers();
     }
 
     private void UpdatePrefabPlacement()
@@ -68,32 +71,15 @@ public class TowerPlacementManager : MonoBehaviour
                 _selectedTowerPrefab.transform.position = hitPoint.Value;
                 _selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 
-                if (_selectedTowerPrefab != null)
-                {
-                    OnTowerPlaced?.Invoke(_selectedTowerPrefab);
-                }
+                OnTowerPlaced?.Invoke(_selectedTowerPrefab);
+
+                placedTowerManager.AddTowerToList(gameObject.GetComponent<AbstractBaseTower>());
+                placedTowerManager.DeactivateRangeVisualForAllTowers();
 
                 _selectedTowerPrefab = null;
             }
         }
     }
-
-    //private void RemoveTower()
-    //{
-    //    Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-    //    if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
-    //    {
-    //        BoxCollider boxCollider = hit.collider as BoxCollider;
-    //        if (boxCollider != null)
-    //        {
-    //            GameObject towerToRemove = hit.collider.gameObject;
-    //            if (towerToRemove.CompareTag("Tower"))
-    //            {
-    //                Destroy(towerToRemove);
-    //            }
-    //        }
-    //    }
-    //}
 
     private bool TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo)
     {

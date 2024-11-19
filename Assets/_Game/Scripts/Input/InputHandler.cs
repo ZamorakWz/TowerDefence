@@ -15,7 +15,6 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Mouse button down detected");
-
             HandleInput(Input.mousePosition);
         }
         else if (Input.touchCount > 0)
@@ -78,7 +77,6 @@ public class InputHandler : MonoBehaviour
                         supriseBoxManager.OnClickedToTower(tower);
                         isClickedToSupriseBox = false;
                     }
-
                 }
                 break;
 
