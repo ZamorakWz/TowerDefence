@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class SupriseBoxManager : MonoBehaviour
 {
     [SerializeField] private GameObject supriseBoxPrefab;
     private GameObject currentSupriseBox;
+
+    [Inject] private PlacedTowerManager placedTowerManager;
 
     public void SpawnSupriseBox(Vector3 position)
     {
@@ -44,6 +47,8 @@ public class SupriseBoxManager : MonoBehaviour
 
     public void OnClickedToTower(AbstractBaseTower tower)
     {
+        placedTowerManager.DeactivateIndicatorAllTowers();
+
         ChooseSupriseRandomly(tower);
 
         Time.timeScale = 1.0f;

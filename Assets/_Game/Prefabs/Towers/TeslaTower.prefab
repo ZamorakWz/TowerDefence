@@ -3612,7 +3612,7 @@ GameObject:
   - component: {fileID: 1164844179960809570}
   - component: {fileID: 905951968845131406}
   - component: {fileID: 4944991402561281621}
-  - component: {fileID: 1465082860743069471}
+  - component: {fileID: 165193721229398360}
   m_Layer: 6
   m_Name: TeslaTower
   m_TagString: Tower
@@ -3757,7 +3757,7 @@ MonoBehaviour:
   strategyText: {fileID: 4672829607418257568}
   strategyDropdown: {fileID: 4612378402311914010}
   youCantMakeTargetSelectionText: {fileID: 8080254647578242749}
---- !u!114 &1465082860743069471
+--- !u!114 &165193721229398360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3766,12 +3766,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8651312074908895980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Script: {fileID: 11500000, guid: ac83e36fdfeae564891f6a80ec5cbb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 10
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

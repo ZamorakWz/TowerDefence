@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class SupriseBoxController : MonoBehaviour
 {
     private SupriseBoxManager supriseBoxManager;
+    private PlacedTowerManager placedTowerManager;
 
     private void Awake()
     {
-        supriseBoxManager = FindObjectOfType<SupriseBoxManager>();
+        supriseBoxManager = FindAnyObjectByType<SupriseBoxManager>();
+        placedTowerManager = FindAnyObjectByType<PlacedTowerManager>();
     }
 
     public void OnClickedToSupriseBox()
     {
-        Time.timeScale = 0.25f;
+        Time.timeScale = 0.5f;
 
-        //make indicator somehow?
+        placedTowerManager.ActivateIndicatorAllTowers();
 
         Destroy(gameObject);
     }

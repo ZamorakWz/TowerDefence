@@ -9302,7 +9302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2e20b558b42be46a25e9472687cbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedTowerList: []
+  placedTowerList: []
 --- !u!1 &806274711
 GameObject:
   m_ObjectHideFlags: 0
