@@ -10,11 +10,16 @@ public class TowerPlacementManager : MonoBehaviour
     public static Action<GameObject> OnTowerPlaced;
 
     private Camera mainCamera;
-    [SerializeField] private LayerMask placementLayer;
+    private LayerMask placementLayer;
     private GameObject selectedTowerPrefab;
     private bool isCanPlaceHere;
 
-    [Inject] PlacedTowerManager placedTowerManager;
+    [Inject] private PlacedTowerManager placedTowerManager;
+
+    private void Awake()
+    {
+        placementLayer = LayerMask.GetMask("TowerPlaceableGround");
+    }
 
     private void Start()
     {
@@ -96,15 +101,7 @@ public class TowerPlacementManager : MonoBehaviour
 
     public bool CanPlaceHere(Vector3 position)
     {
-        if (GroundValidator.Instance == null || OverlapValidator.Instance == null)
-        {
-            Debug.LogError("GroundValidator or OverlapValidator is null!");
-            return false;
-        }
-
-        bool isOnValidGround = GroundValidator.Instance.CheckGroundValidity(position);
-        bool isNotOverlapping = OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
-
-        return isOnValidGround && isNotOverlapping;
+        return GroundValidator.Instance.CheckGroundValidity(position) &&
+           OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
     }
 }

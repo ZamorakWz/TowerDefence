@@ -3,7 +3,8 @@ using UnityEngine;
 public class GroundValidator : MonoBehaviour
 {
     public static GroundValidator Instance { get; private set; }
-    [SerializeField] private float _rayDistance = 5f;
+    [SerializeField] private float rayDistance = 5f;
+    private LayerMask validGroundLayer;
 
     private void Awake()
     {
@@ -15,17 +16,17 @@ public class GroundValidator : MonoBehaviour
         {
             Instance = this;
         }
+        validGroundLayer = LayerMask.GetMask("TowerPlaceableGround");
     }
 
     public bool CheckGroundValidity(Vector3 position)
     {
         RaycastHit hit;
-        LayerMask validGroundLayer = LayerMask.GetMask("TowerPlaceableGround");
+        bool hitGround = Physics.Raycast(position + Vector3.up * 0.5f, Vector3.down, out hit, rayDistance, validGroundLayer);
 
-        Vector3 rayStart = position + (Vector3.up * 0.5f);
+        if (!hitGround) return false;
 
-        bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, _rayDistance, validGroundLayer);
-
-        return hitGround;
+        float tolerance = 0.01f;
+        return Mathf.Abs(hit.point.y - position.y) < tolerance;
     }
 }

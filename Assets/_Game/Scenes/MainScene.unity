@@ -133,7 +133,8 @@ GameObject:
   - component: {fileID: 1206114}
   - component: {fileID: 1206113}
   - component: {fileID: 1206112}
-  m_Layer: 0
+  - component: {fileID: 1206115}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +206,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1206115
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &3118214
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +271,8 @@ GameObject:
   - component: {fileID: 17861799}
   - component: {fileID: 17861798}
   - component: {fileID: 17861797}
-  m_Layer: 0
+  - component: {fileID: 17861800}
+  m_Layer: 9
   m_Name: ForestTreePineTall (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,6 +344,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &17861800
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17861796}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &48031392
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +378,8 @@ GameObject:
   - component: {fileID: 48031395}
   - component: {fileID: 48031394}
   - component: {fileID: 48031393}
-  m_Layer: 0
+  - component: {fileID: 48031396}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,6 +451,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &48031396
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48031392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &94625409
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +485,8 @@ GameObject:
   - component: {fileID: 94625412}
   - component: {fileID: 94625411}
   - component: {fileID: 94625410}
-  m_Layer: 0
+  - component: {fileID: 94625413}
+  m_Layer: 9
   m_Name: ForestTreePineTall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,6 +558,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &94625413
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94625409}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &95826369
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +592,8 @@ GameObject:
   - component: {fileID: 95826372}
   - component: {fileID: 95826371}
   - component: {fileID: 95826370}
-  m_Layer: 0
+  - component: {fileID: 95826373}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,6 +665,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &95826373
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95826369}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &100669162
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +744,8 @@ GameObject:
   - component: {fileID: 139902812}
   - component: {fileID: 139902811}
   - component: {fileID: 139902810}
-  m_Layer: 0
+  - component: {fileID: 139902813}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,6 +817,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &139902813
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139902809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &144513383
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +851,8 @@ GameObject:
   - component: {fileID: 144513386}
   - component: {fileID: 144513385}
   - component: {fileID: 144513384}
-  m_Layer: 0
+  - component: {fileID: 144513387}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,6 +924,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &144513387
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144513383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &151341013
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +958,8 @@ GameObject:
   - component: {fileID: 151341016}
   - component: {fileID: 151341015}
   - component: {fileID: 151341014}
-  m_Layer: 0
+  - component: {fileID: 151341017}
+  m_Layer: 9
   m_Name: ForestTreeDShort (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,6 +1031,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &151341017
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151341013}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &173102606
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +1112,8 @@ GameObject:
   - component: {fileID: 194908263}
   - component: {fileID: 194908262}
   - component: {fileID: 194908261}
-  m_Layer: 0
+  - component: {fileID: 194908264}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,6 +1185,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &194908264
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194908260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &222731811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1302,8 @@ GameObject:
   - component: {fileID: 236676972}
   - component: {fileID: 236676971}
   - component: {fileID: 236676970}
-  m_Layer: 0
+  - component: {fileID: 236676973}
+  m_Layer: 9
   m_Name: ForestTreePineTall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,6 +1375,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &236676973
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236676969}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &238642158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1409,8 @@ GameObject:
   - component: {fileID: 238642161}
   - component: {fileID: 238642160}
   - component: {fileID: 238642159}
-  m_Layer: 0
+  - component: {fileID: 238642162}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,6 +1482,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &238642162
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238642158}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &253107033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1516,8 @@ GameObject:
   - component: {fileID: 253107036}
   - component: {fileID: 253107035}
   - component: {fileID: 253107034}
-  m_Layer: 0
+  - component: {fileID: 253107037}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,6 +1589,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &253107037
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253107033}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &275913652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1757,8 @@ GameObject:
   - component: {fileID: 292330566}
   - component: {fileID: 292330565}
   - component: {fileID: 292330564}
-  m_Layer: 0
+  - component: {fileID: 292330567}
+  m_Layer: 9
   m_Name: ForestTreePineTall (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1541,6 +1830,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &292330567
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292330563}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &303675016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1864,8 @@ GameObject:
   - component: {fileID: 303675019}
   - component: {fileID: 303675018}
   - component: {fileID: 303675017}
-  m_Layer: 0
+  - component: {fileID: 303675020}
+  m_Layer: 9
   m_Name: ForestTreePineTall (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1624,6 +1937,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &303675020
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303675016}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &323393554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,7 +2085,8 @@ GameObject:
   - component: {fileID: 336927948}
   - component: {fileID: 336927947}
   - component: {fileID: 336927946}
-  m_Layer: 0
+  - component: {fileID: 336927949}
+  m_Layer: 9
   m_Name: ForestTreePineTall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1821,6 +2158,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &336927949
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336927945}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &364991619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +2192,8 @@ GameObject:
   - component: {fileID: 364991622}
   - component: {fileID: 364991621}
   - component: {fileID: 364991620}
-  m_Layer: 0
+  - component: {fileID: 364991623}
+  m_Layer: 9
   m_Name: ForestTreeDShort (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1904,6 +2265,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &364991623
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364991619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &377450298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,7 +2299,8 @@ GameObject:
   - component: {fileID: 377450301}
   - component: {fileID: 377450300}
   - component: {fileID: 377450299}
-  m_Layer: 0
+  - component: {fileID: 377450302}
+  m_Layer: 9
   m_Name: ForestTreeDShort (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1987,6 +2372,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &377450302
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377450298}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &397335215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2540,8 @@ GameObject:
   - component: {fileID: 406966705}
   - component: {fileID: 406966704}
   - component: {fileID: 406966703}
-  m_Layer: 0
+  - component: {fileID: 406966706}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,6 +2613,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &406966706
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406966702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &421543607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2647,8 @@ GameObject:
   - component: {fileID: 421543610}
   - component: {fileID: 421543609}
   - component: {fileID: 421543608}
-  m_Layer: 0
+  - component: {fileID: 421543611}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2287,6 +2720,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &421543611
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421543607}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &431063969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2754,8 @@ GameObject:
   - component: {fileID: 431063972}
   - component: {fileID: 431063971}
   - component: {fileID: 431063970}
-  m_Layer: 0
+  - component: {fileID: 431063973}
+  m_Layer: 9
   m_Name: ForestTreePineTall (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2370,6 +2827,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &431063973
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431063969}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &434118685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2861,8 @@ GameObject:
   - component: {fileID: 434118688}
   - component: {fileID: 434118687}
   - component: {fileID: 434118686}
-  m_Layer: 0
+  - component: {fileID: 434118689}
+  m_Layer: 9
   m_Name: ForestTreePineTall (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2453,6 +2934,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &434118689
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434118685}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &436400659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2968,8 @@ GameObject:
   - component: {fileID: 436400662}
   - component: {fileID: 436400661}
   - component: {fileID: 436400660}
-  m_Layer: 0
+  - component: {fileID: 436400663}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,6 +3041,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &436400663
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436400659}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &448792821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,7 +3075,8 @@ GameObject:
   - component: {fileID: 448792824}
   - component: {fileID: 448792823}
   - component: {fileID: 448792822}
-  m_Layer: 0
+  - component: {fileID: 448792825}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2619,6 +3148,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &448792825
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448792821}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &457649465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,7 +3399,8 @@ GameObject:
   - component: {fileID: 481966607}
   - component: {fileID: 481966606}
   - component: {fileID: 481966605}
-  m_Layer: 0
+  - component: {fileID: 481966608}
+  m_Layer: 9
   m_Name: ForestTreeDShort (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2919,6 +3472,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &481966608
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481966604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &492029677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3611,8 @@ GameObject:
   - component: {fileID: 504156570}
   - component: {fileID: 504156569}
   - component: {fileID: 504156568}
-  m_Layer: 0
+  - component: {fileID: 504156571}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3107,6 +3684,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &504156571
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504156567}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &513646522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,7 +3718,8 @@ GameObject:
   - component: {fileID: 513646525}
   - component: {fileID: 513646524}
   - component: {fileID: 513646523}
-  m_Layer: 0
+  - component: {fileID: 513646526}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,6 +3791,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &513646526
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513646522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &520677810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3825,8 @@ GameObject:
   - component: {fileID: 520677813}
   - component: {fileID: 520677812}
   - component: {fileID: 520677811}
-  m_Layer: 0
+  - component: {fileID: 520677814}
+  m_Layer: 9
   m_Name: ForestTreeDShort (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3273,6 +3898,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &520677814
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520677810}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &555085104
 GameObject:
   m_ObjectHideFlags: 0
@@ -8127,7 +8775,8 @@ GameObject:
   - component: {fileID: 574825678}
   - component: {fileID: 574825677}
   - component: {fileID: 574825676}
-  m_Layer: 0
+  - component: {fileID: 574825679}
+  m_Layer: 9
   m_Name: ForestTreeDShort (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8199,6 +8848,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &574825679
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574825675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &591782249
 GameObject:
   m_ObjectHideFlags: 0
@@ -8210,7 +8882,8 @@ GameObject:
   - component: {fileID: 591782252}
   - component: {fileID: 591782251}
   - component: {fileID: 591782250}
-  m_Layer: 0
+  - component: {fileID: 591782253}
+  m_Layer: 9
   m_Name: ForestTreePineTall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8282,6 +8955,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &591782253
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591782249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &649503505
 GameObject:
   m_ObjectHideFlags: 0
@@ -8376,7 +9072,8 @@ GameObject:
   - component: {fileID: 656821029}
   - component: {fileID: 656821028}
   - component: {fileID: 656821027}
-  m_Layer: 0
+  - component: {fileID: 656821030}
+  m_Layer: 9
   m_Name: ForestTreeDShort (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8448,6 +9145,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &656821030
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656821026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8577,7 +9297,8 @@ GameObject:
   - component: {fileID: 708273600}
   - component: {fileID: 708273599}
   - component: {fileID: 708273598}
-  m_Layer: 0
+  - component: {fileID: 708273601}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8649,6 +9370,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &708273601
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708273597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &726353476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8762,7 +9506,8 @@ GameObject:
   - component: {fileID: 728021393}
   - component: {fileID: 728021392}
   - component: {fileID: 728021391}
-  m_Layer: 0
+  - component: {fileID: 728021394}
+  m_Layer: 9
   m_Name: ForestTreeDShort (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8834,6 +9579,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &728021394
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728021390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &744708838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8845,7 +9613,8 @@ GameObject:
   - component: {fileID: 744708841}
   - component: {fileID: 744708840}
   - component: {fileID: 744708839}
-  m_Layer: 0
+  - component: {fileID: 744708842}
+  m_Layer: 9
   m_Name: ForestTreeDShort (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8917,6 +9686,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &744708842
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744708838}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &748302508
 GameObject:
   m_ObjectHideFlags: 0
@@ -8969,7 +9761,8 @@ GameObject:
   - component: {fileID: 750716399}
   - component: {fileID: 750716398}
   - component: {fileID: 750716397}
-  m_Layer: 0
+  - component: {fileID: 750716400}
+  m_Layer: 9
   m_Name: ForestTreePineTall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9041,6 +9834,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &750716400
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750716396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &757167170
 GameObject:
   m_ObjectHideFlags: 0
@@ -9052,7 +9868,8 @@ GameObject:
   - component: {fileID: 757167173}
   - component: {fileID: 757167172}
   - component: {fileID: 757167171}
-  m_Layer: 0
+  - component: {fileID: 757167174}
+  m_Layer: 9
   m_Name: ForestTreeDShort (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9124,6 +9941,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &757167174
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757167170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &760273586
 GameObject:
   m_ObjectHideFlags: 0
@@ -9135,7 +9975,8 @@ GameObject:
   - component: {fileID: 760273589}
   - component: {fileID: 760273588}
   - component: {fileID: 760273587}
-  m_Layer: 0
+  - component: {fileID: 760273590}
+  m_Layer: 9
   m_Name: ForestTreeDShort (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9207,6 +10048,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &760273590
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760273586}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &787077423
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,7 +10178,8 @@ GameObject:
   - component: {fileID: 806274714}
   - component: {fileID: 806274713}
   - component: {fileID: 806274712}
-  m_Layer: 0
+  - component: {fileID: 806274715}
+  m_Layer: 9
   m_Name: ForestTreePineTall (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9386,6 +10251,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &806274715
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806274711}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &834780743
 GameObject:
   m_ObjectHideFlags: 0
@@ -9480,7 +10368,8 @@ GameObject:
   - component: {fileID: 838460805}
   - component: {fileID: 838460804}
   - component: {fileID: 838460803}
-  m_Layer: 0
+  - component: {fileID: 838460806}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9552,6 +10441,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &838460806
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838460802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &848779623
 GameObject:
   m_ObjectHideFlags: 0
@@ -9563,7 +10475,8 @@ GameObject:
   - component: {fileID: 848779626}
   - component: {fileID: 848779625}
   - component: {fileID: 848779624}
-  m_Layer: 0
+  - component: {fileID: 848779627}
+  m_Layer: 9
   m_Name: ForestTreeDShort (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9635,6 +10548,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &848779627
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848779623}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!850595691 &850441037
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -9897,7 +10833,8 @@ GameObject:
   - component: {fileID: 900792728}
   - component: {fileID: 900792727}
   - component: {fileID: 900792726}
-  m_Layer: 0
+  - component: {fileID: 900792729}
+  m_Layer: 9
   m_Name: ForestTreePineTall (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9969,6 +10906,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &900792729
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900792725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &931736531
 GameObject:
   m_ObjectHideFlags: 0
@@ -10146,7 +11106,8 @@ GameObject:
   - component: {fileID: 950486471}
   - component: {fileID: 950486470}
   - component: {fileID: 950486469}
-  m_Layer: 0
+  - component: {fileID: 950486472}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10218,6 +11179,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &950486472
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950486468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &960039070
 GameObject:
   m_ObjectHideFlags: 0
@@ -10229,7 +11213,8 @@ GameObject:
   - component: {fileID: 960039073}
   - component: {fileID: 960039072}
   - component: {fileID: 960039071}
-  m_Layer: 0
+  - component: {fileID: 960039074}
+  m_Layer: 9
   m_Name: ForestTreePineTall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10301,6 +11286,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &960039074
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960039070}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10470,7 +11478,8 @@ GameObject:
   - component: {fileID: 966363918}
   - component: {fileID: 966363917}
   - component: {fileID: 966363916}
-  m_Layer: 0
+  - component: {fileID: 966363919}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10542,6 +11551,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &966363919
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966363915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1005822551
 GameObject:
   m_ObjectHideFlags: 0
@@ -10553,7 +11585,8 @@ GameObject:
   - component: {fileID: 1005822554}
   - component: {fileID: 1005822553}
   - component: {fileID: 1005822552}
-  m_Layer: 0
+  - component: {fileID: 1005822555}
+  m_Layer: 9
   m_Name: ForestTreeDShort (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10625,6 +11658,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1005822555
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005822551}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1013320311
 GameObject:
   m_ObjectHideFlags: 0
@@ -10636,7 +11692,8 @@ GameObject:
   - component: {fileID: 1013320314}
   - component: {fileID: 1013320313}
   - component: {fileID: 1013320312}
-  m_Layer: 0
+  - component: {fileID: 1013320315}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10708,6 +11765,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1013320315
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013320311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1034944159
 GameObject:
   m_ObjectHideFlags: 0
@@ -10719,7 +11799,8 @@ GameObject:
   - component: {fileID: 1034944162}
   - component: {fileID: 1034944161}
   - component: {fileID: 1034944160}
-  m_Layer: 0
+  - component: {fileID: 1034944163}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10791,6 +11872,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1034944163
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034944159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1043849544
 GameObject:
   m_ObjectHideFlags: 0
@@ -10802,7 +11906,8 @@ GameObject:
   - component: {fileID: 1043849547}
   - component: {fileID: 1043849546}
   - component: {fileID: 1043849545}
-  m_Layer: 0
+  - component: {fileID: 1043849548}
+  m_Layer: 9
   m_Name: ForestTreePineTall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10874,6 +11979,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1043849548
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043849544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1045964345
 GameObject:
   m_ObjectHideFlags: 0
@@ -10885,7 +12013,8 @@ GameObject:
   - component: {fileID: 1045964348}
   - component: {fileID: 1045964347}
   - component: {fileID: 1045964346}
-  m_Layer: 0
+  - component: {fileID: 1045964349}
+  m_Layer: 9
   m_Name: ForestTreeDShort (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10957,6 +12086,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1045964349
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045964345}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1047379420
 GameObject:
   m_ObjectHideFlags: 0
@@ -11051,7 +12203,8 @@ GameObject:
   - component: {fileID: 1067641285}
   - component: {fileID: 1067641284}
   - component: {fileID: 1067641283}
-  m_Layer: 0
+  - component: {fileID: 1067641286}
+  m_Layer: 9
   m_Name: ForestTreeDShort (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11123,6 +12276,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1067641286
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067641282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1068108404
 GameObject:
   m_ObjectHideFlags: 0
@@ -11134,7 +12310,8 @@ GameObject:
   - component: {fileID: 1068108407}
   - component: {fileID: 1068108406}
   - component: {fileID: 1068108405}
-  m_Layer: 0
+  - component: {fileID: 1068108408}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11206,6 +12383,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1068108408
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068108404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1074329158
 GameObject:
   m_ObjectHideFlags: 0
@@ -11366,7 +12566,8 @@ GameObject:
   - component: {fileID: 1079110597}
   - component: {fileID: 1079110596}
   - component: {fileID: 1079110595}
-  m_Layer: 0
+  - component: {fileID: 1079110598}
+  m_Layer: 9
   m_Name: ForestTreePineTall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11438,6 +12639,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1079110598
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079110594}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1096522619
 GameObject:
   m_ObjectHideFlags: 0
@@ -11449,7 +12673,8 @@ GameObject:
   - component: {fileID: 1096522622}
   - component: {fileID: 1096522621}
   - component: {fileID: 1096522620}
-  m_Layer: 0
+  - component: {fileID: 1096522623}
+  m_Layer: 9
   m_Name: ForestTreePineTall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11521,6 +12746,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1096522623
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096522619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1101418951
 GameObject:
   m_ObjectHideFlags: 0
@@ -11532,7 +12780,8 @@ GameObject:
   - component: {fileID: 1101418954}
   - component: {fileID: 1101418953}
   - component: {fileID: 1101418952}
-  m_Layer: 0
+  - component: {fileID: 1101418955}
+  m_Layer: 9
   m_Name: ForestTreeDShort (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11604,6 +12853,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1101418955
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101418951}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1118502569
 GameObject:
   m_ObjectHideFlags: 0
@@ -11660,7 +12932,8 @@ GameObject:
   - component: {fileID: 1133286398}
   - component: {fileID: 1133286397}
   - component: {fileID: 1133286396}
-  m_Layer: 0
+  - component: {fileID: 1133286399}
+  m_Layer: 9
   m_Name: ForestTreePineTall (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11732,6 +13005,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1133286399
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133286395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1152797761
 GameObject:
   m_ObjectHideFlags: 0
@@ -11953,7 +13249,8 @@ GameObject:
   - component: {fileID: 1166793670}
   - component: {fileID: 1166793669}
   - component: {fileID: 1166793668}
-  m_Layer: 0
+  - component: {fileID: 1166793671}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12025,6 +13322,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1166793671
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166793667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1169150042
 GameObject:
   m_ObjectHideFlags: 0
@@ -12141,7 +13461,8 @@ GameObject:
   - component: {fileID: 1183727314}
   - component: {fileID: 1183727313}
   - component: {fileID: 1183727312}
-  m_Layer: 0
+  - component: {fileID: 1183727315}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12213,6 +13534,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1183727315
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183727311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1191832880
 GameObject:
   m_ObjectHideFlags: 0
@@ -12224,7 +13568,8 @@ GameObject:
   - component: {fileID: 1191832883}
   - component: {fileID: 1191832882}
   - component: {fileID: 1191832881}
-  m_Layer: 0
+  - component: {fileID: 1191832884}
+  m_Layer: 9
   m_Name: ForestTreeDShort (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12296,6 +13641,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1191832884
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191832880}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1197583361
 GameObject:
   m_ObjectHideFlags: 0
@@ -12384,7 +13752,8 @@ GameObject:
   - component: {fileID: 1199583190}
   - component: {fileID: 1199583189}
   - component: {fileID: 1199583188}
-  m_Layer: 0
+  - component: {fileID: 1199583191}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12456,6 +13825,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1199583191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199583187}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1218477600
 GameObject:
   m_ObjectHideFlags: 0
@@ -12467,7 +13859,8 @@ GameObject:
   - component: {fileID: 1218477603}
   - component: {fileID: 1218477602}
   - component: {fileID: 1218477601}
-  m_Layer: 0
+  - component: {fileID: 1218477604}
+  m_Layer: 9
   m_Name: ForestTreeDShort (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12539,6 +13932,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1218477604
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218477600}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1218585764
 GameObject:
   m_ObjectHideFlags: 0
@@ -12767,7 +14183,8 @@ GameObject:
   - component: {fileID: 1262309325}
   - component: {fileID: 1262309324}
   - component: {fileID: 1262309323}
-  m_Layer: 0
+  - component: {fileID: 1262309326}
+  m_Layer: 9
   m_Name: ForestTreePineTall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12839,6 +14256,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1262309326
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262309322}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1271219514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12955,7 +14395,8 @@ GameObject:
   - component: {fileID: 1296760046}
   - component: {fileID: 1296760045}
   - component: {fileID: 1296760044}
-  m_Layer: 0
+  - component: {fileID: 1296760047}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13027,6 +14468,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1296760047
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296760043}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1322098459
 GameObject:
   m_ObjectHideFlags: 0
@@ -13038,7 +14502,8 @@ GameObject:
   - component: {fileID: 1322098462}
   - component: {fileID: 1322098461}
   - component: {fileID: 1322098460}
-  m_Layer: 0
+  - component: {fileID: 1322098463}
+  m_Layer: 9
   m_Name: ForestTreePineTall (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13110,6 +14575,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1322098463
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322098459}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1324698200
 GameObject:
   m_ObjectHideFlags: 0
@@ -13121,7 +14609,8 @@ GameObject:
   - component: {fileID: 1324698203}
   - component: {fileID: 1324698202}
   - component: {fileID: 1324698201}
-  m_Layer: 0
+  - component: {fileID: 1324698204}
+  m_Layer: 9
   m_Name: ForestTreePineTall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13193,6 +14682,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1324698204
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324698200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1330237295
 GameObject:
   m_ObjectHideFlags: 0
@@ -13204,7 +14716,8 @@ GameObject:
   - component: {fileID: 1330237298}
   - component: {fileID: 1330237297}
   - component: {fileID: 1330237296}
-  m_Layer: 0
+  - component: {fileID: 1330237299}
+  m_Layer: 9
   m_Name: ForestTreePineTall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13276,6 +14789,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1330237299
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330237295}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1335231849
 GameObject:
   m_ObjectHideFlags: 0
@@ -13287,7 +14823,8 @@ GameObject:
   - component: {fileID: 1335231852}
   - component: {fileID: 1335231851}
   - component: {fileID: 1335231850}
-  m_Layer: 0
+  - component: {fileID: 1335231853}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13359,6 +14896,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1335231853
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335231849}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1337687643
 GameObject:
   m_ObjectHideFlags: 0
@@ -13370,7 +14930,8 @@ GameObject:
   - component: {fileID: 1337687646}
   - component: {fileID: 1337687645}
   - component: {fileID: 1337687644}
-  m_Layer: 0
+  - component: {fileID: 1337687647}
+  m_Layer: 9
   m_Name: ForestTreeDShort (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13442,6 +15003,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1337687647
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337687643}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1337841821
 GameObject:
   m_ObjectHideFlags: 0
@@ -13453,7 +15037,8 @@ GameObject:
   - component: {fileID: 1337841824}
   - component: {fileID: 1337841823}
   - component: {fileID: 1337841822}
-  m_Layer: 0
+  - component: {fileID: 1337841825}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13525,6 +15110,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1337841825
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337841821}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1339939031
 GameObject:
   m_ObjectHideFlags: 0
@@ -13536,7 +15144,8 @@ GameObject:
   - component: {fileID: 1339939034}
   - component: {fileID: 1339939033}
   - component: {fileID: 1339939032}
-  m_Layer: 0
+  - component: {fileID: 1339939035}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13608,6 +15217,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1339939035
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339939031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1365883398
 GameObject:
   m_ObjectHideFlags: 0
@@ -13619,7 +15251,8 @@ GameObject:
   - component: {fileID: 1365883401}
   - component: {fileID: 1365883400}
   - component: {fileID: 1365883399}
-  m_Layer: 0
+  - component: {fileID: 1365883402}
+  m_Layer: 9
   m_Name: ForestTreePineTall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13691,6 +15324,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1365883402
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365883398}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1368680144
 GameObject:
   m_ObjectHideFlags: 0
@@ -13785,7 +15441,8 @@ GameObject:
   - component: {fileID: 1368940848}
   - component: {fileID: 1368940847}
   - component: {fileID: 1368940846}
-  m_Layer: 0
+  - component: {fileID: 1368940849}
+  m_Layer: 9
   m_Name: ForestTreeDShort (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13857,6 +15514,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1368940849
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368940845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1379537613
 GameObject:
   m_ObjectHideFlags: 0
@@ -13868,7 +15548,8 @@ GameObject:
   - component: {fileID: 1379537616}
   - component: {fileID: 1379537615}
   - component: {fileID: 1379537614}
-  m_Layer: 0
+  - component: {fileID: 1379537617}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13940,6 +15621,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1379537617
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379537613}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1408038154
 GameObject:
   m_ObjectHideFlags: 0
@@ -13951,7 +15655,8 @@ GameObject:
   - component: {fileID: 1408038157}
   - component: {fileID: 1408038156}
   - component: {fileID: 1408038155}
-  m_Layer: 0
+  - component: {fileID: 1408038158}
+  m_Layer: 9
   m_Name: ForestTreeDShort (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14023,6 +15728,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1408038158
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408038154}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1410705691
 GameObject:
   m_ObjectHideFlags: 0
@@ -14034,7 +15762,8 @@ GameObject:
   - component: {fileID: 1410705694}
   - component: {fileID: 1410705693}
   - component: {fileID: 1410705692}
-  m_Layer: 0
+  - component: {fileID: 1410705695}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14106,6 +15835,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1410705695
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410705691}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1414299447
 GameObject:
   m_ObjectHideFlags: 0
@@ -14117,7 +15869,8 @@ GameObject:
   - component: {fileID: 1414299450}
   - component: {fileID: 1414299449}
   - component: {fileID: 1414299448}
-  m_Layer: 0
+  - component: {fileID: 1414299451}
+  m_Layer: 9
   m_Name: ForestTreeDShort (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14189,6 +15942,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1414299451
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414299447}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1433764854
 GameObject:
   m_ObjectHideFlags: 0
@@ -14200,7 +15976,8 @@ GameObject:
   - component: {fileID: 1433764857}
   - component: {fileID: 1433764856}
   - component: {fileID: 1433764855}
-  m_Layer: 0
+  - component: {fileID: 1433764858}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14272,6 +16049,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1433764858
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433764854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1437131367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14515,7 +16315,8 @@ GameObject:
   - component: {fileID: 1465601965}
   - component: {fileID: 1465601964}
   - component: {fileID: 1465601963}
-  m_Layer: 0
+  - component: {fileID: 1465601966}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14587,6 +16388,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1465601966
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465601962}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1471225068
 GameObject:
   m_ObjectHideFlags: 0
@@ -14598,7 +16422,8 @@ GameObject:
   - component: {fileID: 1471225071}
   - component: {fileID: 1471225070}
   - component: {fileID: 1471225069}
-  m_Layer: 0
+  - component: {fileID: 1471225072}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14670,6 +16495,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1471225072
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471225068}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1475639570
 GameObject:
   m_ObjectHideFlags: 0
@@ -14681,7 +16529,8 @@ GameObject:
   - component: {fileID: 1475639573}
   - component: {fileID: 1475639572}
   - component: {fileID: 1475639571}
-  m_Layer: 0
+  - component: {fileID: 1475639574}
+  m_Layer: 9
   m_Name: ForestTreeDShort (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14753,6 +16602,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1475639574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475639570}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1479596049
 GameObject:
   m_ObjectHideFlags: 0
@@ -14764,7 +16636,8 @@ GameObject:
   - component: {fileID: 1479596052}
   - component: {fileID: 1479596051}
   - component: {fileID: 1479596050}
-  m_Layer: 0
+  - component: {fileID: 1479596053}
+  m_Layer: 9
   m_Name: ForestTreeDShort (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14836,6 +16709,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1479596053
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479596049}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1489396583
 GameObject:
   m_ObjectHideFlags: 0
@@ -14883,7 +16779,8 @@ GameObject:
   - component: {fileID: 1497631423}
   - component: {fileID: 1497631422}
   - component: {fileID: 1497631421}
-  m_Layer: 0
+  - component: {fileID: 1497631424}
+  m_Layer: 9
   m_Name: ForestTreePineTall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14955,6 +16852,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1497631424
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497631420}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1506146270
 GameObject:
   m_ObjectHideFlags: 0
@@ -15105,7 +17025,8 @@ GameObject:
   - component: {fileID: 1516897600}
   - component: {fileID: 1516897599}
   - component: {fileID: 1516897598}
-  m_Layer: 0
+  - component: {fileID: 1516897601}
+  m_Layer: 9
   m_Name: ForestTreeDShort (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15177,6 +17098,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1516897601
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516897597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1518059381
 GameObject:
   m_ObjectHideFlags: 0
@@ -15378,7 +17322,8 @@ GameObject:
   - component: {fileID: 1526738644}
   - component: {fileID: 1526738643}
   - component: {fileID: 1526738642}
-  m_Layer: 0
+  - component: {fileID: 1526738645}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15450,6 +17395,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1526738645
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526738641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1534374751
 GameObject:
   m_ObjectHideFlags: 0
@@ -15461,7 +17429,8 @@ GameObject:
   - component: {fileID: 1534374754}
   - component: {fileID: 1534374753}
   - component: {fileID: 1534374752}
-  m_Layer: 0
+  - component: {fileID: 1534374755}
+  m_Layer: 9
   m_Name: ForestTreePineTall (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15533,6 +17502,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1534374755
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534374751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1540563388
 GameObject:
   m_ObjectHideFlags: 0
@@ -15544,7 +17536,8 @@ GameObject:
   - component: {fileID: 1540563391}
   - component: {fileID: 1540563390}
   - component: {fileID: 1540563389}
-  m_Layer: 0
+  - component: {fileID: 1540563392}
+  m_Layer: 9
   m_Name: ForestTreePineTall (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15616,6 +17609,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1540563392
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540563388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1610209934
 GameObject:
   m_ObjectHideFlags: 0
@@ -15732,7 +17748,8 @@ GameObject:
   - component: {fileID: 1614193614}
   - component: {fileID: 1614193613}
   - component: {fileID: 1614193612}
-  m_Layer: 0
+  - component: {fileID: 1614193615}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15804,6 +17821,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1614193615
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614193611}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1617836633
 GameObject:
   m_ObjectHideFlags: 0
@@ -15853,7 +17893,8 @@ GameObject:
   - component: {fileID: 1618886253}
   - component: {fileID: 1618886252}
   - component: {fileID: 1618886251}
-  m_Layer: 0
+  - component: {fileID: 1618886254}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15925,6 +17966,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1618886254
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618886250}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1641235995
 GameObject:
   m_ObjectHideFlags: 0
@@ -16119,7 +18183,8 @@ GameObject:
   - component: {fileID: 1689830921}
   - component: {fileID: 1689830920}
   - component: {fileID: 1689830919}
-  m_Layer: 0
+  - component: {fileID: 1689830922}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16191,6 +18256,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1689830922
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689830918}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1690572200
 GameObject:
   m_ObjectHideFlags: 0
@@ -16202,7 +18290,8 @@ GameObject:
   - component: {fileID: 1690572203}
   - component: {fileID: 1690572202}
   - component: {fileID: 1690572201}
-  m_Layer: 0
+  - component: {fileID: 1690572204}
+  m_Layer: 9
   m_Name: ForestTreePineTall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16274,6 +18363,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1690572204
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690572200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1696678204
 GameObject:
   m_ObjectHideFlags: 0
@@ -21358,7 +23470,8 @@ GameObject:
   - component: {fileID: 1791183968}
   - component: {fileID: 1791183967}
   - component: {fileID: 1791183966}
-  m_Layer: 0
+  - component: {fileID: 1791183969}
+  m_Layer: 9
   m_Name: ForestTreePineTall (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21430,6 +23543,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1791183969
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791183965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1806515892
 GameObject:
   m_ObjectHideFlags: 0
@@ -21441,7 +23577,8 @@ GameObject:
   - component: {fileID: 1806515895}
   - component: {fileID: 1806515894}
   - component: {fileID: 1806515893}
-  m_Layer: 0
+  - component: {fileID: 1806515896}
+  m_Layer: 9
   m_Name: ForestTreeDShort (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21513,6 +23650,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1806515896
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806515892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1812532765
 GameObject:
   m_ObjectHideFlags: 0
@@ -21524,7 +23684,8 @@ GameObject:
   - component: {fileID: 1812532768}
   - component: {fileID: 1812532767}
   - component: {fileID: 1812532766}
-  m_Layer: 0
+  - component: {fileID: 1812532769}
+  m_Layer: 9
   m_Name: ForestTreePineTall (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21596,6 +23757,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1812532769
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812532765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &1821321631
 GameObject:
   m_ObjectHideFlags: 0
@@ -21607,7 +23791,8 @@ GameObject:
   - component: {fileID: 1821321634}
   - component: {fileID: 1821321633}
   - component: {fileID: 1821321632}
-  m_Layer: 0
+  - component: {fileID: 1821321635}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21679,6 +23864,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1821321635
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821321631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &1829289547
 GameObject:
   m_ObjectHideFlags: 0
@@ -21824,7 +24032,8 @@ GameObject:
   - component: {fileID: 1901166625}
   - component: {fileID: 1901166624}
   - component: {fileID: 1901166623}
-  m_Layer: 0
+  - component: {fileID: 1901166626}
+  m_Layer: 9
   m_Name: ForestTreeDShort (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21896,6 +24105,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1901166626
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901166622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &1902522380
 GameObject:
   m_ObjectHideFlags: 0
@@ -22251,7 +24483,8 @@ GameObject:
   - component: {fileID: 1966066700}
   - component: {fileID: 1966066699}
   - component: {fileID: 1966066698}
-  m_Layer: 0
+  - component: {fileID: 1966066701}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22323,6 +24556,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1966066701
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966066697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &1970219777
 GameObject:
   m_ObjectHideFlags: 0
@@ -27296,7 +29552,8 @@ GameObject:
   - component: {fileID: 2002778027}
   - component: {fileID: 2002778026}
   - component: {fileID: 2002778025}
-  m_Layer: 0
+  - component: {fileID: 2002778028}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27368,6 +29625,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2002778028
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002778024}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &2002909395
 GameObject:
   m_ObjectHideFlags: 0
@@ -27620,7 +29900,8 @@ GameObject:
   - component: {fileID: 2028637862}
   - component: {fileID: 2028637861}
   - component: {fileID: 2028637860}
-  m_Layer: 0
+  - component: {fileID: 2028637863}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27692,6 +29973,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2028637863
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028637859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &2029613356
 GameObject:
   m_ObjectHideFlags: 0
@@ -27758,7 +30062,8 @@ GameObject:
   - component: {fileID: 2060003455}
   - component: {fileID: 2060003454}
   - component: {fileID: 2060003453}
-  m_Layer: 0
+  - component: {fileID: 2060003456}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27830,6 +30135,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2060003456
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060003452}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &2060855652
 GameObject:
   m_ObjectHideFlags: 0
@@ -27841,7 +30169,8 @@ GameObject:
   - component: {fileID: 2060855655}
   - component: {fileID: 2060855654}
   - component: {fileID: 2060855653}
-  m_Layer: 0
+  - component: {fileID: 2060855656}
+  m_Layer: 9
   m_Name: ForestTreePineTall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27913,6 +30242,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2060855656
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060855652}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &2062266419
 GameObject:
   m_ObjectHideFlags: 0
@@ -28062,7 +30414,8 @@ GameObject:
   - component: {fileID: 2072039844}
   - component: {fileID: 2072039843}
   - component: {fileID: 2072039842}
-  m_Layer: 0
+  - component: {fileID: 2072039845}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28134,6 +30487,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2072039845
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072039841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &2083111726
 GameObject:
   m_ObjectHideFlags: 0
@@ -33104,7 +35480,8 @@ GameObject:
   - component: {fileID: 2098471751}
   - component: {fileID: 2098471750}
   - component: {fileID: 2098471749}
-  m_Layer: 0
+  - component: {fileID: 2098471752}
+  m_Layer: 9
   m_Name: ForestTreePineTall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33176,6 +35553,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2098471752
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098471748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &2101862140
 GameObject:
   m_ObjectHideFlags: 0
@@ -33187,7 +35587,8 @@ GameObject:
   - component: {fileID: 2101862143}
   - component: {fileID: 2101862142}
   - component: {fileID: 2101862141}
-  m_Layer: 0
+  - component: {fileID: 2101862144}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33259,6 +35660,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2101862144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101862140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!1 &2103622795
 GameObject:
   m_ObjectHideFlags: 0
@@ -33270,7 +35694,8 @@ GameObject:
   - component: {fileID: 2103622798}
   - component: {fileID: 2103622797}
   - component: {fileID: 2103622796}
-  m_Layer: 0
+  - component: {fileID: 2103622799}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33342,6 +35767,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2103622799
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103622795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!1 &2120017635
 GameObject:
   m_ObjectHideFlags: 0
@@ -33384,7 +35832,8 @@ GameObject:
   - component: {fileID: 2132272079}
   - component: {fileID: 2132272078}
   - component: {fileID: 2132272077}
-  m_Layer: 0
+  - component: {fileID: 2132272080}
+  m_Layer: 9
   m_Name: ForestTreePineTall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33456,6 +35905,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2132272080
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132272076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!1 &2133882583
 GameObject:
   m_ObjectHideFlags: 0
@@ -33467,7 +35939,8 @@ GameObject:
   - component: {fileID: 2133882586}
   - component: {fileID: 2133882585}
   - component: {fileID: 2133882584}
-  m_Layer: 0
+  - component: {fileID: 2133882587}
+  m_Layer: 9
   m_Name: ForestTreeDShort (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33539,6 +36012,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2133882587
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133882583}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1 &2135685090
 GameObject:
   m_ObjectHideFlags: 0
@@ -38203,7 +40699,8 @@ GameObject:
   - component: {fileID: 557159995673578755}
   - component: {fileID: 559212889439484731}
   - component: {fileID: 569629276924237801}
-  m_Layer: 0
+  - component: {fileID: 569629276924237802}
+  m_Layer: 9
   m_Name: ForestTreePineTall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38275,6 +40772,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &569629276924237802
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554452099234361077}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9284867
+  m_Height: 3.000051
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
 --- !u!4 &794260058755562735
 Transform:
   m_ObjectHideFlags: 0
@@ -39962,7 +42482,8 @@ GameObject:
   - component: {fileID: 3241128932042521322}
   - component: {fileID: 3214669871849236506}
   - component: {fileID: 3222735771121858176}
-  m_Layer: 0
+  - component: {fileID: 3241128932042521323}
+  m_Layer: 9
   m_Name: ForestTreeAppleTall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39984,6 +42505,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1506146271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3241128932042521323
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237969763112106788}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9035135
+  m_Height: 2.934407
+  m_Direction: 1
+  m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
 --- !u!4 &5766880640257704013
 Transform:
   m_ObjectHideFlags: 0
@@ -40010,7 +42554,8 @@ GameObject:
   - component: {fileID: 5766880640257704013}
   - component: {fileID: 5795986599289373935}
   - component: {fileID: 5785788121895836569}
-  m_Layer: 0
+  - component: {fileID: 5795986599289373936}
+  m_Layer: 9
   m_Name: ForestTreeAppleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40067,6 +42612,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5772794892081561211}
   m_Mesh: {fileID: 4300000, guid: 55d234882e9a60747b3208b956d8244b, type: 3}
+--- !u!136 &5795986599289373936
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772794892081561211}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8658263
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: 0.005123496, y: 0.9278216, z: 0.015567243}
 --- !u!95 &5934064645213372475
 Animator:
   serializedVersion: 5
@@ -45155,13 +47723,37 @@ GameObject:
   - component: {fileID: 8495995255977747539}
   - component: {fileID: 8467551092683710487}
   - component: {fileID: 8476673756762668231}
-  m_Layer: 0
+  - component: {fileID: 8499333211888493746}
+  m_Layer: 9
   m_Name: ForestTreeDShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &8499333211888493746
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499333211888493745}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8282256
+  m_Height: 1.8279172
+  m_Direction: 1
+  m_Center: {x: -0.00000014901161, y: 0.9278216, z: 0.018611878}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
