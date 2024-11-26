@@ -5,6 +5,7 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
     //[SerializeField] private GameObject rangeSpherePrefab;
     private float towerRange;
     [SerializeField] private GameObject rangeSphere;
+    [SerializeField] private GameObject rangeBox;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
 
         UpdateTowerRangeVisualization(towerRange);
         rangeSphere.SetActive(show);
+        rangeBox.SetActive(show);
     }
 
     private float GetCurrentTowerRange()
@@ -56,6 +58,23 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
     public void UpdateTowerRangeVisualization(float newRange)
     {
         float currentRange = GetCurrentTowerRange();
-        rangeSphere.transform.localScale = new Vector3(currentRange * 2f, currentRange * 2f, currentRange * 2f);
+
+        if (rangeSphere != null)
+        {
+            rangeSphere.transform.localScale = new Vector3(currentRange * 2f, currentRange * 2f, currentRange * 2f);
+        }
+
+        if (rangeBox != null)
+        {
+            rangeBox.transform.rotation = gameObject.transform.rotation;
+
+            Vector3 localPosition = rangeBox.transform.localPosition;
+            localPosition.z = newRange / 2f;
+            rangeBox.transform.localPosition = localPosition;
+
+            Vector3 scale = rangeBox.transform.localScale;
+            scale.z = newRange;
+            rangeBox.transform.localScale = scale;
+        }
     }
 }

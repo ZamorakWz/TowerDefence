@@ -18,4 +18,10 @@ public class MortarTower : AbstractBaseTower
     {
         targetSelectionStrategy = new NearestTarget();
     }
+
+    protected override void InitializeTargetDetectionStrategy()
+    {
+        targetDetector = GetComponent<SphereTargetDetector>();
+        targetDetector.InitializeTargetDetector(towerRange);
+    }
 }

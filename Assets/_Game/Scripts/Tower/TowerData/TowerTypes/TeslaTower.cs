@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class TeslaTower : AbstractBaseTower
 {
-    //Electric Tower
     [SerializeField] private ParticleSystem teslaEffectPrefab;
 
     protected override void InitializeAttackStrategy()
@@ -13,6 +12,11 @@ public class TeslaTower : AbstractBaseTower
     protected override void InitializeTargetSelectionStrategy()
     {
         targetSelectionStrategy = new AllTargets();
+    }
+    protected override void InitializeTargetDetectionStrategy()
+    {
+        targetDetector = GetComponent<SphereTargetDetector>();
+        targetDetector.InitializeTargetDetector(towerRange);
     }
     public override List<ITargetSelectionStrategy> GetAvailableStrategies()
     {

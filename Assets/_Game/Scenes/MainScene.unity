@@ -10124,6 +10124,8 @@ MonoBehaviour:
     pooledBulletSize: 10
   - bulletPrefab: {fileID: 3735524092478213355, guid: 84a9b4a31f710344687f0dfe4e891974, type: 3}
     pooledBulletSize: 10
+  - bulletPrefab: {fileID: 563273499407113362, guid: b35f00e6bb819c247826a00b6a8b0d63, type: 3}
+    pooledBulletSize: 10
 --- !u!1 &802584186
 GameObject:
   m_ObjectHideFlags: 0
@@ -17984,6 +17986,9 @@ MonoBehaviour:
   - towerType: MortarTower
     towerPrefab: {fileID: 7580644487428908520, guid: 826f586dac624784cb0d0948091b6e7e, type: 3}
     towerData: {fileID: 11400000, guid: 923fd1852d813fc41a79dd66cd819069, type: 2}
+  - towerType: ElectricTower
+    towerPrefab: {fileID: 111865336708837552, guid: 4bf96175879b4064fa2474aae7d22d58, type: 3}
+    towerData: {fileID: 11400000, guid: 78e8e65f89b9e8f4fb9dbae11a1485d3, type: 2}
 --- !u!1 &1641249856
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueTower : AbstractBaseTower
+public class ElectricTower : AbstractBaseTower
 {
-    //AOE Attacker Tower
-
-    [SerializeField] private ParticleSystem aoeEffectPrefab;
+    [SerializeField] private ParticleSystem electricParticlePrefab;
 
     protected override void InitializeAttackStrategy()
     {
-        IAOEEffectStrategy effectStrategy = new AOEEffectStrategy(aoeEffectPrefab);
-        attackStrategy = new AOEAttackStrategy(towerData.towerAOERadius, effectStrategy);
+        ITeslaEffectStrategy effectStrategy = new TeslaEffectStrategy(electricParticlePrefab);
+        attackStrategy = new ElectricAttackStrategy(effectStrategy, GetTowerPosition());
     }
 
     protected override void InitializeTargetSelectionStrategy()
     {
         targetSelectionStrategy = new NearestTarget();
     }
+
     protected override void InitializeTargetDetectionStrategy()
     {
-        targetDetector = GetComponent<SphereTargetDetector>();
+        targetDetector = GetComponent<BoxTargetDetector>();
         targetDetector.InitializeTargetDetector(towerRange);
     }
 }

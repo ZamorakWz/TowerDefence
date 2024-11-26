@@ -65,7 +65,7 @@ public class TowerDataUI : MonoBehaviour
     {
         if (tower.isTowerPlaced)
         {
-            topicText.text = $"{tower.GetTowerData().towerName} Upgrade Panel";
+            topicText.text = $"{tower.GetTowerData().towerName}";
 
             damageUpgradeCost = tower.GetUpgradeCost(tower.damageUpgradeLevel);
             rangeUpgradeCost = tower.GetUpgradeCost(tower.rangeUpgradeLevel);
@@ -178,5 +178,17 @@ public class TowerDataUI : MonoBehaviour
         {
             tower.ChangeTargetSelectionStrategy(strategies[index]);
         }
+    }
+
+    //Bind to button
+    public void OnRotateLeft()
+    {
+        tower.gameObject.transform.rotation = Quaternion.Euler(0, tower.gameObject.transform.rotation.eulerAngles.y - 20f, 0);
+    }
+
+    //Bind to button
+    public void OnRotateRight()
+    {
+        tower.gameObject.transform.rotation = Quaternion.Euler(0, tower.gameObject.transform.rotation.eulerAngles.y + 20f, 0);
     }
 }

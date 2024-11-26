@@ -3708,7 +3708,7 @@ MonoBehaviour:
   towerData: {fileID: 11400000, guid: 58b81202838dbc343a5a25f43d376b59, type: 2}
   firePoint: {fileID: 1871865056725784167}
   buffText: {fileID: 3139830855961765754}
-  electricEffectPrefab: {fileID: 5120818134831280092, guid: 7accabd423ec7ff4297a68e710b45e0a, type: 3}
+  teslaEffectPrefab: {fileID: 5120818134831280092, guid: 7accabd423ec7ff4297a68e710b45e0a, type: 3}
 --- !u!114 &1164844179960809570
 MonoBehaviour:
   m_ObjectHideFlags: 0

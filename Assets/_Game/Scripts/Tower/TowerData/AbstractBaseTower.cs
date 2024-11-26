@@ -169,8 +169,9 @@ public abstract class AbstractBaseTower : MonoBehaviour
         towerRange = towerData.towerRange;
 
         //Setup targetdetection
-        targetDetector = gameObject.GetComponent<SphereTargetDetector>();
-        targetDetector.InitializeTargetDetector(towerRange);
+        //targetDetector = gameObject.GetComponent<SphereTargetDetector>();
+        //targetDetector.InitializeTargetDetector(towerRange);
+        InitializeTargetDetectionStrategy();
 
         //TowerRangeVisualizer
         towerRangeVisualizer = gameObject.GetComponent<ITowerRangeUpdater>();
@@ -188,8 +189,8 @@ public abstract class AbstractBaseTower : MonoBehaviour
     }
 
     protected abstract void InitializeAttackStrategy();
-
     protected abstract void InitializeTargetSelectionStrategy();
+    protected abstract void InitializeTargetDetectionStrategy();
 
     public TowerTypeSO GetTowerData()
     {
