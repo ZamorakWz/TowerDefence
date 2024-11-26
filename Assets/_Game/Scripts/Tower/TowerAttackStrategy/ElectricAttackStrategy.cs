@@ -1,10 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-public class TeslaAttackStrategy : IAttackStrategy
+
+public class ElectricAttackStrategy : IAttackStrategy
 {
     private ITeslaEffectStrategy effectStrategy;
     private Vector3 towerPosition;
 
-    public TeslaAttackStrategy(ITeslaEffectStrategy effectStrategy, Vector3 towerPosition)
+    public ElectricAttackStrategy(ITeslaEffectStrategy effectStrategy, Vector3 towerPosition)
     {
         this.effectStrategy = effectStrategy;
         this.towerPosition = towerPosition;
@@ -34,6 +37,6 @@ public class TeslaAttackStrategy : IAttackStrategy
 
     public BulletObjectPool.BulletType GetBulletType()
     {
-        return BulletObjectPool.BulletType.TeslaBullet;
+        return BulletObjectPool.BulletType.ElectricBullet;
     }
 }

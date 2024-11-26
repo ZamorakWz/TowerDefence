@@ -3,11 +3,11 @@ using UnityEngine;
 public class TeslaTower : AbstractBaseTower
 {
     //Electric Tower
-    [SerializeField] private ParticleSystem electricEffectPrefab;
+    [SerializeField] private ParticleSystem teslaEffectPrefab;
 
     protected override void InitializeAttackStrategy()
     {
-        ITeslaEffectStrategy effectStrategy = new TeslaEffectStrategy(electricEffectPrefab);
+        ITeslaEffectStrategy effectStrategy = new TeslaEffectStrategy(teslaEffectPrefab);
         attackStrategy = new TeslaAttackStrategy(effectStrategy, GetTowerPosition());
     }
     protected override void InitializeTargetSelectionStrategy()

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TeslaEffectStrategy : ITeslaEffectStrategy
 {
-    private ParticleSystem _teslaParticlePrefab;
+    private ParticleSystem teslaParticlePrefab;
 
     public TeslaEffectStrategy(ParticleSystem teslaParticlePrefab)
     {
-        this._teslaParticlePrefab = teslaParticlePrefab;
+        this.teslaParticlePrefab = teslaParticlePrefab;
     }
 
     public void CreateTeslaEffect(Vector3 startPosition, Vector3 endPosition, float distance)
     {
-        ParticleSystem effect = Object.Instantiate(_teslaParticlePrefab, startPosition, Quaternion.identity);
+        ParticleSystem effect = Object.Instantiate(teslaParticlePrefab, startPosition, Quaternion.identity);
 
         if (endPosition != startPosition)
         {

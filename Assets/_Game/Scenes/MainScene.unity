@@ -10122,6 +10122,8 @@ MonoBehaviour:
     pooledBulletSize: 10
   - bulletPrefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
     pooledBulletSize: 10
+  - bulletPrefab: {fileID: 3735524092478213355, guid: 84a9b4a31f710344687f0dfe4e891974, type: 3}
+    pooledBulletSize: 10
 --- !u!1 &802584186
 GameObject:
   m_ObjectHideFlags: 0
@@ -17979,6 +17981,9 @@ MonoBehaviour:
   - towerType: TeslaTower
     towerPrefab: {fileID: 8651312074908895980, guid: cc56b0a27f5d7e441b973ae097d19110, type: 3}
     towerData: {fileID: 11400000, guid: 58b81202838dbc343a5a25f43d376b59, type: 2}
+  - towerType: MortarTower
+    towerPrefab: {fileID: 7580644487428908520, guid: 826f586dac624784cb0d0948091b6e7e, type: 3}
+    towerData: {fileID: 11400000, guid: 923fd1852d813fc41a79dd66cd819069, type: 2}
 --- !u!1 &1641249856
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,6 +67,8 @@ public class BulletObjectPool : MonoBehaviour
     {
         StandartBullet,
         AOEBullet,
+        TeslaBullet,
         ElectricBullet,
+        MortarBullet
     }
 }
