@@ -6,7 +6,7 @@ public class TeslaTower : AbstractBaseTower
 
     protected override void InitializeAttackStrategy()
     {
-        ITeslaEffectStrategy effectStrategy = new TeslaEffectStrategy(teslaEffectPrefab);
+        ILightningEffectStrategy effectStrategy = new TeslaEffectStrategy(teslaEffectPrefab);
         attackStrategy = new TeslaAttackStrategy(effectStrategy, GetTowerPosition());
     }
     protected override void InitializeTargetSelectionStrategy()
@@ -20,8 +20,13 @@ public class TeslaTower : AbstractBaseTower
     }
     public override List<ITargetSelectionStrategy> GetAvailableStrategies()
     {
-        List<ITargetSelectionStrategy> strategies = new List<ITargetSelectionStrategy>();
+        List<ITargetSelectionStrategy> strategies = availableStrategies;
+        availableStrategies.Clear();
         strategies.Add(new AllTargets());
         return strategies;
+
+        //availableStrategies.Clear();
+        //availableStrategies.Add(new AllTargets());
+        //return availableStrategies;
     }
 }

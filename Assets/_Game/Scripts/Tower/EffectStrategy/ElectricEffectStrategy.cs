@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeslaEffectStrategy : ILightningEffectStrategy
+public class ElectricEffectStrategy : ILightningEffectStrategy
 {
-    private ParticleSystem teslaParticlePrefab;
+    private ParticleSystem electricParticlePrefab;
 
-    public TeslaEffectStrategy(ParticleSystem teslaParticlePrefab)
+    public ElectricEffectStrategy(ParticleSystem teslaParticlePrefab)
     {
-        this.teslaParticlePrefab = teslaParticlePrefab;
+        this.electricParticlePrefab = teslaParticlePrefab;
     }
 
     public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, float distance)
     {
-        ParticleSystem effect = Object.Instantiate(teslaParticlePrefab, startPosition, Quaternion.identity);
+        ParticleSystem effect = Object.Instantiate(electricParticlePrefab, startPosition, Quaternion.identity);
 
         if (endPosition != startPosition)
         {

@@ -10115,17 +10115,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5210f9e6fd3d60439be9a62a73987f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pools:
-  - bulletPrefab: {fileID: 2165294548058768490, guid: 69690e466662e2041951f64941d910aa, type: 3}
-    pooledBulletSize: 10
-  - bulletPrefab: {fileID: 110726954416850335, guid: 569f43d6813425c4bb213f3083c4f7aa, type: 3}
-    pooledBulletSize: 10
-  - bulletPrefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
-    pooledBulletSize: 10
-  - bulletPrefab: {fileID: 3735524092478213355, guid: 84a9b4a31f710344687f0dfe4e891974, type: 3}
-    pooledBulletSize: 10
-  - bulletPrefab: {fileID: 563273499407113362, guid: b35f00e6bb819c247826a00b6a8b0d63, type: 3}
-    pooledBulletSize: 10
+  bulletPools:
+  - prefab: {fileID: 2165294548058768490, guid: 69690e466662e2041951f64941d910aa, type: 3}
+    poolSize: 20
+    type: 0
+    pooledObjects: []
+  - prefab: {fileID: 110726954416850335, guid: 569f43d6813425c4bb213f3083c4f7aa, type: 3}
+    poolSize: 20
+    type: 1
+    pooledObjects: []
+  - prefab: {fileID: 563273499407113362, guid: b35f00e6bb819c247826a00b6a8b0d63, type: 3}
+    poolSize: 20
+    type: 3
+    pooledObjects: []
+  - prefab: {fileID: 3735524092478213355, guid: 84a9b4a31f710344687f0dfe4e891974, type: 3}
+    poolSize: 20
+    type: 4
+    pooledObjects: []
+  - prefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
+    poolSize: 20
+    type: 2
+    pooledObjects: []
 --- !u!1 &802584186
 GameObject:
   m_ObjectHideFlags: 0
@@ -29942,7 +29952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bec60d99a953e4680c92ba48a88bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyWaypoints:
+  enemyWaypoints:
   - {fileID: 1437131371}
   - {fileID: 854498579}
   - {fileID: 1047379424}

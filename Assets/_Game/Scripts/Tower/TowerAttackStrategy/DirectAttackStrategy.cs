@@ -16,6 +16,6 @@ public class DirectAttackStrategy : IAttackStrategy
 
     public BulletObjectPool.BulletType GetBulletType()
     {
-        return BulletObjectPool.BulletType.StandartBullet;
+        return BulletObjectPool.BulletType.DirectBullet;
     }
 }

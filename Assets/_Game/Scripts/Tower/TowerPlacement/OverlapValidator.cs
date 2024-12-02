@@ -6,8 +6,9 @@ public class OverlapValidator : MonoBehaviour
 
     [SerializeField] private float _checkRadius = 1f;
 
-    private static int targetDetectionLayer;
-    private static int treeLayer;
+    private int targetDetectionLayer;
+    private int treeLayer;
+    private int towerInteractionLayer;
 
     private void Awake()
     {
@@ -22,6 +23,8 @@ public class OverlapValidator : MonoBehaviour
 
         targetDetectionLayer = LayerMask.NameToLayer("TargetDetection");
         treeLayer = LayerMask.NameToLayer("Tree");
+        towerInteractionLayer = LayerMask.NameToLayer("TowerInteraction");
+
     }
 
     public bool CheckOverlapping(Vector3 position, GameObject selectedTower)
@@ -48,6 +51,17 @@ public class OverlapValidator : MonoBehaviour
                 outline.OutlineColor = Color.red;
                 outline.OutlineWidth = 10f;
                 return false;
+            }
+            else if (collider is BoxCollider && collider.gameObject.layer == towerInteractionLayer)
+            {
+                var baseTower = collider.GetComponentInParent<AbstractBaseTower>();
+
+                if (baseTower != null && baseTower.gameObject != selectedTower)
+                {
+                    outline.OutlineColor = Color.red;
+                    outline.OutlineWidth = 10f;
+                    return false;
+                }
             }
         }
         outline.OutlineWidth = 0f;

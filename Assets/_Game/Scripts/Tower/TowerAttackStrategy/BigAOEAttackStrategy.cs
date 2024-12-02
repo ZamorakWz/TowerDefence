@@ -40,5 +40,4 @@ public class BigAOEAttackStrategy : IAttackStrategy
     {
         return BulletObjectPool.BulletType.MortarBullet;
     }
-
 }

@@ -11,6 +11,9 @@ public abstract class AbstractBaseTower : MonoBehaviour
     [SerializeField] protected TowerTypeSO towerData;
     [SerializeField] protected Transform firePoint;
     [SerializeField] private TextMeshProUGUI buffText;
+    private BulletObjectPool bulletObjectPool;
+
+    public List<ITargetSelectionStrategy> availableStrategies { get; private set; } = new List<ITargetSelectionStrategy>();
 
     //Attributes for each tower
     public float towerDamage { get; private set; }
@@ -46,12 +49,15 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     public bool isBuffActive { get; private set; }
 
-    public bool isTowerInitialize { get; private set; }
+    public bool isTowerInitialized { get; private set; }
+
+    protected Coroutine attackRoutine;
 
     #region ------------------------------MONOBEHAVIOURS------------------------------
     private void Awake()
     {
         towerDataUI = GetComponent<TowerDataUI>();
+        bulletObjectPool = FindAnyObjectByType<BulletObjectPool>();
     }
 
     private void LateUpdate()
@@ -70,6 +76,8 @@ public abstract class AbstractBaseTower : MonoBehaviour
     protected virtual void OnDestroy()
     {
         UnSubscribeEvent();
+
+        StopAttackRoutine();
     }
     #endregion
 
@@ -130,7 +138,34 @@ public abstract class AbstractBaseTower : MonoBehaviour
     #endregion
 
     #region------------------------------TOWER ATTACK------------------------------
-    protected async UniTaskVoid AttackRoutine()
+    //protected async UniTaskVoid AttackRoutine()
+    //{
+    //    while (isActiveAndEnabled)
+    //    {
+    //        if (isTowerPlaced)
+    //        {
+    //            PerformAttackTasks();
+    //        }
+
+    //        await UniTask.Delay(100);
+    //    }
+    //}
+
+    //protected virtual void PerformAttackTasks()
+    //{
+    //    if (currentTarget == null || !IsTargetValid(currentTarget))
+    //    {
+    //        SelectNewTarget();
+    //    }
+
+    //    if (attackManager.CanAttack())
+    //    {
+    //        var targets = targetSelectionStrategy.SelectTargets(targetDetector.GetTargetsInRange(), transform.position);
+    //        attackManager.Attack(targets);
+    //    }
+    //}
+
+    protected IEnumerator AttackRoutine()
     {
         while (isActiveAndEnabled)
         {
@@ -139,7 +174,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
                 PerformAttackTasks();
             }
 
-            await UniTask.Delay(100);
+            yield return new WaitForSeconds(0.1f); // 100ms
         }
     }
 
@@ -156,36 +191,73 @@ public abstract class AbstractBaseTower : MonoBehaviour
             attackManager.Attack(targets);
         }
     }
+
+    public void StartAttackRoutine()
+    {
+        if (attackRoutine == null)
+        {
+            attackRoutine = StartCoroutine(AttackRoutine());
+            Debug.Log("AttackRoutine is Started!");
+        }
+    }
+
+    public void StopAttackRoutine()
+    {
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+            Debug.Log("AttackRoutine is Stopped!");
+            attackRoutine = null;
+        }
+    }
     #endregion
 
     #region------------------------------TOWER INITIALIZE------------------------------
     public virtual void Initialize(TowerTypeSO towerData)
     {
-        this.towerData = towerData;
+        if (isTowerInitialized == false)
+        {
+            this.towerData = towerData;
 
-        //Make independence the informations that come from scriptable objects
-        towerDamage = towerData.towerDamage;
-        towerFireRate = towerData.towerFireRate;
-        towerRange = towerData.towerRange;
+            //Make independence the informations that come from scriptable objects
+            towerDamage = towerData.towerDamage;
+            towerFireRate = towerData.towerFireRate;
+            towerRange = towerData.towerRange;
 
-        //Setup targetdetection
-        //targetDetector = gameObject.GetComponent<SphereTargetDetector>();
-        //targetDetector.InitializeTargetDetector(towerRange);
-        InitializeTargetDetectionStrategy();
+            //var currentStrategy = targetSelectionStrategy;
 
-        //TowerRangeVisualizer
-        towerRangeVisualizer = gameObject.GetComponent<ITowerRangeUpdater>();
+            //Setup targetdetection
+            //targetDetector = gameObject.GetComponent<SphereTargetDetector>();
+            //targetDetector.InitializeTargetDetector(towerRange);
+            InitializeTargetDetectionStrategy();
 
-        //Setup strategies
-        InitializeAttackStrategy();
-        InitializeTargetSelectionStrategy();
+            //TowerRangeVisualizer
+            towerRangeVisualizer = gameObject.GetComponent<ITowerRangeUpdater>();
 
-        //Setup attackmanager
-        attackManager = new AttackManager(attackStrategy,
-             towerFireRate,
-             towerDamage, firePoint, gameObject);
+            //Setup strategies
+            InitializeAttackStrategy();
+            InitializeTargetSelectionStrategy();
 
-        isTowerInitialize = true;
+            //if (currentStrategy == null)
+            //{
+            //    InitializeTargetSelectionStrategy();
+            //}
+            //else
+            //{
+            //    targetSelectionStrategy = currentStrategy;
+            //}
+
+            //Setup attackmanager
+            attackManager = new AttackManager(attackStrategy,
+                 towerFireRate,
+                 towerDamage, firePoint, gameObject, bulletObjectPool);
+
+            InitializeStrategiesList();
+
+            towerDataUI.UpdateStrategyDropdown();
+
+            isTowerInitialized = true;
+        }
     }
 
     protected abstract void InitializeAttackStrategy();
@@ -206,17 +278,17 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     protected virtual void HandleTowerPlaced(GameObject tower)
     {
-        if (tower != null && tower.activeInHierarchy && tower == this.gameObject)
+        if (tower != null && tower.activeInHierarchy && tower == this.gameObject && isTowerPlaced == false)
         {
-            isTowerPlaced = true;
-
             towerPosition = transform.position;
 
             Initialize(towerData);
 
-            AttackRoutine().Forget();
+            StartAttackRoutine();
 
             Debug.Log($"{tower.gameObject.name} has been fully initialized and attack routine has started.");
+
+            isTowerPlaced = true;
         }
     }
     #endregion
@@ -360,35 +432,82 @@ public abstract class AbstractBaseTower : MonoBehaviour
     #endregion
 
     #region------------------------------TARGET SELECTION STRATEGY------------------------------
+
+    protected virtual void InitializeStrategiesList()
+    {
+        availableStrategies.Clear();
+
+        availableStrategies.Add(new NearestTarget());
+        availableStrategies.Add(new FastestTarget());
+        availableStrategies.Add(new MostHealthTarget());
+        availableStrategies.Add(new MostProgressTarget());
+    }
+
     public virtual List<ITargetSelectionStrategy> GetAvailableStrategies()
     {
-        List<ITargetSelectionStrategy> strategies = new List<ITargetSelectionStrategy>();
-        strategies.Add(new NearestTarget());
-        strategies.Add(new FastestTarget());
-        strategies.Add(new MostHealthTarget());
-        strategies.Add(new MostProgressTarget());
-        return strategies;
+        //List<ITargetSelectionStrategy> strategies = new List<ITargetSelectionStrategy>();
+        //strategies.Add(new NearestTarget());
+        //strategies.Add(new FastestTarget());
+        //strategies.Add(new MostHealthTarget());
+        //strategies.Add(new MostProgressTarget());
+        //return strategies;
+
+        //List<ITargetSelectionStrategy> strategies = availableStrategies;
+        return availableStrategies;
     }
 
-    public void ChangeTargetSelectionStrategy(ITargetSelectionStrategy newStrategy)
+    public virtual void ChangeTargetSelectionStrategy(ITargetSelectionStrategy newStrategy)
     {
-        List<ITargetSelectionStrategy> availableStrategies = GetAvailableStrategies();
+        //List<ITargetSelectionStrategy> availableStrategies = GetAvailableStrategies();
 
-        bool isStrategyAvailable = false;
-        foreach (var strategy in availableStrategies)
-        {
-            if (strategy.GetType() == newStrategy.GetType())
-            {
-                isStrategyAvailable = true;
-                break;
-            }
+        //foreach (ITargetSelectionStrategy strategy in availableStrategies)
+        //{
+        //    if (strategy.GetType() == newStrategy.GetType())
+        //    {
+        //        targetSelectionStrategy = newStrategy;
+        //        Debug.Log($"Target selection strategy changed to: {strategy.GetType().Name}");
+        //        return;
+        //    }
+        //}
 
-            if (isStrategyAvailable)
-            {
-                targetSelectionStrategy = newStrategy;
-            }
-        }
+        //Debug.LogWarning("Requested strategy is not available for this tower.");
+        StopAttackRoutine();
+
+        targetSelectionStrategy = newStrategy;
+        Debug.Log($"{targetSelectionStrategy} is changing to: {newStrategy}");
+
+        SelectNewTarget();
+
+        StartAttackRoutine();
     }
+
+    //public virtual List<ITargetSelectionStrategy> CreateTargetSelectionStrategies()
+    //{
+    //    return new List<ITargetSelectionStrategy>
+    //    {
+    //        new NearestTarget(),
+    //        new FastestTarget(),
+    //        new MostHealthTarget(),
+    //        new MostProgressTarget()
+    //    };
+    //}
+
+    //public virtual List<ITargetSelectionStrategy> GetAvailableStrategies()
+    //{
+    //    if (availableStrategies == null)
+    //    {
+    //        availableStrategies = CreateTargetSelectionStrategies();
+    //    }
+    //    return availableStrategies;
+    //}
+
+    //public void ChangeTargetSelectionStrategy(ITargetSelectionStrategy newStrategy)
+    //{
+    //    Debug.Log($"Attempting to change strategy. New strategy type: {newStrategy.GetType().Name}");
+    //    targetSelectionStrategy = newStrategy;
+    //    Debug.Log($"Strategy after change: {targetSelectionStrategy.GetType().Name}");
+    //    SelectNewTarget();
+    //}
     #endregion
 
     #region------------------------------Events------------------------------

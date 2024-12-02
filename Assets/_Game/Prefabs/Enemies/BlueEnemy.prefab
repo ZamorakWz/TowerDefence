@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627f28bca54cfaf459b64e65f61b6f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWaypointIndex: 0
-  _enemyType: {fileID: 11400000, guid: 72503727f46eea14595416e949632d35, type: 2}
+  currentWaypointIndex: 0
+  enemyType: {fileID: 11400000, guid: 72503727f46eea14595416e949632d35, type: 2}
 --- !u!114 &2155027266104831776
 MonoBehaviour:
   m_ObjectHideFlags: 0

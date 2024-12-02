@@ -8,7 +8,7 @@ public class ElectricTower : AbstractBaseTower
 
     protected override void InitializeAttackStrategy()
     {
-        ITeslaEffectStrategy effectStrategy = new TeslaEffectStrategy(electricParticlePrefab);
+        ILightningEffectStrategy effectStrategy = new ElectricEffectStrategy(electricParticlePrefab);
         attackStrategy = new ElectricAttackStrategy(effectStrategy, GetTowerPosition());
     }
 

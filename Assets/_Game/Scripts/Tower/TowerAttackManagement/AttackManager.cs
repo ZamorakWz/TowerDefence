@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class AttackManager : IAttackManager
 {
@@ -11,8 +12,9 @@ public class AttackManager : IAttackManager
     private Transform firePoint;
     private GameObject tower;
     private AbstractBaseTower towerComponent;
+    private BulletObjectPool bulletObjectPool;
 
-    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower)
+    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower, BulletObjectPool bulletObjectPool)
     {
         this.attackStrategy = attackStrategy;
         this.fireRate = fireRate;
@@ -20,6 +22,7 @@ public class AttackManager : IAttackManager
         this.firePoint = firePoint;
         this.tower = tower;
         towerComponent = this.tower.GetComponent<AbstractBaseTower>();
+        this.bulletObjectPool = bulletObjectPool;
     }
 
     public void UpdateDamage(float newDamage)
@@ -55,7 +58,14 @@ public class AttackManager : IAttackManager
 
     private void FireBullet(IAttackable target)
     {
-        GameObject bullet = BulletObjectPool.Instance.GetPooledBullet(attackStrategy.GetBulletType());
+        GameObject bullet = bulletObjectPool.GetPooledBullet(attackStrategy.GetBulletType());
+
+        if (bullet == null)
+        {
+            Debug.LogError($"Bullet could not be retrieved for type: {attackStrategy.GetBulletType()}");
+            return;
+        }
+
         bullet.transform.position = firePoint.position;
 
         BulletMovement bulletMovement = bullet.GetComponent<BulletMovement>();

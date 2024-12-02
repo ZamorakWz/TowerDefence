@@ -409,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627f28bca54cfaf459b64e65f61b6f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWaypointIndex: 0
-  _enemyType: {fileID: 11400000, guid: e0a2879e19035c743bb44e4d8d1406e3, type: 2}
+  currentWaypointIndex: 0
+  enemyType: {fileID: 11400000, guid: e0a2879e19035c743bb44e4d8d1406e3, type: 2}
 --- !u!114 &5925180622772196032
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ElectricAttackStrategy : IAttackStrategy
 {
-    private ITeslaEffectStrategy effectStrategy;
+    private ILightningEffectStrategy effectStrategy;
     private Vector3 towerPosition;
 
     private int chainCount = 4;
     private float chainRadius = 2f;
 
-    public ElectricAttackStrategy(ITeslaEffectStrategy effectStrategy, Vector3 towerPosition)
+    public ElectricAttackStrategy(ILightningEffectStrategy effectStrategy, Vector3 towerPosition)
     {
         this.effectStrategy = effectStrategy;
         this.towerPosition = towerPosition;
@@ -20,7 +20,7 @@ public class ElectricAttackStrategy : IAttackStrategy
     {
         if (target is EnemyComposite enemyComposite)
         {
-            enemyComposite.StartCoroutine(ChainAttack(target, damage));
+            enemyComposite.StartCoroutine(ChainAttack(enemyComposite, damage));
         }
 
         //Vector3 targetPosition = ((IPositionProvider)target).GetPosition();
@@ -38,9 +38,44 @@ public class ElectricAttackStrategy : IAttackStrategy
         //effectStrategy.CreateTeslaEffect(towerPosition, targetPosition, distance);
     }
 
-    private IEnumerator ChainAttack(IAttackable initialTarget, float damage)
+    //private IEnumerator ChainAttack(IAttackable initialTarget, float damage)
+    //{
+    //    IAttackable currentTarget = initialTarget;
+
+    //    for (int i = 0; i < chainCount; i++)
+    //    {
+    //        if (currentTarget == null)
+    //        {
+    //            yield break;
+    //        }
+
+    //        currentTarget.TakeDamage(damage);
+
+    //        Vector3 currentTargetPosition = ((IPositionProvider)currentTarget).GetPosition();
+    //        effectStrategy.CreateTeslaEffect(towerPosition, currentTargetPosition, Vector3.Distance(towerPosition, currentTargetPosition));
+
+    //        Collider[] colliders = Physics.OverlapSphere(currentTargetPosition, chainRadius);
+    //        IAttackable nextTarget = null;
+
+    //        foreach (Collider collider in colliders)
+    //        {
+    //            if (collider.TryGetComponent(out IAttackable potentialTarget) && potentialTarget != currentTarget)
+    //            {
+    //                nextTarget = potentialTarget;
+    //                break;
+    //            }
+    //        }
+
+    //        currentTarget = nextTarget;
+    //        towerPosition = currentTargetPosition;
+
+    //        yield return new WaitForSeconds(0.2f);
+    //    }
+    //}
+
+    private IEnumerator ChainAttack(EnemyComposite initialTarget, float damage)
     {
-        IAttackable currentTarget = initialTarget;
+        EnemyComposite currentTarget = initialTarget;
 
         for (int i = 0; i < chainCount; i++)
         {
@@ -51,15 +86,15 @@ public class ElectricAttackStrategy : IAttackStrategy
 
             currentTarget.TakeDamage(damage);
 
-            Vector3 currentTargetPosition = ((IPositionProvider)currentTarget).GetPosition();
-            effectStrategy.CreateTeslaEffect(towerPosition, currentTargetPosition, Vector3.Distance(towerPosition, currentTargetPosition));
+            Vector3 currentTargetPosition = currentTarget.GetPosition();
+            effectStrategy.CreateLightningEffect(towerPosition, currentTargetPosition, Vector3.Distance(towerPosition, currentTargetPosition));
 
             Collider[] colliders = Physics.OverlapSphere(currentTargetPosition, chainRadius);
-            IAttackable nextTarget = null;
+            EnemyComposite nextTarget = null;
 
             foreach (Collider collider in colliders)
             {
-                if (collider.TryGetComponent(out IAttackable potentialTarget) && potentialTarget != currentTarget)
+                if (collider.TryGetComponent(out EnemyComposite potentialTarget) && potentialTarget != currentTarget)
                 {
                     nextTarget = potentialTarget;
                     break;
@@ -72,6 +107,7 @@ public class ElectricAttackStrategy : IAttackStrategy
             yield return new WaitForSeconds(0.2f);
         }
     }
+
 
     public IBulletMovementStrategy GetBulletMovementStrategy()
     {

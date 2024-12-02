@@ -25,6 +25,7 @@ public class TowerDataUI : MonoBehaviour
     private float damageUpgradeCost;
     private float rangeUpgradeCost;
     private float fireRateUpgradeCost;
+    private List<ITargetSelectionStrategy> targetSelectionStrategyList;
 
     [Inject] private TowerDataPanelManager towerDataPanelManager;
 
@@ -84,7 +85,7 @@ public class TowerDataUI : MonoBehaviour
             HidePanel();
         }
 
-        UpdateStrategyDropdown();
+        //UpdateStrategyDropdown();
     }
 
     private void UpdateButton(Button button, int upgradeLevel)
@@ -123,14 +124,20 @@ public class TowerDataUI : MonoBehaviour
         }
     }
 
-    private void UpdateStrategyDropdown()
+    public void UpdateStrategyDropdown()
     {
+        Debug.Log("UpdateStrategyDropdown called.");
+
+        targetSelectionStrategyList = tower.availableStrategies;
+        Debug.LogWarning($"{targetSelectionStrategyList.Count} is the count of strategies that come from Abstract class to towerdataui");
+
         strategyDropdown.ClearOptions();
+        Debug.Log("Cleared dropdown options.");
 
-        List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
-
-        if (strategies.Count <= 1)
+        if (targetSelectionStrategyList.Count <= 1)
         {
+            Debug.Log("Only one or no strategies available, hiding dropdown.");
+
             strategyDropdown.gameObject.SetActive(false);
             strategyText.gameObject.SetActive(false);
 
@@ -143,52 +150,107 @@ public class TowerDataUI : MonoBehaviour
         }
 
         strategyDropdown.gameObject.SetActive(true);
+        Debug.Log("Showing dropdown and adding strategies.");
 
         List<string> strategyNames = new List<string>();
-        foreach (var strategy in strategies)
+        foreach (var strategy in targetSelectionStrategyList)
         {
             strategyNames.Add(strategy.GetType().Name);
+            Debug.Log($"Added strategy to dropdown: {strategy.GetType().Name}");
         }
 
         strategyDropdown.AddOptions(strategyNames);
 
-        if (tower.targetSelectionStrategy == null)
-        {
-            tower.targetSelectionStrategy = strategies[0];
-        }
+        //tower.ChangeTargetSelectionStrategy(targetSelectionStrategies[1]);
+
+        //if (tower.targetSelectionStrategy == null)
+        //{
+        //    Debug.Log("Tower's targetSelectionStrategy is null. Setting default strategy.");
+        //    tower.targetSelectionStrategy = strategies[0];
+        //}
+        //else
+        //{
+        //    Debug.Log($"Tower's current strategy: {tower.targetSelectionStrategy.GetType().Name}");
+        //}
 
         int currentStrategyIndex = 0;
-        for (int i = 0; i < strategies.Count; i++)
+        for (int i = 0; i < targetSelectionStrategyList.Count; i++)
         {
-            if (strategies[i].GetType() == tower.targetSelectionStrategy.GetType())
+            if (targetSelectionStrategyList[i].GetType().Name == tower.targetSelectionStrategy.GetType().Name)
             {
                 currentStrategyIndex = i;
+                Debug.Log($"Found current strategy at index {i}: {targetSelectionStrategyList[i].GetType().Name}");
                 break;
             }
         }
 
         strategyDropdown.value = currentStrategyIndex;
+        Debug.Log($"Dropdown value set to index {currentStrategyIndex}");
+        strategyDropdown.RefreshShownValue();
+
+        strategyDropdown.onValueChanged.AddListener(OnStrategyChanged);
+
+        //tower.ChangeTargetSelectionStrategy(targetSelectionStrategyList[currentStrategyIndex]);
+        //Debug.Log($"Final strategy in tower: {tower.targetSelectionStrategy?.GetType().Name}");
     }
 
     //Bind to dropdown
     public void OnStrategyChanged(int index)
     {
-        List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
-        if (index >= 0 && index < strategies.Count)
+        ////List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
+
+        ////List<ITargetSelectionStrategy> strategies = tower.availableStrategies;
+
+        //if (index >= 0 && index < targetSelectionStrategyList.Count)
+        //{
+        //    ITargetSelectionStrategy selectedStrategy = targetSelectionStrategyList[index];
+        //    tower.targetSelectionStrategy = selectedStrategy;
+        //    Debug.Log($"{tower.targetSelectionStrategy} changed to {selectedStrategy}");
+        //}
+
+        ITargetSelectionStrategy selectedStrategy = null;
+
+        switch (index)
         {
-            tower.ChangeTargetSelectionStrategy(strategies[index]);
+            case 0:
+                selectedStrategy = targetSelectionStrategyList[0];
+                break;
+            case 1:
+                selectedStrategy = targetSelectionStrategyList[1];
+                break;
+            case 2:
+                selectedStrategy = targetSelectionStrategyList[2];
+                break;
+            case 3:
+                selectedStrategy = targetSelectionStrategyList[3];
+                break;
+            default:
+                break;
         }
+
+        tower.ChangeTargetSelectionStrategy(selectedStrategy);
     }
 
     //Bind to button
     public void OnRotateLeft()
     {
-        tower.gameObject.transform.rotation = Quaternion.Euler(0, tower.gameObject.transform.rotation.eulerAngles.y - 20f, 0);
+        RotateTower(-45f);
     }
 
     //Bind to button
     public void OnRotateRight()
     {
-        tower.gameObject.transform.rotation = Quaternion.Euler(0, tower.gameObject.transform.rotation.eulerAngles.y + 20f, 0);
+        RotateTower(45f);
+    }
+
+    private void RotateTower(float angle)
+    {
+        Quaternion currentRotation = tower.gameObject.transform.rotation;
+
+        Vector3 localUp = tower.gameObject.transform.up;
+
+        Quaternion rotationChange = Quaternion.AngleAxis(angle, localUp);
+
+        tower.gameObject.transform.rotation = rotationChange * currentRotation;
     }
 }

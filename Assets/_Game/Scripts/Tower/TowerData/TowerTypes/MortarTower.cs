@@ -5,7 +5,6 @@ using UnityEngine;
 public class MortarTower : AbstractBaseTower
 {
     //Big AOE Tower
-
     [SerializeField] private ParticleSystem explosionEffectPrefab;
 
     protected override void InitializeAttackStrategy()
