@@ -224,11 +224,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
             towerFireRate = towerData.towerFireRate;
             towerRange = towerData.towerRange;
 
-            //var currentStrategy = targetSelectionStrategy;
-
             //Setup targetdetection
-            //targetDetector = gameObject.GetComponent<SphereTargetDetector>();
-            //targetDetector.InitializeTargetDetector(towerRange);
             InitializeTargetDetectionStrategy();
 
             //TowerRangeVisualizer
@@ -237,15 +233,6 @@ public abstract class AbstractBaseTower : MonoBehaviour
             //Setup strategies
             InitializeAttackStrategy();
             InitializeTargetSelectionStrategy();
-
-            //if (currentStrategy == null)
-            //{
-            //    InitializeTargetSelectionStrategy();
-            //}
-            //else
-            //{
-            //    targetSelectionStrategy = currentStrategy;
-            //}
 
             //Setup attackmanager
             attackManager = new AttackManager(attackStrategy,
@@ -445,32 +432,11 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
     public virtual List<ITargetSelectionStrategy> GetAvailableStrategies()
     {
-        //List<ITargetSelectionStrategy> strategies = new List<ITargetSelectionStrategy>();
-        //strategies.Add(new NearestTarget());
-        //strategies.Add(new FastestTarget());
-        //strategies.Add(new MostHealthTarget());
-        //strategies.Add(new MostProgressTarget());
-        //return strategies;
-
-        //List<ITargetSelectionStrategy> strategies = availableStrategies;
         return availableStrategies;
     }
 
     public virtual void ChangeTargetSelectionStrategy(ITargetSelectionStrategy newStrategy)
     {
-        //List<ITargetSelectionStrategy> availableStrategies = GetAvailableStrategies();
-
-        //foreach (ITargetSelectionStrategy strategy in availableStrategies)
-        //{
-        //    if (strategy.GetType() == newStrategy.GetType())
-        //    {
-        //        targetSelectionStrategy = newStrategy;
-        //        Debug.Log($"Target selection strategy changed to: {strategy.GetType().Name}");
-        //        return;
-        //    }
-        //}
-
-        //Debug.LogWarning("Requested strategy is not available for this tower.");
         StopAttackRoutine();
 
         targetSelectionStrategy = newStrategy;
@@ -480,34 +446,6 @@ public abstract class AbstractBaseTower : MonoBehaviour
 
         StartAttackRoutine();
     }
-
-    //public virtual List<ITargetSelectionStrategy> CreateTargetSelectionStrategies()
-    //{
-    //    return new List<ITargetSelectionStrategy>
-    //    {
-    //        new NearestTarget(),
-    //        new FastestTarget(),
-    //        new MostHealthTarget(),
-    //        new MostProgressTarget()
-    //    };
-    //}
-
-    //public virtual List<ITargetSelectionStrategy> GetAvailableStrategies()
-    //{
-    //    if (availableStrategies == null)
-    //    {
-    //        availableStrategies = CreateTargetSelectionStrategies();
-    //    }
-    //    return availableStrategies;
-    //}
-
-    //public void ChangeTargetSelectionStrategy(ITargetSelectionStrategy newStrategy)
-    //{
-    //    Debug.Log($"Attempting to change strategy. New strategy type: {newStrategy.GetType().Name}");
-    //    targetSelectionStrategy = newStrategy;
-    //    Debug.Log($"Strategy after change: {targetSelectionStrategy.GetType().Name}");
-    //    SelectNewTarget();
-    //}
     #endregion
 
     #region------------------------------Events------------------------------

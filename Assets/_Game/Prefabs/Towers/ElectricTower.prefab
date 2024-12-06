@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3464955127619610960}
   - component: {fileID: 8096293519768758701}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,8 +114,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111865336708837552}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.007679378, w: 0.99997056}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -126,7 +126,7 @@ Transform:
   - {fileID: 1761565164956818436}
   - {fileID: 2033023391805311500}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.88}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3071319565793956108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 4000183363865703965}
   - component: {fileID: 1440901932739656285}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2957,7 +2957,7 @@ GameObject:
   - component: {fileID: 5387749481842149376}
   - component: {fileID: 3047930398048973002}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

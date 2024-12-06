@@ -10136,6 +10136,10 @@ MonoBehaviour:
     poolSize: 20
     type: 2
     pooledObjects: []
+  - prefab: {fileID: 1143846331768777601, guid: c804cf6be29e55748b76f4dd604367bb, type: 3}
+    poolSize: 20
+    type: 5
+    pooledObjects: []
 --- !u!1 &802584186
 GameObject:
   m_ObjectHideFlags: 0
@@ -17999,6 +18003,9 @@ MonoBehaviour:
   - towerType: ElectricTower
     towerPrefab: {fileID: 111865336708837552, guid: 4bf96175879b4064fa2474aae7d22d58, type: 3}
     towerData: {fileID: 11400000, guid: 78e8e65f89b9e8f4fb9dbae11a1485d3, type: 2}
+  - towerType: LaserTower
+    towerPrefab: {fileID: 6572293621808661287, guid: 5ffd586e13cdea14382d080904e2762c, type: 3}
+    towerData: {fileID: 11400000, guid: eea60479721438c41aa385cf2b7632ee, type: 2}
 --- !u!1 &1641249856
 GameObject:
   m_ObjectHideFlags: 0

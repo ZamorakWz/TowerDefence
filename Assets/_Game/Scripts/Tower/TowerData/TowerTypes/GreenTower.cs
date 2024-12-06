@@ -14,14 +14,7 @@ public class GreenTower : AbstractBaseTower
 
     protected override void InitializeTargetSelectionStrategy()
     {
-        if (targetSelectionStrategy != null)
-        {
-            Debug.Log($"Existing strategy will be used: {targetSelectionStrategy.GetType().Name}");
-            return;
-        }
-
         targetSelectionStrategy = new NearestTarget();
-        Debug.Log("Setting default strategy to NearestTarget");
     }
 
     protected override void InitializeTargetDetectionStrategy()

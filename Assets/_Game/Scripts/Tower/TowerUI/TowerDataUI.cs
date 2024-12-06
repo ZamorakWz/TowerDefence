@@ -84,8 +84,6 @@ public class TowerDataUI : MonoBehaviour
         {
             HidePanel();
         }
-
-        //UpdateStrategyDropdown();
     }
 
     private void UpdateButton(Button button, int upgradeLevel)
@@ -161,18 +159,6 @@ public class TowerDataUI : MonoBehaviour
 
         strategyDropdown.AddOptions(strategyNames);
 
-        //tower.ChangeTargetSelectionStrategy(targetSelectionStrategies[1]);
-
-        //if (tower.targetSelectionStrategy == null)
-        //{
-        //    Debug.Log("Tower's targetSelectionStrategy is null. Setting default strategy.");
-        //    tower.targetSelectionStrategy = strategies[0];
-        //}
-        //else
-        //{
-        //    Debug.Log($"Tower's current strategy: {tower.targetSelectionStrategy.GetType().Name}");
-        //}
-
         int currentStrategyIndex = 0;
         for (int i = 0; i < targetSelectionStrategyList.Count; i++)
         {
@@ -189,25 +175,11 @@ public class TowerDataUI : MonoBehaviour
         strategyDropdown.RefreshShownValue();
 
         strategyDropdown.onValueChanged.AddListener(OnStrategyChanged);
-
-        //tower.ChangeTargetSelectionStrategy(targetSelectionStrategyList[currentStrategyIndex]);
-        //Debug.Log($"Final strategy in tower: {tower.targetSelectionStrategy?.GetType().Name}");
     }
 
     //Bind to dropdown
     public void OnStrategyChanged(int index)
     {
-        ////List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
-
-        ////List<ITargetSelectionStrategy> strategies = tower.availableStrategies;
-
-        //if (index >= 0 && index < targetSelectionStrategyList.Count)
-        //{
-        //    ITargetSelectionStrategy selectedStrategy = targetSelectionStrategyList[index];
-        //    tower.targetSelectionStrategy = selectedStrategy;
-        //    Debug.Log($"{tower.targetSelectionStrategy} changed to {selectedStrategy}");
-        //}
-
         ITargetSelectionStrategy selectedStrategy = null;
 
         switch (index)

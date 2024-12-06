@@ -21,7 +21,6 @@ public class ElectricEffectStrategy : ILightningEffectStrategy
             effect.transform.rotation = Quaternion.LookRotation(direction);
 
             distance = Vector3.Distance(endPosition, startPosition);
-            float length = distance;
 
             var shape = effect.shape;
             shape.length = distance;
@@ -30,8 +29,8 @@ public class ElectricEffectStrategy : ILightningEffectStrategy
         var main = effect.main;
 
         float speedMultiplier = 5f;
-        float maxSpeed = 10f;
-        float calculatedSpeed = Mathf.Clamp(distance * speedMultiplier, 10f, maxSpeed);
+        float maxSpeed = 2f;
+        float calculatedSpeed = Mathf.Clamp(distance * speedMultiplier, 2f, maxSpeed);
 
         main.startSpeed = calculatedSpeed;
         main.startLifetime = distance / calculatedSpeed * 1f;

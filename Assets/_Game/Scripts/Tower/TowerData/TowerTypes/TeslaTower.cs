@@ -24,9 +24,5 @@ public class TeslaTower : AbstractBaseTower
         availableStrategies.Clear();
         strategies.Add(new AllTargets());
         return strategies;
-
-        //availableStrategies.Clear();
-        //availableStrategies.Add(new AllTargets());
-        //return availableStrategies;
     }
 }
