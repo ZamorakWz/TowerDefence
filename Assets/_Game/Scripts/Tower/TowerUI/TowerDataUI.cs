@@ -124,18 +124,12 @@ public class TowerDataUI : MonoBehaviour
 
     public void UpdateStrategyDropdown()
     {
-        Debug.Log("UpdateStrategyDropdown called.");
-
         targetSelectionStrategyList = tower.availableStrategies;
-        Debug.LogWarning($"{targetSelectionStrategyList.Count} is the count of strategies that come from Abstract class to towerdataui");
 
         strategyDropdown.ClearOptions();
-        Debug.Log("Cleared dropdown options.");
 
         if (targetSelectionStrategyList.Count <= 1)
         {
-            Debug.Log("Only one or no strategies available, hiding dropdown.");
-
             strategyDropdown.gameObject.SetActive(false);
             strategyText.gameObject.SetActive(false);
 
@@ -148,13 +142,11 @@ public class TowerDataUI : MonoBehaviour
         }
 
         strategyDropdown.gameObject.SetActive(true);
-        Debug.Log("Showing dropdown and adding strategies.");
 
         List<string> strategyNames = new List<string>();
         foreach (var strategy in targetSelectionStrategyList)
         {
             strategyNames.Add(strategy.GetType().Name);
-            Debug.Log($"Added strategy to dropdown: {strategy.GetType().Name}");
         }
 
         strategyDropdown.AddOptions(strategyNames);
@@ -165,13 +157,11 @@ public class TowerDataUI : MonoBehaviour
             if (targetSelectionStrategyList[i].GetType().Name == tower.targetSelectionStrategy.GetType().Name)
             {
                 currentStrategyIndex = i;
-                Debug.Log($"Found current strategy at index {i}: {targetSelectionStrategyList[i].GetType().Name}");
                 break;
             }
         }
 
         strategyDropdown.value = currentStrategyIndex;
-        Debug.Log($"Dropdown value set to index {currentStrategyIndex}");
         strategyDropdown.RefreshShownValue();
 
         strategyDropdown.onValueChanged.AddListener(OnStrategyChanged);

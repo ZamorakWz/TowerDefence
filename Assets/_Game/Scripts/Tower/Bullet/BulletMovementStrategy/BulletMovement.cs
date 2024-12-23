@@ -73,6 +73,7 @@ public class BulletMovement : MonoBehaviour
         bulletTransform.gameObject.SetActive(false);
     }
 
+    //Laser tower some of attack logic
     private void OnTriggerEnter(Collider other)
     {
         if (isLaserBullet && other.TryGetComponent(out IAttackable attackable))

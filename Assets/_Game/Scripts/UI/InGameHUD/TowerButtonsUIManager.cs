@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class TowerButtonsUIManager : MonoBehaviour
 {
-    [SerializeField] private Transform _towerButtonContainer;
-    [SerializeField] private Button _towerButtonPrefab;
-    [SerializeField] private TowerPlacementManager _towerPlacementManager;
+    [SerializeField] private Transform towerButtonContainer;
+    [SerializeField] private Button towerButtonPrefab;
+    [SerializeField] private TowerPlacementManager towerPlacementManager;
     [SerializeField] private List<AbstractBaseTower> availableTowers;
 
     private void OnEnable()
@@ -24,7 +24,7 @@ public class TowerButtonsUIManager : MonoBehaviour
     {
         foreach (AbstractBaseTower tower in availableTowers)
         {
-            Button button = Instantiate(_towerButtonPrefab, _towerButtonContainer);
+            Button button = Instantiate(towerButtonPrefab, towerButtonContainer);
             TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
 
             if (buttonText != null)
@@ -41,7 +41,7 @@ public class TowerButtonsUIManager : MonoBehaviour
         GameObject createdTower = TowerCreationManager.Instance.CreateTower(towerType, Vector3.zero);
         if (createdTower != null)
         {
-            _towerPlacementManager.SelectTower(createdTower);
+            towerPlacementManager.SelectTower(createdTower);
         }
     }
 

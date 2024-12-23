@@ -8,7 +8,7 @@ public class ElectricAttackStrategy : IAttackStrategy
     private Vector3 towerPosition;
 
     private int chainCount = 4;
-    private float chainRadius = 2f;
+    private float chainRadius = 6f;
 
     public ElectricAttackStrategy(ILightningEffectStrategy effectStrategy, Vector3 towerPosition)
     {
@@ -26,39 +26,52 @@ public class ElectricAttackStrategy : IAttackStrategy
 
     private IEnumerator ChainAttack(EnemyComposite initialTarget, float damage)
     {
-        EnemyComposite currentTarget = initialTarget;
+        if (initialTarget == null)
+        {
+            yield break;
+        }
+
+        Vector3 previousTargetPosition = towerPosition;
 
         for (int i = 0; i < chainCount; i++)
         {
-            if (currentTarget == null)
+            if (initialTarget == null)
             {
                 yield break;
             }
 
-            currentTarget.TakeDamage(damage);
+            //initialTarget.TakeDamage(damage);
 
-            Vector3 currentTargetPosition = currentTarget.GetPosition();
-            effectStrategy.CreateLightningEffect(towerPosition, currentTargetPosition, Vector3.Distance(towerPosition, currentTargetPosition));
+            Vector3 currentTargetGetPosition = initialTarget.GetPosition();
+            Vector3 currentTargetHigherYPosition = new Vector3(currentTargetGetPosition.x, currentTargetGetPosition.y + 8, currentTargetGetPosition.z);
 
-            Collider[] colliders = Physics.OverlapSphere(currentTargetPosition, chainRadius);
+            effectStrategy.CreateLightningEffect(currentTargetHigherYPosition, currentTargetGetPosition, initialTarget.transform);
+
+            initialTarget.TakeDamage(damage);
+
+            Collider[] colliders = Physics.OverlapSphere(currentTargetGetPosition, chainRadius);
+            Debug.Log($"Found {colliders.Length} colliders within chain radius.");
             EnemyComposite nextTarget = null;
 
             foreach (Collider collider in colliders)
             {
-                if (collider.TryGetComponent(out EnemyComposite potentialTarget) && potentialTarget != currentTarget)
+                if (collider.TryGetComponent(out EnemyComposite potentialTarget) && potentialTarget != initialTarget)
                 {
-                    nextTarget = potentialTarget;
-                    break;
+                    Debug.Log($"Potential target found: {potentialTarget.name}");
+                    if (currentTargetGetPosition.magnitude > potentialTarget.GetPosition().magnitude)
+                    {
+                        nextTarget = potentialTarget;
+                        break;
+                    }
                 }
             }
 
-            currentTarget = nextTarget;
-            towerPosition = currentTargetPosition;
+            initialTarget = nextTarget;
+            previousTargetPosition = currentTargetHigherYPosition;
 
             yield return new WaitForSeconds(0.2f);
         }
     }
-
 
     public IBulletMovementStrategy GetBulletMovementStrategy()
     {

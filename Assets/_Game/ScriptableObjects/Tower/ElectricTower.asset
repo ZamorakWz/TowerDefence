@@ -16,7 +16,7 @@ MonoBehaviour:
   towerPrefab: {fileID: 0}
   towerCost: 0
   towerRange: 5
-  towerDamage: 20
+  towerDamage: 10
   towerFireRate: 0.5
   towerAOERadius: 0
   towerBulletData:

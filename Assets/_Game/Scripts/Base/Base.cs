@@ -7,23 +7,23 @@ public class Base : MonoBehaviour, IDamageable
 {
     public static Action<int, int> OnBaseHealthChanged;
 
-    [SerializeField] private int _maxHealth = 100;
-    private IBaseHealthSystem _healthSystem;
+    [SerializeField] private int maxHealth = 100;
+    private IBaseHealthSystem healthSystem;
 
     private void Awake()
     {
-        _healthSystem = new HealthSystem(_maxHealth);
+        healthSystem = new HealthSystem(maxHealth);
 
-        OnBaseHealthChanged?.Invoke(_maxHealth, _healthSystem.currentHealth);
+        OnBaseHealthChanged?.Invoke(maxHealth, healthSystem.currentHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        _healthSystem.TakeDamage(damage);
+        healthSystem.TakeDamage(damage);
 
-        OnBaseHealthChanged?.Invoke(_maxHealth, _healthSystem.currentHealth);
+        OnBaseHealthChanged?.Invoke(maxHealth, healthSystem.currentHealth);
 
-        if (_healthSystem.isDead)
+        if (healthSystem.isDead)
         {
             OnBaseDeath();
         }

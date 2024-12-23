@@ -11,9 +11,10 @@ public class TeslaEffectStrategy : ILightningEffectStrategy
         this.teslaParticlePrefab = teslaParticlePrefab;
     }
 
-    public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, float distance)
+    public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, Transform obj)
     {
         ParticleSystem effect = Object.Instantiate(teslaParticlePrefab, startPosition, Quaternion.identity);
+        float distance = Vector3.Distance(endPosition, startPosition);
 
         if (endPosition != startPosition)
         {

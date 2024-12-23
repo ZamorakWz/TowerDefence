@@ -16,8 +16,9 @@ MonoBehaviour:
   towerPrefab: {fileID: 5812643004807113662, guid: c637d97fe14f07544b178edf51058d41, type: 3}
   towerCost: 0
   towerRange: 7
-  towerDamage: 5
+  towerDamage: 2.5
   towerFireRate: 5
   towerAOERadius: 0
   towerBulletData:
     bulletPrefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
+  isLookAtTower: 0

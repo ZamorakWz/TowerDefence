@@ -5,38 +5,42 @@ using UnityEngine;
 public class ElectricEffectStrategy : ILightningEffectStrategy
 {
     private ParticleSystem electricParticlePrefab;
+    public ParticleSystem effect;
 
-    public ElectricEffectStrategy(ParticleSystem teslaParticlePrefab)
+    public ElectricEffectStrategy(ParticleSystem electricParticlePrefab)
     {
-        this.electricParticlePrefab = teslaParticlePrefab;
+        this.electricParticlePrefab = electricParticlePrefab;
     }
 
-    public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, float distance)
+    public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, Transform obj)
     {
-        ParticleSystem effect = Object.Instantiate(electricParticlePrefab, startPosition, Quaternion.identity);
+        effect = Object.Instantiate(electricParticlePrefab, startPosition, Quaternion.identity);
+        float distance = Vector3.Distance(endPosition, startPosition);
 
         if (endPosition != startPosition)
         {
-            Vector3 direction = (endPosition - startPosition).normalized;
-            effect.transform.rotation = Quaternion.LookRotation(direction);
+            //Vector3 direction = (endPosition - startPosition).normalized;
+            //effect.transform.rotation = Quaternion.LookRotation(direction);
 
-            distance = Vector3.Distance(endPosition, startPosition);
+            //Vector3 rotation = effect.transform.rotation.eulerAngles;
+            //rotation.x = 90f;
+            //effect.transform.rotation = Quaternion.Euler(rotation);
 
-            var shape = effect.shape;
-            shape.length = distance;
+            effect.transform.rotation = Quaternion.identity;
         }
+        //else
+        //{
+        //    effect.transform.rotation = Quaternion.identity;
+        //}
 
         var main = effect.main;
 
-        float speedMultiplier = 5f;
-        float maxSpeed = 2f;
-        float calculatedSpeed = Mathf.Clamp(distance * speedMultiplier, 2f, maxSpeed);
+        main.startLifetime = Mathf.Clamp(distance / 10f, 0.5f, 5f);
 
-        main.startSpeed = calculatedSpeed;
-        main.startLifetime = distance / calculatedSpeed * 1f;
+        effect.transform.SetParent(obj);
 
         effect.Play();
 
-        Object.Destroy(effect.gameObject, main.duration);
+        //Object.Destroy(effect.gameObject, distance);
     }
 }

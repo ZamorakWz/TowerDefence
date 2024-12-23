@@ -22,9 +22,9 @@ public class TeslaAttackStrategy : IAttackStrategy
 
         target.TakeDamage(damage);
 
-        float distance = Vector3.Distance(towerPosition, targetPosition);
+        //float distance = Vector3.Distance(towerPosition, targetPosition);
 
-        effectStrategy.CreateLightningEffect(towerPosition, targetPosition, distance);
+        effectStrategy.CreateLightningEffect(towerPosition, targetPosition, null);
     }
 
     public IBulletMovementStrategy GetBulletMovementStrategy()

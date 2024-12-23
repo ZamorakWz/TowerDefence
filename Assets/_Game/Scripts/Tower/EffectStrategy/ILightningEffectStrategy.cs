@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ILightningEffectStrategy
 {
-    void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, float distance);
+    void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, Transform obj);
 }

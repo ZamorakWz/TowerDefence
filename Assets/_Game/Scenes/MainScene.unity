@@ -16196,11 +16196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225a536d934d36a47a8cdae44697f610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseHealth: {fileID: 471503646}
-  _currentWave: {fileID: 1829289549}
-  _aliveEnemyCount: {fileID: 397335217}
-  _timeToNextWave: {fileID: 275913654}
-  _goldText: {fileID: 1902522382}
+  baseHealth: {fileID: 471503646}
+  currentWave: {fileID: 1829289549}
+  aliveEnemyCount: {fileID: 397335217}
+  timeToNextWave: {fileID: 275913654}
+  goldText: {fileID: 1902522382}
 --- !u!114 &1465110273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16213,9 +16213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5d83fbdf8188b4488b5341491d1554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerButtonContainer: {fileID: 726353477}
-  _towerButtonPrefab: {fileID: 9074749900910565156, guid: 85220b14b37ed0b449df6a0bae613173, type: 3}
-  _towerPlacementManager: {fileID: 1641235998}
+  towerButtonContainer: {fileID: 726353477}
+  towerButtonPrefab: {fileID: 9074749900910565156, guid: 85220b14b37ed0b449df6a0bae613173, type: 3}
+  towerPlacementManager: {fileID: 1641235998}
   availableTowers: []
 --- !u!1 &1465601962
 GameObject:
@@ -17989,7 +17989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerInfoList:
   - towerType: GreenTower
-    towerPrefab: {fileID: 8417100427490335222, guid: 472412284212371498424bad1c8a1ce6, type: 3}
+    towerPrefab: {fileID: 8935877076845156258, guid: 481a76f2ed2d1b9429dd419b81053da9, type: 3}
     towerData: {fileID: 11400000, guid: 15a9f9bdfcd45fc47a0201e5716a4b04, type: 2}
   - towerType: BlueTower
     towerPrefab: {fileID: 8047960686294091696, guid: fc1b718f46afa484dba03b48c71c89e2, type: 3}
@@ -42954,7 +42954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6ca74a23c930143a2612b9f0fadcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  maxHealth: 100
 --- !u!114 &5976960897086663644
 MonoBehaviour:
   m_ObjectHideFlags: 0

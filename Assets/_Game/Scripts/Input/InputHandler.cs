@@ -16,7 +16,6 @@ public class InputHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Mouse button down detected");
             HandleInput(Input.mousePosition);
         }
         else if (Input.touchCount > 0)
@@ -24,7 +23,6 @@ public class InputHandler : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("Touch began detected");
                 HandleInput(touch.position);
             }
         }
@@ -50,8 +48,6 @@ public class InputHandler : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, layerMask))
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
-                Debug.Log($"Raycast hit: {hitObject.name} with tag {hitObject.tag}");
-
                 ProcessHitObject(hitObject);
             }
             else
