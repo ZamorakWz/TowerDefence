@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour, IPositionProvider, ISpeedProvider
 
     void Start()
     {
-        waypointPath = FindObjectOfType<EnemyWaypointPath>();
+        waypointPath = FindAnyObjectByType<EnemyWaypointPath>();
 
         Speed = enemyType.typeSpeed;
     }

@@ -33,20 +33,19 @@ public class GroundValidator : MonoBehaviour
 
     public bool CheckGroundValidity(Vector3 position)
     {
-        //RaycastHit hit;
-        //LayerMask validGroundLayer = LayerMask.GetMask("TowerPlaceableGround");
-
-        //Vector3 rayStart = position + (Vector3.up * 0.1f);
-
-        //bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
-
-        //return hitGround;
-
         RaycastHit hit;
-        Vector3 rayStart = position;
+
+        Vector3 rayStart = position + (Vector3.up * 0.1f);
 
         bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
 
         return hitGround;
+
+        //RaycastHit hit;
+        //Vector3 rayStart = position;
+
+        //bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
+
+        //return hitGround;
     }
 }

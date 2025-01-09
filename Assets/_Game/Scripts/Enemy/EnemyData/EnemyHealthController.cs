@@ -9,53 +9,53 @@ public class EnemyHealthController : MonoBehaviour, IAttackable, IHealthProvider
     public Action<float> OnHealthChanged;
     public static Action<EnemyHealthController> OnEnemyDied;
 
-    private EnemySpawnController _enemySpawnController;
+    private EnemySpawnController enemySpawnController;
 
-    [SerializeField] private EnemyTypeSO _enemyTypeSO;
+    [SerializeField] private EnemyTypeSO enemyTypeSO;
 
-    [SerializeField] private float _currentHealth;
-    private bool _isDead;
+    [SerializeField] private float currentHealth;
+    private bool isDead;
 
     public float CurrentHealth
     {
-        get { return _currentHealth; }
-        set { _currentHealth = value; }
+        get { return currentHealth; }
+        set { currentHealth = value; }
     }
 
     private void Awake()
     {
-        _enemySpawnController = FindObjectOfType<EnemySpawnController>();
+        enemySpawnController = FindObjectOfType<EnemySpawnController>();
     }
 
     private void OnEnable()
     {
-        _isDead = false;
+        isDead = false;
     }
 
     public void SetEnemyHealthBeginningValue()
     {
-        _currentHealth = _enemyTypeSO.typeMaxHealth;
+        currentHealth = enemyTypeSO.typeMaxHealth;
     }
 
     public void TakeDamage(float amount)
     {
-        _currentHealth -= amount;
+        currentHealth -= amount;
 
-        if (_currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
 
         Debug.Log($"{amount} damage is taken!");
 
-        OnHealthChanged?.Invoke(_currentHealth);
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     public void Die()
     {
-        if (_isDead) { return; }
+        if (isDead) { return; }
 
-        _isDead = true;
+        isDead = true;
 
         OnEnemyDied?.Invoke(this);
 
@@ -67,9 +67,9 @@ public class EnemyHealthController : MonoBehaviour, IAttackable, IHealthProvider
 
         gameObject.SetActive(false);
 
-        _enemySpawnController.AliveEnemyCount--;
+        enemySpawnController.AliveEnemyCount--;
 
-        GoldManager.Instance.AddGold(_enemyTypeSO.typeGold);
+        GoldManager.Instance.AddGold(enemyTypeSO.typeGold);
     }
 
     public float GetHealth()

@@ -13912,31 +13912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e5b126d5496db44bd12fdce17f4049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfigs:
-  - enemyConfigs:
-    - enemyType: 0
-      spawnCount: 5
-      spawnInterval: 1
-    - enemyType: 1
-      spawnCount: 5
-      spawnInterval: 2
-  - enemyConfigs:
-    - enemyType: 1
-      spawnCount: 2
-      spawnInterval: 1.5
-  - enemyConfigs:
-    - enemyType: 2
-      spawnCount: 3
-      spawnInterval: 1
-    - enemyType: 0
-      spawnCount: 5
-      spawnInterval: 1
-    - enemyType: 3
-      spawnCount: 2
-      spawnInterval: 1
-  _enemySpawnController: {fileID: 173102608}
-  _currentWaveIndex: 0
-  _totalTimeBetweenWaves: 10
+  currentLevelData: {fileID: 11400000, guid: a53a8c30eac930a408ad8169c07fd5a7, type: 2}
+  enemySpawnController: {fileID: 173102608}
+  currentWaveIndex: 0
 --- !u!1 &1219051298
 GameObject:
   m_ObjectHideFlags: 0
@@ -17992,7 +17970,7 @@ MonoBehaviour:
     towerPrefab: {fileID: 8935877076845156258, guid: 481a76f2ed2d1b9429dd419b81053da9, type: 3}
     towerData: {fileID: 11400000, guid: 15a9f9bdfcd45fc47a0201e5716a4b04, type: 2}
   - towerType: BlueTower
-    towerPrefab: {fileID: 8047960686294091696, guid: fc1b718f46afa484dba03b48c71c89e2, type: 3}
+    towerPrefab: {fileID: 8569351826459922516, guid: fc1b718f46afa484dba03b48c71c89e2, type: 3}
     towerData: {fileID: 11400000, guid: e2a2ca856b3c0c54ca57180e9ee38eda, type: 2}
   - towerType: TeslaTower
     towerPrefab: {fileID: 8651312074908895980, guid: cc56b0a27f5d7e441b973ae097d19110, type: 3}
@@ -18001,7 +17979,7 @@ MonoBehaviour:
     towerPrefab: {fileID: 7580644487428908520, guid: 826f586dac624784cb0d0948091b6e7e, type: 3}
     towerData: {fileID: 11400000, guid: 923fd1852d813fc41a79dd66cd819069, type: 2}
   - towerType: ElectricTower
-    towerPrefab: {fileID: 111865336708837552, guid: 4bf96175879b4064fa2474aae7d22d58, type: 3}
+    towerPrefab: {fileID: 3312967728880134691, guid: 4bf96175879b4064fa2474aae7d22d58, type: 3}
     towerData: {fileID: 11400000, guid: 78e8e65f89b9e8f4fb9dbae11a1485d3, type: 2}
   - towerType: LaserTower
     towerPrefab: {fileID: 6572293621808661287, guid: 5ffd586e13cdea14382d080904e2762c, type: 3}
@@ -24391,6 +24369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564cca7be5b434649b0a66e3f7bfed03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevelData: {fileID: 11400000, guid: a53a8c30eac930a408ad8169c07fd5a7, type: 2}
 --- !u!1 &1966066697
 GameObject:
   m_ObjectHideFlags: 0
@@ -29801,13 +29780,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pools:
   - _enemyPrefab: {fileID: 7611756579546102484, guid: 732dac1f51c810b42a812e1a1f493670, type: 3}
-    _pooledEnemySize: 25
+    _pooledEnemySize: 30
   - _enemyPrefab: {fileID: 4442690739926472982, guid: e58d5f4f78701c64985420fe4c214375, type: 3}
-    _pooledEnemySize: 25
+    _pooledEnemySize: 30
   - _enemyPrefab: {fileID: 910603429181921328, guid: de76a59f93d6b614f9a75cc8063270d2, type: 3}
-    _pooledEnemySize: 25
+    _pooledEnemySize: 30
   - _enemyPrefab: {fileID: 3239203202804841009, guid: 15216bfbb5b7e3c498142e6ea8199e84, type: 3}
-    _pooledEnemySize: 25
+    _pooledEnemySize: 30
 --- !u!1 &2028637859
 GameObject:
   m_ObjectHideFlags: 0
@@ -42954,7 +42933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6ca74a23c930143a2612b9f0fadcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  currentLevelData: {fileID: 11400000, guid: a53a8c30eac930a408ad8169c07fd5a7, type: 2}
 --- !u!114 &5976960897086663644
 MonoBehaviour:
   m_ObjectHideFlags: 0

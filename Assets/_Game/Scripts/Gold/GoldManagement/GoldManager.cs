@@ -9,7 +9,9 @@ public class GoldManager : MonoBehaviour
 
     public static event Action<int> OnGoldChanged;
 
-    private int _currentGold = 100;
+    [SerializeField] private LevelDataSO currentLevelData;
+
+    private int currentGold;
 
     private void Awake()
     {
@@ -21,24 +23,26 @@ public class GoldManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        currentGold = currentLevelData.levelBeginnigGold;
     }
 
     public void AddGold(int amount)
     {
-        _currentGold += amount;
+        currentGold += amount;
 
-        OnGoldChanged?.Invoke(_currentGold);
+        OnGoldChanged?.Invoke(currentGold);
     }
 
     public void RemoveGold(int amount)
     {
-        _currentGold -= amount;
+        currentGold -= amount;
 
-        OnGoldChanged?.Invoke(_currentGold);
+        OnGoldChanged?.Invoke(currentGold);
     }
 
     public int GetCurrentGold()
     {
-        return _currentGold;
+        return currentGold;
     }
 }
