@@ -25,6 +25,7 @@ public class TowerDataUI : MonoBehaviour
     private float damageUpgradeCost;
     private float rangeUpgradeCost;
     private float fireRateUpgradeCost;
+    private List<ITargetSelectionStrategy> targetSelectionStrategyList;
 
     [Inject] private TowerDataPanelManager towerDataPanelManager;
 
@@ -65,7 +66,7 @@ public class TowerDataUI : MonoBehaviour
     {
         if (tower.isTowerPlaced)
         {
-            topicText.text = $"{tower.GetTowerData().towerName} Upgrade Panel";
+            topicText.text = $"{tower.GetTowerData().towerName}";
 
             damageUpgradeCost = tower.GetUpgradeCost(tower.damageUpgradeLevel);
             rangeUpgradeCost = tower.GetUpgradeCost(tower.rangeUpgradeLevel);
@@ -83,8 +84,6 @@ public class TowerDataUI : MonoBehaviour
         {
             HidePanel();
         }
-
-        UpdateStrategyDropdown();
     }
 
     private void UpdateButton(Button button, int upgradeLevel)
@@ -123,13 +122,13 @@ public class TowerDataUI : MonoBehaviour
         }
     }
 
-    private void UpdateStrategyDropdown()
+    public void UpdateStrategyDropdown()
     {
+        targetSelectionStrategyList = tower.availableStrategies;
+
         strategyDropdown.ClearOptions();
 
-        List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
-
-        if (strategies.Count <= 1)
+        if (targetSelectionStrategyList.Count <= 1)
         {
             strategyDropdown.gameObject.SetActive(false);
             strategyText.gameObject.SetActive(false);
@@ -145,22 +144,17 @@ public class TowerDataUI : MonoBehaviour
         strategyDropdown.gameObject.SetActive(true);
 
         List<string> strategyNames = new List<string>();
-        foreach (var strategy in strategies)
+        foreach (var strategy in targetSelectionStrategyList)
         {
             strategyNames.Add(strategy.GetType().Name);
         }
 
         strategyDropdown.AddOptions(strategyNames);
 
-        if (tower.targetSelectionStrategy == null)
-        {
-            tower.targetSelectionStrategy = strategies[0];
-        }
-
         int currentStrategyIndex = 0;
-        for (int i = 0; i < strategies.Count; i++)
+        for (int i = 0; i < targetSelectionStrategyList.Count; i++)
         {
-            if (strategies[i].GetType() == tower.targetSelectionStrategy.GetType())
+            if (targetSelectionStrategyList[i].GetType().Name == tower.targetSelectionStrategy.GetType().Name)
             {
                 currentStrategyIndex = i;
                 break;
@@ -168,15 +162,57 @@ public class TowerDataUI : MonoBehaviour
         }
 
         strategyDropdown.value = currentStrategyIndex;
+        strategyDropdown.RefreshShownValue();
+
+        strategyDropdown.onValueChanged.AddListener(OnStrategyChanged);
     }
 
     //Bind to dropdown
     public void OnStrategyChanged(int index)
     {
-        List<ITargetSelectionStrategy> strategies = tower.GetAvailableStrategies();
-        if (index >= 0 && index < strategies.Count)
+        ITargetSelectionStrategy selectedStrategy = null;
+
+        switch (index)
         {
-            tower.ChangeTargetSelectionStrategy(strategies[index]);
+            case 0:
+                selectedStrategy = targetSelectionStrategyList[0];
+                break;
+            case 1:
+                selectedStrategy = targetSelectionStrategyList[1];
+                break;
+            case 2:
+                selectedStrategy = targetSelectionStrategyList[2];
+                break;
+            case 3:
+                selectedStrategy = targetSelectionStrategyList[3];
+                break;
+            default:
+                break;
         }
+
+        tower.ChangeTargetSelectionStrategy(selectedStrategy);
+    }
+
+    //Bind to button
+    public void OnRotateLeft()
+    {
+        RotateTower(-45f);
+    }
+
+    //Bind to button
+    public void OnRotateRight()
+    {
+        RotateTower(45f);
+    }
+
+    private void RotateTower(float angle)
+    {
+        Quaternion currentRotation = tower.gameObject.transform.rotation;
+
+        Vector3 localUp = tower.gameObject.transform.up;
+
+        Quaternion rotationChange = Quaternion.AngleAxis(angle, localUp);
+
+        tower.gameObject.transform.rotation = rotationChange * currentRotation;
     }
 }

@@ -5,13 +5,13 @@ using TMPro;
 
 public class InGameHUDManager : MonoBehaviour, IInGameHUD
 {
-    public static InGameHUDManager Instance {  get; private set; }
+    public static InGameHUDManager Instance { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI _baseHealth;
-    [SerializeField] private TextMeshProUGUI _currentWave;
-    [SerializeField] private TextMeshProUGUI _aliveEnemyCount;
-    [SerializeField] private TextMeshProUGUI _timeToNextWave;
-    [SerializeField] private TextMeshProUGUI _goldText;
+    [SerializeField] private TextMeshProUGUI baseHealth;
+    [SerializeField] private TextMeshProUGUI currentWave;
+    [SerializeField] private TextMeshProUGUI aliveEnemyCount;
+    [SerializeField] private TextMeshProUGUI timeToNextWave;
+    [SerializeField] private TextMeshProUGUI goldText;
 
     private void Awake()
     {
@@ -37,27 +37,27 @@ public class InGameHUDManager : MonoBehaviour, IInGameHUD
 
     public void HandleBaseHealth(int maxHealth, int currentHealth)
     {
-        _baseHealth.text = $"Base Health {maxHealth}/{currentHealth}";
+        baseHealth.text = $"Base Health {maxHealth}/{currentHealth}";
     }
 
     public void HandleCurrentWave(int maxWave, int currentWave)
     {
-        _currentWave.text = $"{currentWave}/{maxWave}";
+        this.currentWave.text = $"{currentWave}/{maxWave}";
     }
 
     public void HandleAliveEnemyCount(int count)
     {
-        _aliveEnemyCount.text = $"Alive Enemy Count: {count}";
+        aliveEnemyCount.text = $"Alive Enemy Count: {count}";
     }
 
     public void HandleRemainingTimeToNextWave(int time)
     {
-        _timeToNextWave.text = $"Time To Next Wave: {time}";
+        timeToNextWave.text = $"Time To Next Wave: {time}";
     }
 
     public void HandleGoldUIUpdate(int amount)
     {
-        _goldText.text = $"Gold: {amount}";
+        goldText.text = $"Gold: {amount}";
     }
 
     private void SubscribeEvents()

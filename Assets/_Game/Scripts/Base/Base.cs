@@ -1,29 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Base : MonoBehaviour, IDamageable
 {
-    public static Action<int, int> OnBaseHealthChanged;
+    public static event UnityAction<int, int> OnBaseHealthChanged;
 
-    [SerializeField] private int _maxHealth = 100;
-    private IBaseHealthSystem _healthSystem;
+    [SerializeField] private LevelDataSO currentLevelData;
+    private BaseHealthSystem healthSystem;
 
     private void Awake()
     {
-        _healthSystem = new HealthSystem(_maxHealth);
-
-        OnBaseHealthChanged?.Invoke(_maxHealth, _healthSystem.currentHealth);
+        healthSystem = new BaseHealthSystem(currentLevelData.levelBaseHealth);
+        OnBaseHealthChanged?.Invoke(healthSystem.MaxHealth, healthSystem.CurrentHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        _healthSystem.TakeDamage(damage);
+        healthSystem.TakeDamage(damage);
+        OnBaseHealthChanged?.Invoke(healthSystem.MaxHealth, healthSystem.CurrentHealth);
 
-        OnBaseHealthChanged?.Invoke(_maxHealth, _healthSystem.currentHealth);
-
-        if (_healthSystem.isDead)
+        if (healthSystem.IsDead)
         {
             OnBaseDeath();
         }
@@ -32,7 +28,6 @@ public class Base : MonoBehaviour, IDamageable
     private void OnBaseDeath()
     {
         Debug.Log("Base is destroyed! Game Over!");
-
         Time.timeScale = 0;
     }
 }

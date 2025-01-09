@@ -1,28 +1,33 @@
 using UnityEngine;
 
-public class EnemyComposite : MonoBehaviour, IAttackable, IPositionProvider, IHealthProvider
+public class EnemyComposite : MonoBehaviour, IAttackable, IPositionProvider, IHealthProvider, ISpeedProvider
 {
-    private EnemyHealthController healthController;
-    private EnemyMovement movement;
+    private EnemyHealthController enemyHealth;
+    private EnemyMovement enemyMovement;
 
     void Awake()
     {
-        healthController = GetComponent<EnemyHealthController>();
-        movement = GetComponent<EnemyMovement>();
+        enemyHealth = GetComponent<EnemyHealthController>();
+        enemyMovement = GetComponent<EnemyMovement>();
     }
 
     public void TakeDamage(float amount)
     {
-        healthController?.TakeDamage(amount);
+        enemyHealth?.TakeDamage(amount);
     }
 
     public Vector3 GetPosition()
     {
-        return movement?.GetPosition() ?? Vector3.zero;
+        return enemyMovement?.GetPosition() ?? Vector3.zero;
     }
 
     public float GetHealth()
     {
-        return healthController?.GetHealth() ?? 0f;
+        return enemyHealth?.GetHealth() ?? 0f;
+    }
+
+    public float GetSpeedValue()
+    {
+        return enemyMovement.GetSpeedValue();
     }
 }

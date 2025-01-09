@@ -1,10 +1,10 @@
 using UnityEngine;
 public class TeslaAttackStrategy : IAttackStrategy
 {
-    private ITeslaEffectStrategy effectStrategy;
+    private ILightningEffectStrategy effectStrategy;
     private Vector3 towerPosition;
 
-    public TeslaAttackStrategy(ITeslaEffectStrategy effectStrategy, Vector3 towerPosition)
+    public TeslaAttackStrategy(ILightningEffectStrategy effectStrategy, Vector3 towerPosition)
     {
         this.effectStrategy = effectStrategy;
         this.towerPosition = towerPosition;
@@ -22,9 +22,9 @@ public class TeslaAttackStrategy : IAttackStrategy
 
         target.TakeDamage(damage);
 
-        float distance = Vector3.Distance(towerPosition, targetPosition);
+        //float distance = Vector3.Distance(towerPosition, targetPosition);
 
-        effectStrategy.CreateTeslaEffect(towerPosition, targetPosition, distance);
+        effectStrategy.CreateLightningEffect(towerPosition, targetPosition, null);
     }
 
     public IBulletMovementStrategy GetBulletMovementStrategy()
@@ -34,6 +34,6 @@ public class TeslaAttackStrategy : IAttackStrategy
 
     public BulletObjectPool.BulletType GetBulletType()
     {
-        return BulletObjectPool.BulletType.ElectricBullet;
+        return BulletObjectPool.BulletType.TeslaBullet;
     }
 }

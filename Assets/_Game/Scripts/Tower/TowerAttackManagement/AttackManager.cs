@@ -1,35 +1,38 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class AttackManager : IAttackManager
 {
-    private IAttackStrategy _attackStrategy;
-    private float _fireRate;
-    private float _damage;
-    private float _lastAttackTime;
-    private Transform _firePoint;
-    private GameObject _tower;
-    private AbstractBaseTower _towerComponent;
+    private IAttackStrategy attackStrategy;
+    private float fireRate;
+    private float damage;
+    private float lastAttackTime;
+    private Transform firePoint;
+    private GameObject tower;
+    private AbstractBaseTower towerComponent;
+    private BulletObjectPool bulletObjectPool;
 
-    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower)
+    public AttackManager(IAttackStrategy attackStrategy, float fireRate, float damage, Transform firePoint, GameObject tower, BulletObjectPool bulletObjectPool)
     {
-        _attackStrategy = attackStrategy;
-        _fireRate = fireRate;
-        _damage = damage;
-        _firePoint = firePoint;
-        _tower = tower;
-        _towerComponent = _tower.GetComponent<AbstractBaseTower>();
+        this.attackStrategy = attackStrategy;
+        this.fireRate = fireRate;
+        this.damage = damage;
+        this.firePoint = firePoint;
+        this.tower = tower;
+        towerComponent = this.tower.GetComponent<AbstractBaseTower>();
+        this.bulletObjectPool = bulletObjectPool;
     }
 
     public void UpdateDamage(float newDamage)
     {
-        _damage = newDamage;
+        damage = newDamage;
     }
     
     public void UpdateFireRate(float newFireRate)
     {
-        _fireRate = newFireRate;
+        fireRate = newFireRate;
     }
 
     public void Attack(IEnumerable<IAttackable> targets)
@@ -41,29 +44,36 @@ public class AttackManager : IAttackManager
                 FireBullet(target);
                 if (CheckIsLookAtTower() && target is IPositionProvider positionProvider)
                 {
-                    _tower.transform.LookAt(positionProvider.GetPosition(), Vector3.up);
+                    tower.transform.LookAt(positionProvider.GetPosition(), Vector3.up);
                 }
             }
-            _lastAttackTime = Time.time;
+            lastAttackTime = Time.time;
         }
     }
 
     public bool CheckIsLookAtTower()
     {
-        return _towerComponent.GetTowerData().isLookAtTower ? true : false;
+        return towerComponent.GetTowerData().isLookAtTower ? true : false;
     }
 
     private void FireBullet(IAttackable target)
     {
-        GameObject bullet = BulletObjectPool.Instance.GetPooledBullet(_attackStrategy.GetBulletType());
-        bullet.transform.position = _firePoint.position;
+        GameObject bullet = bulletObjectPool.GetPooledBullet(attackStrategy.GetBulletType());
+
+        if (bullet == null)
+        {
+            Debug.LogError($"Bullet could not be retrieved for type: {attackStrategy.GetBulletType()}");
+            return;
+        }
+
+        bullet.transform.position = firePoint.position;
 
         BulletMovement bulletMovement = bullet.GetComponent<BulletMovement>();
-        bulletMovement.SetBulletTarget(target, _damage, _attackStrategy);
+        bulletMovement.SetBulletTarget(target, damage, attackStrategy);
     }
 
     public bool CanAttack()
     {
-        return Time.time - _lastAttackTime >= 1f / _fireRate;
+        return Time.time - lastAttackTime >= 1f / fireRate;
     }
 }

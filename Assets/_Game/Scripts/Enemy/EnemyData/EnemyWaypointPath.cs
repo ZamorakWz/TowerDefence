@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyWaypointPath : MonoBehaviour
 {
-    public Transform[] _enemyWaypoints;
+    public Transform[] enemyWaypoints;
 
     private void OnDrawGizmos()
     {
-        if (_enemyWaypoints != null && _enemyWaypoints.Length > 1)
+        if (enemyWaypoints != null && enemyWaypoints.Length > 1)
         {
-            for (int i = 0; i < _enemyWaypoints.Length - 1 ; i++)
+            for (int i = 0; i < enemyWaypoints.Length - 1 ; i++)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawLine(_enemyWaypoints[i].position, _enemyWaypoints[i + 1].position);
+                Gizmos.DrawLine(enemyWaypoints[i].position, enemyWaypoints[i + 1].position);
             }
         }
     }

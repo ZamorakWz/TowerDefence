@@ -1,72 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BulletObjectPool : MonoBehaviour
 {
-    public static BulletObjectPool Instance { get; private set; }
+    [System.Serializable]
+    public class BulletPoolItem
+    {
+        public GameObject prefab;
+        public int poolSize;
+        public BulletType type;
+        public List<GameObject> pooledObjects = new List<GameObject>();
+    }
 
-    [SerializeField] private BulletPool[] _pools = null;
+    [SerializeField] private BulletPoolItem[] bulletPools;
+
+    private Dictionary<BulletType, BulletPoolItem> poolDictionary = new Dictionary<BulletType, BulletPoolItem>();
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         InitializePools();
     }
 
     private void InitializePools()
     {
-        for (int j = 0; j < _pools.Length; j++)
+        foreach (var pool in bulletPools)
         {
-            _pools[j].pooledBullets = new Queue<GameObject>();
-
-            for (int i = 0; i < _pools[j].pooledBulletSize; i++)
+            pool.pooledObjects.Clear();
+            for (int i = 0; i < pool.poolSize; i++)
             {
-                GameObject obj = Instantiate(_pools[j].bulletPrefab);
+                GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
-
-                _pools[j].pooledBullets.Enqueue(obj);
+                pool.pooledObjects.Add(obj);
             }
+
+            poolDictionary[pool.type] = pool;
         }
     }
 
     public GameObject GetPooledBullet(BulletType bulletType)
     {
-        int bulletTypeIndex = (int)bulletType;
-
-        if (bulletTypeIndex >= _pools.Length)
+        if (!poolDictionary.TryGetValue(bulletType, out BulletPoolItem poolItem))
         {
+            Debug.LogError($"No pool found for bullet type: {bulletType}");
             return null;
         }
 
-        GameObject obj = _pools[bulletTypeIndex].pooledBullets.Dequeue();
-        obj.SetActive(true);
+        // Find first inactive bullet
+        foreach (GameObject obj in poolItem.pooledObjects)
+        {
+            if (!obj.activeSelf)
+            {
+                obj.SetActive(true);
+                return obj;
+            }
+        }
 
-        _pools[bulletTypeIndex].pooledBullets.Enqueue(obj);
-
-        return obj;
+        // If no inactive bullets, create new one
+        GameObject newObj = Instantiate(poolItem.prefab);
+        poolItem.pooledObjects.Add(newObj);
+        return newObj;
     }
 
-    [System.Serializable]
-    public struct BulletPool
+    public void ReturnBulletToPool(GameObject bullet)
     {
-        public Queue<GameObject> pooledBullets;
-        public GameObject bulletPrefab;
-        public int pooledBulletSize;
+        bullet.SetActive(false);
     }
 
     public enum BulletType
     {
-        StandartBullet,
+        DirectBullet,
         AOEBullet,
+        TeslaBullet,
         ElectricBullet,
+        MortarBullet,
+        LaserBullet
     }
 }

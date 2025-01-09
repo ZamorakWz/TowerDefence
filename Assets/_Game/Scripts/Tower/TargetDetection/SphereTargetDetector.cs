@@ -6,8 +6,8 @@ using Zenject;
 
 public class SphereTargetDetector : MonoBehaviour, ITargetDetector
 {
-    private SphereCollider _detectionCollider;
-    [SerializeField] private HashSet<IAttackable> _targetsInRange = new HashSet<IAttackable>();
+    private SphereCollider detectionCollider;
+    [SerializeField] private HashSet<IAttackable> targetsInRange = new HashSet<IAttackable>();
 
     private void OnEnable()
     {
@@ -21,29 +21,29 @@ public class SphereTargetDetector : MonoBehaviour, ITargetDetector
 
     public void InitializeTargetDetector(float detectionRadius)
     {
-        _detectionCollider = gameObject.GetComponentInChildren<SphereCollider>();
-        _detectionCollider.radius = detectionRadius;
-        _detectionCollider.isTrigger = true;
+        detectionCollider = gameObject.GetComponentInChildren<SphereCollider>();
+        detectionCollider.radius = detectionRadius;
+        detectionCollider.isTrigger = true;
     }
 
     public void UpdateRange(float newRange)
     {
-        _detectionCollider.radius = newRange;
+        detectionCollider.radius = newRange;
     }
 
     public List<IAttackable> GetTargetsInRange()
     {
-        return new List<IAttackable>(_targetsInRange);
+        return new List<IAttackable>(targetsInRange);
     }
 
     public void AddTarget(IAttackable target)
     {
-        _targetsInRange.Add(target);
+        targetsInRange.Add(target);
     }
 
     public void RemoveTarget(IAttackable target)
     {
-        _targetsInRange.Remove(target);
+        targetsInRange.Remove(target);
     }
 
     private void OnTriggerEnter(Collider other)

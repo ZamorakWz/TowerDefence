@@ -14,9 +14,10 @@ public class MostProgressTarget : ITargetSelectionStrategy
         for (int i = 0; i < targets.Count; i++)
         {
             var target = targets[i];
-            if (target is IPositionProvider positionProvider)
+
+            if (target is EnemyComposite enemy)
             {
-                float distanceToBase = Vector3.Distance(positionProvider.GetPosition(), basePosition);
+                float distanceToBase = Vector3.Distance(enemy.GetPosition(), basePosition);
 
                 if (distanceToBase < shortestDistance)
                 {
@@ -24,6 +25,17 @@ public class MostProgressTarget : ITargetSelectionStrategy
                     mostProgressTarget = target;
                 }
             }
+
+            //if (target is IPositionProvider positionProvider)
+            //{
+            //    float distanceToBase = Vector3.Distance(positionProvider.GetPosition(), basePosition);
+
+            //    if (distanceToBase < shortestDistance)
+            //    {
+            //        shortestDistance = distanceToBase;
+            //        mostProgressTarget = target;
+            //    }
+            //}
         }
 
         if (mostProgressTarget != null)

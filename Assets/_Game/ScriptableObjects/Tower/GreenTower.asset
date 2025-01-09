@@ -16,7 +16,7 @@ MonoBehaviour:
   towerPrefab: {fileID: 8417100427490335222, guid: 472412284212371498424bad1c8a1ce6, type: 3}
   towerCost: 0
   towerRange: 5
-  towerDamage: 10
+  towerDamage: 5
   towerFireRate: 3
   towerAOERadius: 0
   towerBulletData:

@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour, IPositionProvider, ISpeedProvider
 {
-    private EnemyWaypointPath _waypointPath;
+    private EnemyWaypointPath waypointPath;
 
-    private Transform _targetWaypoint;
-    [SerializeField] private int _currentWaypointIndex = 0;
+    private Transform targetWaypoint;
+    [SerializeField] private int currentWaypointIndex = 0;
     public int CurrentWaypointIndex
     {  
-        get { return _currentWaypointIndex; }
-        set { _currentWaypointIndex = Mathf.Max(0, value); }
+        get { return currentWaypointIndex; }
+        set { currentWaypointIndex = Mathf.Max(0, value); }
     }
 
-    private Vector3 _currentDirection;
+    private Vector3 currentDirection;
 
-    private float _speed;
-    [SerializeField] private EnemyTypeSO _enemyType;
+    private float speed;
+    [SerializeField] private EnemyTypeSO enemyType;
 
     public float Speed
     {
-        get { return _speed; }
-        set { _speed = value; }
+        get { return speed; }
+        set { speed = value; }
     }
 
     void Start()
     {
-        _waypointPath = FindObjectOfType<EnemyWaypointPath>();
+        waypointPath = FindAnyObjectByType<EnemyWaypointPath>();
 
-        Speed = _enemyType.typeSpeed;
+        Speed = enemyType.typeSpeed;
     }
 
     void Update()
@@ -39,16 +39,16 @@ public class EnemyMovement : MonoBehaviour, IPositionProvider, ISpeedProvider
 
     private void MoveTowardsWaypoints()
     {
-        if (_currentWaypointIndex < _waypointPath._enemyWaypoints.Length)
+        if (currentWaypointIndex < waypointPath.enemyWaypoints.Length)
         {
-            _targetWaypoint = _waypointPath._enemyWaypoints[_currentWaypointIndex];
-            gameObject.transform.LookAt(_targetWaypoint);
-            _currentDirection = _targetWaypoint.position - transform.position;
-            transform.Translate(_currentDirection.normalized * _speed * Time.deltaTime, Space.World);
+            targetWaypoint = waypointPath.enemyWaypoints[currentWaypointIndex];
+            gameObject.transform.LookAt(targetWaypoint);
+            currentDirection = targetWaypoint.position - transform.position;
+            transform.Translate(currentDirection.normalized * speed * Time.deltaTime, Space.World);
 
-            if (Vector3.Distance(transform.position, _targetWaypoint.position) < 0.1f)
+            if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
-                _currentWaypointIndex++;
+                currentWaypointIndex++;
             }
         }
     }

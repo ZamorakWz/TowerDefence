@@ -11,13 +11,24 @@ public class FastestTarget : ITargetSelectionStrategy
 
         foreach (var target in targets)
         {
-            float speed = ((ISpeedProvider)target).GetSpeedValue();
-
-            if (speed > maxSpeed)
+            if (target is EnemyComposite enemy)
             {
-                maxSpeed = speed;
-                fastestTarget = target;
+                float speed = enemy.GetSpeedValue();
+
+                if (speed > maxSpeed)
+                {
+                    maxSpeed = speed;
+                    fastestTarget = target;
+                }
             }
+
+            //float speed = ((ISpeedProvider)target).GetSpeedValue();
+
+            //if (speed > maxSpeed)
+            //{
+            //    maxSpeed = speed;
+            //    fastestTarget = target;
+            //}
         }
 
         if (fastestTarget != null)

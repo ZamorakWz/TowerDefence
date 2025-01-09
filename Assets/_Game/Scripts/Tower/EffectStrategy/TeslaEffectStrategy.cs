@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeslaEffectStrategy : ITeslaEffectStrategy
+public class TeslaEffectStrategy : ILightningEffectStrategy
 {
-    private ParticleSystem _teslaParticlePrefab;
+    private ParticleSystem teslaParticlePrefab;
 
     public TeslaEffectStrategy(ParticleSystem teslaParticlePrefab)
     {
-        this._teslaParticlePrefab = teslaParticlePrefab;
+        this.teslaParticlePrefab = teslaParticlePrefab;
     }
 
-    public void CreateTeslaEffect(Vector3 startPosition, Vector3 endPosition, float distance)
+    public void CreateLightningEffect(Vector3 startPosition, Vector3 endPosition, Transform obj)
     {
-        ParticleSystem effect = Object.Instantiate(_teslaParticlePrefab, startPosition, Quaternion.identity);
+        ParticleSystem effect = Object.Instantiate(teslaParticlePrefab, startPosition, Quaternion.identity);
+        float distance = Vector3.Distance(endPosition, startPosition);
 
         if (endPosition != startPosition)
         {
@@ -29,8 +30,8 @@ public class TeslaEffectStrategy : ITeslaEffectStrategy
 
         var main = effect.main;
 
-        float speedMultiplier = 10f;
-        float maxSpeed = 20f;
+        float speedMultiplier = 5f;
+        float maxSpeed = 10f;
         float calculatedSpeed = Mathf.Clamp(distance * speedMultiplier, 10f, maxSpeed);
 
         main.startSpeed = calculatedSpeed;

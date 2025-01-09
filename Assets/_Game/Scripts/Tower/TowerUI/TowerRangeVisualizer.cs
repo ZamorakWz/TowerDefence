@@ -5,6 +5,7 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
     //[SerializeField] private GameObject rangeSpherePrefab;
     private float towerRange;
     [SerializeField] private GameObject rangeSphere;
+    [SerializeField] private GameObject rangeBox;
 
     private void Awake()
     {
@@ -32,17 +33,24 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
 
     public void ToggleRangeVisualization(bool show)
     {
-        if (rangeSphere == null) return;
-
         UpdateTowerRangeVisualization(towerRange);
-        rangeSphere.SetActive(show);
+
+        if (rangeSphere != null)
+        {
+            rangeSphere.SetActive(show);
+        }
+
+        if (rangeBox != null)
+        {
+            rangeBox.SetActive(show);
+        }
     }
 
     private float GetCurrentTowerRange()
     {
         AbstractBaseTower baseTower = gameObject.GetComponent<AbstractBaseTower>();
 
-        if (!baseTower.isTowerInitialize)
+        if (!baseTower.isTowerInitialized)
         {
             TowerTypeSO towerData = baseTower.GetTowerData();
             return towerData.towerRange;
@@ -56,6 +64,23 @@ public class TowerRangeVisualizer : MonoBehaviour, ITowerRangeUpdater
     public void UpdateTowerRangeVisualization(float newRange)
     {
         float currentRange = GetCurrentTowerRange();
-        rangeSphere.transform.localScale = new Vector3(currentRange * 2f, currentRange * 2f, currentRange * 2f);
+
+        if (rangeSphere != null)
+        {
+            rangeSphere.transform.localScale = new Vector3(currentRange * 2f, currentRange * 2f, currentRange * 2f);
+        }
+
+        if (rangeBox != null)
+        {
+            rangeBox.transform.rotation = gameObject.transform.rotation;
+
+            Vector3 localPosition = rangeBox.transform.localPosition;
+            localPosition.z = currentRange / 2f;
+            rangeBox.transform.localPosition = localPosition;
+
+            Vector3 scale = rangeBox.transform.localScale;
+            scale.z = currentRange;
+            rangeBox.transform.localScale = scale;
+        }
     }
 }

@@ -11,12 +11,23 @@ public class MostHealthTarget : ITargetSelectionStrategy
 
         foreach (var target in targets)
         {
-            float health = ((IHealthProvider)target).GetHealth();
-            if (health > maxHealth)
+            if (target is EnemyComposite enemy)
             {
-                maxHealth = health;
-                mostHealthTarget = target;
+                float health = enemy.GetHealth();
+
+                if (health > maxHealth)
+                {
+                    maxHealth = health;
+                    mostHealthTarget = target;
+                }
             }
+
+            //float health = ((IHealthProvider)target).GetHealth();
+            //if (health > maxHealth)
+            //{
+            //    maxHealth = health;
+            //    mostHealthTarget = target;
+            //}
         }
 
         if (mostHealthTarget != null)
