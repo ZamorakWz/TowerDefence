@@ -15,7 +15,7 @@ MonoBehaviour:
   LevelPrefab: {fileID: 0}
   levelBeginnigGold: 50
   levelReward: 0
-  levelBaseHealth: 25
+  levelBaseHealth: 75
   timeBetweenWaves: 15
   waves:
   - enemyConfigs:
