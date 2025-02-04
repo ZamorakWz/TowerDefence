@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasePosition : MonoBehaviour
 {
-    public static BasePosition Instance {  get; private set; }
+    public static BasePosition Instance { get; private set; }
 
     private void Awake()
     {
