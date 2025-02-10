@@ -45,7 +45,6 @@ public class TowerPlacementManager : MonoBehaviour
         {
             Destroy(selectedTowerPrefab);
         }
-
         selectedTowerPrefab = tower;
         Debug.Log("Selected tower prefab: " + selectedTowerPrefab.gameObject.name);
 
@@ -69,6 +68,20 @@ public class TowerPlacementManager : MonoBehaviour
 
     private void PlaceTower()
     {
+        //Tower cost is needed to be checked before the player place the tower.
+        //Tower is destroyed when player has not enough gold
+        float selectedTowerCost = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerCost;
+        if (selectedTowerCost > GoldManager.Instance.currentGold)
+        {
+            Debug.Log("insufficient amount of gold");
+            Destroy(selectedTowerPrefab);
+            selectedTowerPrefab = null;
+            return;
+        }
+
+        GoldManager.Instance.RemoveGold((int)selectedTowerCost);
+        //
+
         if (isCanPlaceHere && TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
             if (selectedTowerPrefab != null)
@@ -80,6 +93,7 @@ public class TowerPlacementManager : MonoBehaviour
 
                 placedTowerManager.AddTowerToList(selectedTowerPrefab.GetComponent<AbstractBaseTower>());
                 placedTowerManager.DeactivateRangeVisualForAllTowers();
+
 
                 selectedTowerPrefab = null;
             }

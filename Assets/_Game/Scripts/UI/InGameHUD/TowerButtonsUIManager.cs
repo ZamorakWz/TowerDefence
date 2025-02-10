@@ -39,6 +39,7 @@ public class TowerButtonsUIManager : MonoBehaviour
     private void OnTowerButtonClicked(string towerType)
     {
         GameObject createdTower = TowerCreationManager.Instance.CreateTower(towerType, Vector3.zero);
+
         if (createdTower != null)
         {
             towerPlacementManager.SelectTower(createdTower);
