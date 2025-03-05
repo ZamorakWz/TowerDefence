@@ -14,6 +14,10 @@ public class TowerPlacementManager : MonoBehaviour
     private GameObject selectedTowerPrefab;
     private bool isCanPlaceHere;
 
+    //Grid Test
+    [SerializeField] GridManager gridManager;
+    Vector3 gridPosition;
+
     [Inject] private PlacedTowerManager placedTowerManager;
 
     private void Awake()
@@ -57,8 +61,16 @@ public class TowerPlacementManager : MonoBehaviour
         if (TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
             selectedTowerPrefab.SetActive(true);
-            selectedTowerPrefab.transform.position = hitPoint.Value;
-            isCanPlaceHere = CanPlaceHere(hitPoint.Value);
+
+            //Grid Test
+            gridPosition = gridManager.GetGridPosition(hitPoint.Value);
+            selectedTowerPrefab.transform.position = gridPosition;
+            //Temp Solution to align towers to grids
+            Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+            selectedTowerPrefab.transform.position += new Vector3(selectedTowerSize.x, 0, selectedTowerSize.y);
+
+            //selectedTowerPrefab.transform.position = hitPoint.Value;
+            isCanPlaceHere = CanPlaceHere(gridPosition, selectedTowerSize);
         }
         else
         {
@@ -68,6 +80,15 @@ public class TowerPlacementManager : MonoBehaviour
 
     private void PlaceTower()
     {
+        // Check Tower size
+        Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+        if (!gridManager.CheckTowerPlacements(gridPosition, selectedTowerSize))
+        {
+            return;
+        }
+
+
+
         //Tower cost is needed to be checked before the player place the tower.
         //Tower is destroyed when player has not enough gold
         float selectedTowerCost = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerCost;
@@ -86,10 +107,16 @@ public class TowerPlacementManager : MonoBehaviour
         {
             if (selectedTowerPrefab != null)
             {
-                selectedTowerPrefab.transform.position = hitPoint.Value;
+                //selectedTowerPrefab.transform.position = hitPoint.Value;
                 selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 
                 OnTowerPlaced?.Invoke(selectedTowerPrefab);
+
+                //GridMechanicTesting
+                //selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+                gridManager.gridData.AddTowerAt(gridPosition, selectedTowerSize);
+                
+
 
                 placedTowerManager.AddTowerToList(selectedTowerPrefab.GetComponent<AbstractBaseTower>());
                 placedTowerManager.DeactivateRangeVisualForAllTowers();
@@ -113,9 +140,9 @@ public class TowerPlacementManager : MonoBehaviour
         return false;
     }
 
-    public bool CanPlaceHere(Vector3 position)
+    public bool CanPlaceHere(Vector3 position, Vector2 towerSize)
     {
-        return GroundValidator.Instance.CheckGroundValidity(position) &&
-           OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
+        return GroundValidator.Instance.CheckGroundValidity(position, towerSize);
+        //&& OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
     }
 }
