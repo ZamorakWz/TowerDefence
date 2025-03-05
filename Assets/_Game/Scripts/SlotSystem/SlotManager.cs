@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class SlotManager : MonoBehaviour
 {
-    
-    private Bakiye bakiyeclass;
     private RewardMethod rewardMethod;
     public int boardHeight, boardWidth;
     public GameObject[] gamePieces;
     private GameObject _board;
     public GameObject[,] _gameBoard;
-    public Vector3 _offset = new Vector3(0, 0, 0);
+    public Vector3 _offset = new Vector3(0, 0, 1);
     public List<string> _matchingObjects;
     public List<string> _paycondition;
     void Start()
     {
         rewardMethod = gameObject.GetComponent<RewardMethod>();
-        bakiyeclass = gameObject.GetComponent<Bakiye>();
         _gameBoard = new GameObject[boardHeight, boardWidth];
         _board = GameObject.Find("GameBoard");
         _matchingObjects = new List<string>();
@@ -25,7 +22,7 @@ public class SlotManager : MonoBehaviour
     
     public void Spin()
     {
-        if(bakiyeclass.bakiye < 25)
+        if(GoldManager.Instance.GetCurrentGold() < 25)
         {
             Debug.Log("Yetersiz Bakiye");
         }
@@ -33,7 +30,7 @@ public class SlotManager : MonoBehaviour
         {
         _matchingObjects.Clear();
         _paycondition.Clear();
-        bakiyeclass.bakiye = bakiyeclass.bakiye - 25;       
+        GoldManager.Instance.RemoveGold(25);       
         for (int i = 0; i< boardHeight; i++)
         {
             for (int j = 0; j < boardWidth; j++)
