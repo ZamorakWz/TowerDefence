@@ -64,6 +64,7 @@ public class TowerPlacementManager : MonoBehaviour
 
             //Grid Test
             gridPosition = gridManager.GetGridPosition(hitPoint.Value);
+            Debug.Log(hitPoint.Value);
             selectedTowerPrefab.transform.position = gridPosition;
             //Temp Solution to align towers to grids
             Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;

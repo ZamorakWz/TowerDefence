@@ -270,6 +270,7 @@ Transform:
   - {fileID: 100669163}
   - {fileID: 802584187}
   - {fileID: 1115010055}
+  - {fileID: 341997453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &17861796
@@ -1175,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 6457216234104326967, guid: 01ed17b76c7e03a4fb852fa24464929f, type: 3}
       propertyPath: m_Name
       value: GameBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457216234104326967, guid: 01ed17b76c7e03a4fb852fa24464929f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7927590852038709454, guid: 01ed17b76c7e03a4fb852fa24464929f, type: 3}
       propertyPath: m_Color.a
@@ -2447,6 +2452,51 @@ CapsuleCollider:
   m_Height: 3.000051
   m_Direction: 1
   m_Center: {x: 0, y: 0.44550627, z: -0.00000008940697}
+--- !u!1 &341997452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341997453}
+  - component: {fileID: 341997454}
+  m_Layer: 0
+  m_Name: GridManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &341997453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341997452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3118215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341997454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341997452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b1c3b6e69b26345a9d5606f34ebacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSize: 2
 --- !u!1 &364991619
 GameObject:
   m_ObjectHideFlags: 0
@@ -13383,6 +13433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217289ebaaa5d124ca1c343162c6b8b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   supriseBoxManager: {fileID: 100669164}
 --- !u!1 &1133286395
 GameObject:
@@ -18375,6 +18429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758497d9635082045bb768c586fecd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 341997454}
 --- !u!114 &1641236000
 MonoBehaviour:
   m_ObjectHideFlags: 0
