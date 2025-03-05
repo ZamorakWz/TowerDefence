@@ -41,8 +41,8 @@ public class SlotManager : MonoBehaviour
                     GameObject destroyPiece = gridPosition.transform.GetChild(0).gameObject;
                     Destroy(destroyPiece);
                 }
-                GameObject pieceType = gamePieces[Random.Range(0, gamePieces.Length)];
-                GameObject thisPiece = Instantiate(pieceType, gridPosition.transform.position + _offset, Quaternion.identity);
+                GameObject pieceType = gamePieces[Random.Range(0, gamePieces.Length)];                
+                GameObject thisPiece = Instantiate(pieceType, gridPosition.transform);
                 thisPiece.name = pieceType.name;
                 thisPiece.transform.parent = gridPosition.transform;
                 _gameBoard[i, j] = thisPiece;
