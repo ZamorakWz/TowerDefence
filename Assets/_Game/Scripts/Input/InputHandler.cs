@@ -5,6 +5,10 @@ using Zenject;
 
 public class InputHandler : MonoBehaviour
 {
+    //GetMousePosition Variables
+    [SerializeField] Camera cam;
+    [SerializeField] LayerMask placementLayerMask;
+    Vector3 returnPosition;
 
     private bool isClickedToSupriseBox = false;
     [SerializeField] private SupriseBoxManager supriseBoxManager;
@@ -26,6 +30,22 @@ public class InputHandler : MonoBehaviour
             }
         }
     }
+
+    //GetMousePosition in InputHandler
+    public Vector3 GetMousePosition()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = cam.nearClipPlane;
+        Ray rayToScreen = cam.ScreenPointToRay(mousePosition);
+        RaycastHit rayCastHit;
+        if (Physics.Raycast(rayToScreen, out rayCastHit, Mathf.Infinity, placementLayerMask))
+        {
+            returnPosition = rayCastHit.point;
+        }
+        Debug.Log(returnPosition);
+        return returnPosition;
+    }
+
 
     private bool IsPointerOverUIElement()
     {

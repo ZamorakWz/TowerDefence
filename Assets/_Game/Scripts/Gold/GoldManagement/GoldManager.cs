@@ -11,7 +11,8 @@ public class GoldManager : MonoBehaviour
 
     [SerializeField] private LevelDataSO currentLevelData;
 
-    private int currentGold;
+    // public -> get, private set
+    public int currentGold { get; private set; }
 
     private void Awake()
     {

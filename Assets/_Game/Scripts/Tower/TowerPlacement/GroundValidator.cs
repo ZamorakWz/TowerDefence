@@ -6,6 +6,8 @@ public class GroundValidator : MonoBehaviour
     [SerializeField] private float rayDistance = 5f;
     private LayerMask validGroundLayer;
 
+    bool hitGround;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,21 +33,27 @@ public class GroundValidator : MonoBehaviour
     //    return Mathf.Abs(hit.point.y - position.y) < tolerance;
     //}
 
-    public bool CheckGroundValidity(Vector3 position)
+    public bool CheckGroundValidity(Vector3 position, Vector2 towerSize)
     {
         RaycastHit hit;
 
         Vector3 rayStart = position + (Vector3.up * 0.1f);
 
-        bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                rayStart = position + (Vector3.up * 0.1f) + new Vector3(i * towerSize.x * 2, 0, j * towerSize.y * 2);
+
+                Debug.Log(rayStart);
+
+                hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
+
+                if (!hitGround) return false;
+            }
+        }
 
         return hitGround;
 
-        //RaycastHit hit;
-        //Vector3 rayStart = position;
-
-        //bool hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
-
-        //return hitGround;
     }
 }

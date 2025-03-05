@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: BlueTower
   towerPrefab: {fileID: 21637770964391972, guid: 59c3015705096dc47b82f1a7dfa0c6dd, type: 3}
-  towerCost: 0
+  towerCost: 40
   towerRange: 8
   towerDamage: 3
   towerFireRate: 0.6
@@ -22,3 +22,4 @@ MonoBehaviour:
   towerBulletData:
     bulletPrefab: {fileID: 110726954416850335, guid: 569f43d6813425c4bb213f3083c4f7aa, type: 3}
   isLookAtTower: 1
+  towerSize: {x: 1, y: 1}

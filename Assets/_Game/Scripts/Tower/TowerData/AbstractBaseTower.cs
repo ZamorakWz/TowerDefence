@@ -20,6 +20,9 @@ public abstract class AbstractBaseTower : MonoBehaviour
     public float towerFireRate { get; private set; }
     public float towerRange { get; private set; }
 
+    //TowerCost
+    public float towerCost { get; private set; }
+
     //Temporary attributes
     private float temporaryTowerDamage;
     private float temporaryTowerFireRate;
@@ -73,6 +76,16 @@ public abstract class AbstractBaseTower : MonoBehaviour
         SubscribeEvent();
     }
 
+    //Event was unsubscribed on disable,
+    //it caused missing reference exception
+    //because OnTowerPlaced event tried to reach old subscriber object.
+    //This is why i added OnDisable method
+    protected virtual void OnDisable()
+    {
+        UnSubscribeEvent();
+
+        StopAttackRoutine();
+    }
     protected virtual void OnDestroy()
     {
         UnSubscribeEvent();
@@ -224,6 +237,10 @@ public abstract class AbstractBaseTower : MonoBehaviour
             towerFireRate = towerData.towerFireRate;
             towerRange = towerData.towerRange;
 
+            //Cost
+            towerCost = towerData.towerCost;
+
+
             //Setup targetdetection
             InitializeTargetDetectionStrategy();
 
@@ -278,6 +295,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
             isTowerPlaced = true;
         }
     }
+
     #endregion
 
     #region ------------------------------TOWER SUPRISEBOX ATTRIBUTE CHANGE------------------------------
@@ -451,11 +469,13 @@ public abstract class AbstractBaseTower : MonoBehaviour
     #region------------------------------Events------------------------------
     protected void SubscribeEvent()
     {
+        Debug.Log("Subscribe Event");
         TowerPlacementManager.OnTowerPlaced += HandleTowerPlaced;
     }
 
     protected void UnSubscribeEvent()
     {
+        Debug.Log("UNSUBSCRIBE");
         TowerPlacementManager.OnTowerPlaced -= HandleTowerPlaced;
     }
     #endregion

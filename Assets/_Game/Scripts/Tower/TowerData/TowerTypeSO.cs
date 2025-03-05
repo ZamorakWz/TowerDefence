@@ -13,4 +13,7 @@ public class TowerTypeSO : ScriptableObject
     public float towerAOERadius;
     public BulletData towerBulletData;
     public bool isLookAtTower;
+
+    //GridTesting
+    public Vector2 towerSize;
 }
