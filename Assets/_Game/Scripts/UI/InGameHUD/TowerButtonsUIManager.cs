@@ -2,13 +2,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class TowerButtonsUIManager : MonoBehaviour
 {
-    [SerializeField] private Transform towerButtonContainer;
-    [SerializeField] private Button towerButtonPrefab;
     [SerializeField] private TowerPlacementManager towerPlacementManager;
-    [SerializeField] private List<AbstractBaseTower> availableTowers;
+    [SerializeField] protected List<AbstractBaseTower> availableTowers;
+    public GameObject _rewardBox;
+    public GameObject[] towerList;
+    private bool isUsed;
 
     private void OnEnable()
     {
@@ -20,23 +22,28 @@ public class TowerButtonsUIManager : MonoBehaviour
         TowerCreationManager.OnGetTowerList -= HandleGetTowerList;
     }
 
-    private void CreateTowerButtons()
+    public void CreateTowerButtons()
     {
+        if (_rewardBox.transform.childCount > 0)
+        {
+            GameObject destroyPiece = _rewardBox.transform.GetChild(0).gameObject;
+            Destroy(destroyPiece);
+        }
+        GameObject towerType = Instantiate(towerList[Random.Range(0, towerList.Length)]);
+        towerType.transform.SetParent(_rewardBox.transform, false);
+        towerType.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        UnityEngine.UI.Button button = towerType.GetComponent<UnityEngine.UI.Button>();
+
         foreach (AbstractBaseTower tower in availableTowers)
         {
-            Button button = Instantiate(towerButtonPrefab, towerButtonContainer);
-            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-
-            if (buttonText != null)
+            if (button.name.Contains(tower.name)) 
             {
-                buttonText.text = tower.gameObject.name;
+                button.onClick.AddListener(() => OnTowerButtonClicked(tower.GetType().Name));
             }
-
-            button.onClick.AddListener(() => OnTowerButtonClicked(tower.GetType().Name));
         }
     }
 
-    private void OnTowerButtonClicked(string towerType)
+    public void OnTowerButtonClicked(string towerType)
     {
         GameObject createdTower = TowerCreationManager.Instance.CreateTower(towerType, Vector3.zero);
 
@@ -44,6 +51,8 @@ public class TowerButtonsUIManager : MonoBehaviour
         {
             towerPlacementManager.SelectTower(createdTower);
         }
+        GameObject destroyPiece = _rewardBox.transform.GetChild(0).gameObject;
+        Destroy(destroyPiece);
     }
 
     private void HandleGetTowerList(List<AbstractBaseTower> towers)

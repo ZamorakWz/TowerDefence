@@ -5,16 +5,20 @@ using UnityEngine;
 public class SlotManager : MonoBehaviour
 {
     private RewardMethod rewardMethod;
+    private SlotRewards slotRewards;
     public int boardHeight, boardWidth;
     public GameObject[] gamePieces;
     private GameObject _board;
     public GameObject[,] _gameBoard;
+    [SerializeField]
+    private int bet;
     public Vector3 _offset = new Vector3(0, 0, 1);
     public List<string> _matchingObjects;
     public List<string> _paycondition;
     void Start()
     {
         rewardMethod = gameObject.GetComponent<RewardMethod>();
+        slotRewards = gameObject.GetComponent<SlotRewards>();
         _gameBoard = new GameObject[boardHeight, boardWidth];
         _board = GameObject.Find("GameBoard");
         _matchingObjects = new List<string>();
@@ -22,7 +26,7 @@ public class SlotManager : MonoBehaviour
     
     public void Spin()
     {
-        if(GoldManager.Instance.GetCurrentGold() < 25)
+        if(GoldManager.Instance.GetCurrentGold() < bet)
         {
             Debug.Log("Yetersiz Bakiye");
         }
@@ -30,7 +34,7 @@ public class SlotManager : MonoBehaviour
         {
         _matchingObjects.Clear();
         _paycondition.Clear();
-        GoldManager.Instance.RemoveGold(25);       
+        GoldManager.Instance.RemoveGold(bet);       
         for (int i = 0; i< boardHeight; i++)
         {
             for (int j = 0; j < boardWidth; j++)
@@ -49,6 +53,7 @@ public class SlotManager : MonoBehaviour
             }
         }
         rewardMethod.CheckForHorizontalMatches();
+        slotRewards.rewardAssign();
         }
     }
 }

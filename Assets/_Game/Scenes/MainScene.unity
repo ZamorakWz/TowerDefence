@@ -1915,7 +1915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -110, y: -65}
+  m_AnchoredPosition: {x: -110, y: -368}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &275913654
@@ -9814,108 +9814,6 @@ CapsuleCollider:
   m_Height: 2.934407
   m_Direction: 1
   m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
---- !u!1 &726353476
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 726353477}
-  - component: {fileID: 726353479}
-  - component: {fileID: 726353478}
-  - component: {fileID: 726353480}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: ShopPanel
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &726353477
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726353476}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2062266423}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 500}
-  m_Pivot: {x: 1, y: 0}
---- !u!114 &726353478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726353476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &726353479
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726353476}
-  m_CullTransparentMesh: 1
---- !u!114 &726353480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726353476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &728021390
 GameObject:
   m_ObjectHideFlags: 0
@@ -13332,6 +13230,8 @@ GameObject:
   - component: {fileID: 1115010055}
   - component: {fileID: 1115010057}
   - component: {fileID: 1115010056}
+  - component: {fileID: 1115010058}
+  - component: {fileID: 1115010059}
   m_Layer: 0
   m_Name: SlotManager
   m_TagString: Untagged
@@ -13386,9 +13286,67 @@ MonoBehaviour:
   - {fileID: 2585882846183241918, guid: a6178da1dd1b4374a83dc6bfb6488735, type: 3}
   - {fileID: 8051332872662278306, guid: e429be5e1cc136b4c9fd2b1f41ddf6df, type: 3}
   - {fileID: 8456647110531595709, guid: 309d0db495702d8429716342abae611f, type: 3}
+  bet: 20
   _offset: {x: 0, y: 0, z: 0}
   _matchingObjects: []
   _paycondition: []
+--- !u!114 &1115010058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115010054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cf96a9078639343ac4c3a73406bd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  payConditionList:
+  - payCondition: Yellow x 3
+    Rewards:
+    - halfofbet
+  - payCondition: Yellow x 4
+    Rewards:
+    - fullofbet
+  - payCondition: Yellow x 5
+    Rewards:
+    - twotimesofbet
+  - payCondition: Yellow x 6
+    Rewards:
+    - fivetimesofbet
+  - payCondition: Yellow x 7
+    Rewards:
+    - tentimesofbet
+  - payCondition: Green x 3
+    Rewards:
+    - rewardbasetower
+  - payCondition: Green x 4
+    Rewards:
+    - rewardbasetower
+  - payCondition: Green x 5
+    Rewards:
+    - rewardbasetower
+  - payCondition: Green x 6
+    Rewards:
+    - rewardbasetower
+  - payCondition: Green x 7
+    Rewards:
+    - rewardbasetower
+--- !u!114 &1115010059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115010054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2100f85fa3ab8d644afe3f55e8c6b878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerButtonsUIManager: {fileID: 1465110273}
+  goldReward: 20
 --- !u!1 &1118502569
 GameObject:
   m_ObjectHideFlags: 0
@@ -15633,6 +15591,81 @@ CapsuleCollider:
   m_Height: 2.934407
   m_Direction: 1
   m_Center: {x: -0.004302621, y: 1.4810663, z: -0.011596203}
+--- !u!1 &1358215227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1358215228}
+  - component: {fileID: 1358215230}
+  - component: {fileID: 1358215229}
+  m_Layer: 5
+  m_Name: RewardBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1358215228
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358215227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2062266423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 740, y: 338.99997}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1358215229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358215227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1358215230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358215227}
+  m_CullTransparentMesh: 1
 --- !u!1 &1365883398
 GameObject:
   m_ObjectHideFlags: 0
@@ -16693,10 +16726,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5d83fbdf8188b4488b5341491d1554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerButtonContainer: {fileID: 726353477}
-  towerButtonPrefab: {fileID: 9074749900910565156, guid: 85220b14b37ed0b449df6a0bae613173, type: 3}
   towerPlacementManager: {fileID: 1641235998}
   availableTowers: []
+  _rewardBox: {fileID: 1358215227}
+  towerList:
+  - {fileID: 8729164249559654002, guid: ccc0dc1b3878f0a44b971c423b0b133b, type: 3}
+  - {fileID: 8729164249559654002, guid: 813b9909896d25b40b2f68b171990b4e, type: 3}
+  - {fileID: 8729164249559654002, guid: 792b877cc95a5124db47309f4f78dc8c, type: 3}
+  - {fileID: 8729164249559654002, guid: 11b46c15ab9ee134ebc74c9c0ecb507c, type: 3}
+  - {fileID: 8729164249559654002, guid: c48af59ca3711f44fbe463e4fa3a4d58, type: 3}
+  - {fileID: 8729164249559654002, guid: 95f7d36c37e1c0a41a8346e24e09c2fa, type: 3}
 --- !u!1 &1465601962
 GameObject:
   m_ObjectHideFlags: 0
@@ -30963,7 +31002,7 @@ RectTransform:
   - {fileID: 263615006}
   - {fileID: 397335216}
   - {fileID: 275913653}
-  - {fileID: 726353477}
+  - {fileID: 1358215228}
   m_Father: {fileID: 2120017636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
