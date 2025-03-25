@@ -48,6 +48,36 @@ public class EnemySpawnController : MonoBehaviour
         }
     }
 
+    //
+    public IEnumerator CreateEnemyPool(EnemySpawnConfig config)
+    {
+        int currentDifficultyLevel = 0;
+
+        while (currentDifficultyLevel < config.totalDifficultyLevel)
+        {
+            Array EnemyTypeLength = Enum.GetNames(typeof(EnemyObjectPool.EnemyType));
+
+            int randomEnemyTypeIndex = UnityEngine.Random.Range(0, EnemyTypeLength.Length - 1);
+
+            GameObject obj = _enemyObjectPool.GetPooledEnemy((EnemyObjectPool.EnemyType)randomEnemyTypeIndex);
+
+            //todo: There is no EnemyBaseClass. Therefore I get overall difficulty from EnemyMovement class. It needs to be refined.
+            currentDifficultyLevel += obj.GetComponent<EnemyMovement>().enemyType.overallDifficulty;
+
+            if (obj != null)
+            {
+                obj.transform.position = _spawnPosition;
+                AliveEnemyCount++;
+            }
+
+            yield return new WaitForSeconds(config.spawnInterval);
+
+            Debug.Log(currentDifficultyLevel);
+            Debug.Log(config.totalDifficultyLevel);
+
+        }
+    }
+
     [System.Serializable]
     public class EnemySpawnConfig
     {
@@ -57,5 +87,10 @@ public class EnemySpawnController : MonoBehaviour
         public int spawnCount;
         [Header("Enemies Spawn Interval")]
         public float spawnInterval;
+
+
+        //Enemy Pooling
+        public int totalDifficultyLevel;
+
     }
 }

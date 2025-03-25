@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: WhiteEnemy
   m_EditorClassIdentifier: 
   typePrefab: {fileID: 3239203202804841009, guid: 15216bfbb5b7e3c498142e6ea8199e84, type: 3}
-  enemyType: 3
   typeName: WhiteEnemy
   typeSpeed: 12
   typeMaxHealth: 75
   typeDamage: 4
   typeGold: 4
+  overallDifficulty: 20
