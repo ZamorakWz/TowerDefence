@@ -78,7 +78,8 @@ public class WaveManager : MonoBehaviour
     {
         foreach (var config in waveConfig.enemyConfigs)
         {
-            yield return StartCoroutine(enemySpawnController.SpawnEnemyRoutine(config));
+            //yield return StartCoroutine(enemySpawnController.SpawnEnemyRoutine(config));
+            yield return StartCoroutine(enemySpawnController.CreateEnemyPool(config));
         }
     }
 }

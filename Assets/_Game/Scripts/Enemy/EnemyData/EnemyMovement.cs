@@ -17,7 +17,10 @@ public class EnemyMovement : MonoBehaviour, IPositionProvider, ISpeedProvider
     private Vector3 currentDirection;
 
     private float speed;
-    [SerializeField] private EnemyTypeSO enemyType;
+
+    //Temporary encapsulation change to quick testing for EnemySpawn. There is no EnemyBaseClass.
+    //Therefore I get overall difficulty from EnemyMovement class. It needs to be refined.
+    [SerializeField] public EnemyTypeSO enemyType;
 
     public float Speed
     {

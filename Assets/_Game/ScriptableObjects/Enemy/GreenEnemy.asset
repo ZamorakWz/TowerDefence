@@ -18,3 +18,4 @@ MonoBehaviour:
   typeMaxHealth: 100
   typeDamage: 8
   typeGold: 8
+  overallDifficulty: 10

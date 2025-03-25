@@ -15,6 +15,7 @@ public class InputHandler : MonoBehaviour
 
     [Inject] private TowerDataPanelManager towerDataPanelManager;
     [Inject] private PlacedTowerManager placedTowerManager;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

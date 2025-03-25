@@ -20,6 +20,9 @@ public class TowerPlacementManager : MonoBehaviour
 
     [Inject] private PlacedTowerManager placedTowerManager;
 
+    // Tower Rotation
+    private Vector2 selectedTowerPrefabSize;
+
     private void Awake()
     {
         placementLayer = LayerMask.GetMask("TowerPlaceableGround");
@@ -36,11 +39,18 @@ public class TowerPlacementManager : MonoBehaviour
         {
             UpdatePrefabPlacement();
 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RotateTower();
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 PlaceTower();
             }
         }
+
+
     }
 
     public void SelectTower(GameObject tower)
@@ -50,6 +60,7 @@ public class TowerPlacementManager : MonoBehaviour
             Destroy(selectedTowerPrefab);
         }
         selectedTowerPrefab = tower;
+        selectedTowerPrefabSize = GetTowerSize(tower);
         Debug.Log("Selected tower prefab: " + selectedTowerPrefab.gameObject.name);
 
         OnTowerSelected?.Invoke(tower);
@@ -67,11 +78,11 @@ public class TowerPlacementManager : MonoBehaviour
             Debug.Log(hitPoint.Value);
             selectedTowerPrefab.transform.position = gridPosition;
             //Temp Solution to align towers to grids
-            Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
-            selectedTowerPrefab.transform.position += new Vector3(selectedTowerSize.x, 0, selectedTowerSize.y);
+            //Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+            selectedTowerPrefab.transform.position += new Vector3(selectedTowerPrefabSize.x, 0, selectedTowerPrefabSize.y);
 
             //selectedTowerPrefab.transform.position = hitPoint.Value;
-            isCanPlaceHere = CanPlaceHere(gridPosition, selectedTowerSize);
+            isCanPlaceHere = CanPlaceHere(gridPosition, selectedTowerPrefabSize);
         }
         else
         {
@@ -82,8 +93,8 @@ public class TowerPlacementManager : MonoBehaviour
     private void PlaceTower()
     {
         // Check Tower size
-        Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
-        if (!gridManager.CheckTowerPlacements(gridPosition, selectedTowerSize))
+        //Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+        if (!gridManager.CheckTowerPlacements(gridPosition, selectedTowerPrefabSize))
         {
             return;
         }
@@ -115,7 +126,7 @@ public class TowerPlacementManager : MonoBehaviour
 
                 //GridMechanicTesting
                 //selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
-                gridManager.gridData.AddTowerAt(gridPosition, selectedTowerSize);
+                gridManager.gridData.AddTowerAt(gridPosition, selectedTowerPrefabSize);
                 
 
 
@@ -146,4 +157,20 @@ public class TowerPlacementManager : MonoBehaviour
         return GroundValidator.Instance.CheckGroundValidity(position, towerSize);
         //&& OverlapValidator.Instance.CheckOverlapping(position, selectedTowerPrefab);
     }
+
+    public Vector2 GetTowerSize(GameObject selectedTower)
+    {
+        selectedTowerPrefabSize = selectedTower.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
+
+        return selectedTowerPrefabSize;
+    }
+    
+    public Vector2 RotateTower()
+    {
+        selectedTowerPrefabSize = new Vector2(selectedTowerPrefabSize.y, selectedTowerPrefabSize.x);
+
+        return selectedTowerPrefabSize;
+    }
+
 }
+

@@ -10,4 +10,7 @@ public class EnemyTypeSO : ScriptableObject
     public float typeMaxHealth;
     public int typeDamage;
     public int typeGold;
+
+    //Spawn Pool Testing
+    public int overallDifficulty;
 }
