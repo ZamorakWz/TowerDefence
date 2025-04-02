@@ -1,14 +1,38 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public Material gridMat;
+
     public GridData gridData;
     public float gridSize = 1f;
+
+    private void OnEnable()
+    {
+        TowerPlacementManager.OnTowerSelected += ExposeGrid;
+        TowerPlacementManager.OnTowerPlaced += HideGrid;
+    }
+
+    private void OnDisable()
+    {
+        TowerPlacementManager.OnTowerSelected -= ExposeGrid;
+        TowerPlacementManager.OnTowerPlaced -= HideGrid;
+    }
 
     private void Start()
     {
         gridData = new GridData();
+    }
+
+    private void ExposeGrid(GameObject tower)
+    {
+        gridMat.SetColor("_Color", new Color(gridMat.color.r, gridMat.color.g, gridMat.color.b, 0.05f));
+    }
+    private void HideGrid(GameObject @object)
+    {
+        gridMat.SetColor("_Color", new Color(gridMat.color.r, gridMat.color.g, gridMat.color.b, 0f));
     }
 
     public Vector3 GetGridPosition(Vector3 worldPos)
