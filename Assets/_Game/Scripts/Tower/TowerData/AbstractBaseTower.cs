@@ -29,9 +29,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
     private float temporaryTowerRange;
 
     //Upgrade levels for each property
-    public int damageUpgradeLevel { get; private set; } = 0;
-    public int rangeUpgradeLevel { get; private set; } = 0;
-    public int fireRateUpgradeLevel { get; private set; } = 0;
+    public int upgradeLevel { get; private set; } = 0;
 
     private int baseUpgradeCost = 4;
 
@@ -100,54 +98,29 @@ public abstract class AbstractBaseTower : MonoBehaviour
         return baseUpgradeCost * Mathf.Pow(2, level);
     }
 
-    public void UpgradeDamage()
+    public void UpgradeTower()
     {
-        int cost = (int)GetUpgradeCost(damageUpgradeLevel);
+        int cost = (int)GetUpgradeCost(upgradeLevel);
         if (GoldManager.Instance.GetCurrentGold() >= cost)
         {
             GoldManager.Instance.RemoveGold(cost);
-            damageUpgradeLevel++;
+            upgradeLevel++;
             towerDamage *= 1.1f;
+            towerRange *= 1.1f;
+            towerFireRate *= 1.1f;
+
+            targetDetector.UpdateRange(towerRange);
+            towerRangeVisualizer.UpdateTowerRangeVisualization(towerRange);
 
             //update tower damage
             if (attackManager != null)
             {
                 attackManager.UpdateDamage(towerDamage);
-            }
-        }
-    }
-
-    public void UpgradeRange()
-    {
-        int cost = (int)GetUpgradeCost(rangeUpgradeLevel);
-        if (GoldManager.Instance.GetCurrentGold() >= cost)
-        {
-            GoldManager.Instance.RemoveGold(cost);
-            rangeUpgradeLevel++;
-            towerRange *= 1.1f;
-
-            //update radius value from targetdetector and visual
-            targetDetector.UpdateRange(towerRange);
-            towerRangeVisualizer.UpdateTowerRangeVisualization(towerRange);
-        }
-    }
-
-    public void UpgradeFireRate()
-    {
-        int cost = (int)GetUpgradeCost(fireRateUpgradeLevel);
-        if (GoldManager.Instance.GetCurrentGold() >= cost)
-        {
-            GoldManager.Instance.RemoveGold(cost);
-            fireRateUpgradeLevel++;
-            towerFireRate *= 1.1f;
-
-            //update firerate value from attackmanager
-            if (attackManager != null)
-            {
                 attackManager.UpdateFireRate(towerFireRate);
             }
         }
     }
+
     #endregion
 
     #region------------------------------TOWER ATTACK------------------------------

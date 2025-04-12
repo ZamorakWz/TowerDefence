@@ -52,7 +52,7 @@ public class GroundValidator : MonoBehaviour
                 if (!hitGround) return false;
             }
         }
-
+        Debug.Log(hitGround);
         return hitGround;
 
     }

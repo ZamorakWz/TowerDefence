@@ -11,10 +11,9 @@ public class TowerDataUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI damageText;
     [SerializeField] private TextMeshProUGUI rangeText;
     [SerializeField] private TextMeshProUGUI fireRateText;
+    [SerializeField] private TextMeshProUGUI towerUpgradeCostText;
 
-    [SerializeField] private Button damageUpgradeButton;
-    [SerializeField] private Button rangeUpgradeButton;
-    [SerializeField] private Button fireRateUpgradeButton;
+    [SerializeField] private Button upgradeButton;
 
     [SerializeField] private TextMeshProUGUI strategyText;
     [SerializeField] private TMP_Dropdown strategyDropdown;
@@ -22,9 +21,7 @@ public class TowerDataUI : MonoBehaviour
 
     private AbstractBaseTower tower;
     private float upgradeCost;
-    private float damageUpgradeCost;
-    private float rangeUpgradeCost;
-    private float fireRateUpgradeCost;
+    private float towerUpgradeCost;
     private List<ITargetSelectionStrategy> targetSelectionStrategyList;
 
     [Inject] private TowerDataPanelManager towerDataPanelManager;
@@ -68,17 +65,14 @@ public class TowerDataUI : MonoBehaviour
         {
             topicText.text = $"{tower.GetTowerData().towerName}";
 
-            damageUpgradeCost = tower.GetUpgradeCost(tower.damageUpgradeLevel);
-            rangeUpgradeCost = tower.GetUpgradeCost(tower.rangeUpgradeLevel);
-            fireRateUpgradeCost = tower.GetUpgradeCost(tower.fireRateUpgradeLevel);
+            towerUpgradeCost = tower.GetUpgradeCost(tower.upgradeLevel);
 
-            damageText.text = $"Damage:{tower.towerDamage.ToString("F1")}({damageUpgradeCost} G)";
-            rangeText.text = $"Range:{tower.towerRange.ToString("F1")}({rangeUpgradeCost} G)";
-            fireRateText.text = $"Fire Rate:{tower.towerFireRate.ToString("F1")}({fireRateUpgradeCost} G)";
+            damageText.text = $"Damage:{tower.towerDamage.ToString("F1")}";
+            rangeText.text = $"Range:{tower.towerRange.ToString("F1")}";
+            fireRateText.text = $"Fire Rate:{tower.towerFireRate.ToString("F1")}";
+            towerUpgradeCostText.text = $"Upgrade Cost:{towerUpgradeCost.ToString("F1")}";
 
-            UpdateButton(damageUpgradeButton, tower.damageUpgradeLevel);
-            UpdateButton(rangeUpgradeButton, tower.rangeUpgradeLevel);
-            UpdateButton(fireRateUpgradeButton, tower.fireRateUpgradeLevel);
+            UpdateButton(upgradeButton, tower.upgradeLevel);
         }
         else
         {
@@ -89,28 +83,12 @@ public class TowerDataUI : MonoBehaviour
     private void UpdateButton(Button button, int upgradeLevel)
     {
         upgradeCost = tower.GetUpgradeCost(upgradeLevel);
-        button.interactable = GoldManager.Instance.GetCurrentGold() >= upgradeCost;
-        button.GetComponentInChildren<TextMeshProUGUI>().text = "x1.1";
     }
 
     //Bind to button
-    public void OnDamageUpgrade()
+    public void OnTowerUpgrade()
     {
-        tower.UpgradeDamage();
-        UpdateTowerUI();
-    }
-
-    //Bind to button
-    public void OnRangeUpgrade()
-    {
-        tower.UpgradeRange();
-        UpdateTowerUI();
-    }
-
-    //Bind to button
-    public void OnFireRateUpgrade()
-    {
-        tower.UpgradeFireRate();
+        tower.UpgradeTower();
         UpdateTowerUI();
     }
 
