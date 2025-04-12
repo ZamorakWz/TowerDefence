@@ -97,7 +97,6 @@ public class GridManager : MonoBehaviour
     }
 }
 
-
 public class GridData
 {
     public Dictionary<Vector3, PlacementData> placedTowers = new();

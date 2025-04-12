@@ -29,6 +29,24 @@ public class PlacedTowerManager : MonoBehaviour
         }
     }
 
+    public void GridVisualizationForAllTowers(bool isVisible)
+    {
+        if (placedTowerList.Count == 0) return;
+
+        for (int i = 0; i < placedTowerList.Count; i++)
+        {
+            if (placedTowerList[i] != null && placedTowerList[i].gameObject.activeSelf)
+            {
+                TowerGridVisualizer gridVisualizer = placedTowerList[i].GetComponent<TowerGridVisualizer>();
+
+                if (gridVisualizer != null)
+                {
+                    gridVisualizer.SetGridVisual(isVisible);
+                }
+            }
+        }
+    }
+
     public void ActivateRangeVisualForAllTowers()
     {
         if (placedTowerList.Count == 0) return;

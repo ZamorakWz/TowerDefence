@@ -14,11 +14,14 @@ public class TowerPlacementManager : MonoBehaviour
     private GameObject selectedTowerPrefab;
     private bool isCanPlaceHere;
 
+    [Inject] private PlacedTowerManager placedTowerManager;
+
     //Grid Test
     [SerializeField] GridManager gridManager;
     Vector3 gridPosition;
+    [SerializeField] GameObject gridPlacementObjectPrefab;
+    GameObject gridPlacementObject;
 
-    [Inject] private PlacedTowerManager placedTowerManager;
 
     // Tower Rotation
     private Vector2 selectedTowerPrefabSize;
@@ -63,6 +66,18 @@ public class TowerPlacementManager : MonoBehaviour
         selectedTowerPrefabSize = GetTowerSize(tower);
         Debug.Log("Selected tower prefab: " + selectedTowerPrefab.gameObject.name);
 
+        // Grid Placement
+        // @TODO: grid placement object will be in prefab and every tower prefab is gonna have tower grid visualizer
+        gridPlacementObject = Instantiate(gridPlacementObjectPrefab);
+        Vector3 gridObjectScale = gridPlacementObject.transform.localScale;
+        gridObjectScale = new Vector3(gridObjectScale.x * selectedTowerPrefabSize.x, 0,gridObjectScale.z * selectedTowerPrefabSize.y);
+        gridPlacementObject.transform.localScale = gridObjectScale;
+        gridPlacementObject.transform.parent = selectedTowerPrefab.transform;
+
+        selectedTowerPrefab.GetComponent<TowerGridVisualizer>().GridObject = gridPlacementObject;
+
+        placedTowerManager.GridVisualizationForAllTowers(true);
+
         OnTowerSelected?.Invoke(tower);
         placedTowerManager.ActivateRangeVisualForAllTowers();
     }
@@ -75,7 +90,6 @@ public class TowerPlacementManager : MonoBehaviour
 
             //Grid Test
             gridPosition = gridManager.GetGridPosition(hitPoint.Value);
-            Debug.Log(hitPoint.Value);
             selectedTowerPrefab.transform.position = gridPosition;
             //Temp Solution to align towers to grids
             //Vector2 selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
@@ -112,11 +126,11 @@ public class TowerPlacementManager : MonoBehaviour
                 //selectedTowerSize = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerSize;
                 gridManager.gridData.AddTowerAt(gridPosition, selectedTowerPrefabSize);
                 
-
-
                 placedTowerManager.AddTowerToList(selectedTowerPrefab.GetComponent<AbstractBaseTower>());
                 placedTowerManager.DeactivateRangeVisualForAllTowers();
-
+                
+                //Grid Visualize
+                placedTowerManager.GridVisualizationForAllTowers(false);
 
                 selectedTowerPrefab = null;
             }

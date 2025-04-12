@@ -45,14 +45,12 @@ public class GroundValidator : MonoBehaviour
             {
                 rayStart = position + (Vector3.up * 0.1f) + new Vector3(i * towerSize.x * 2, 0, j * towerSize.y * 2);
 
-                Debug.Log(rayStart);
-
                 hitGround = Physics.Raycast(rayStart, Vector3.down, out hit, rayDistance, validGroundLayer);
 
                 if (!hitGround) return false;
             }
         }
-        Debug.Log(hitGround);
+        
         return hitGround;
 
     }
