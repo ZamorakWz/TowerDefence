@@ -1637,7 +1637,7 @@ MonoBehaviour:
   topicText: {fileID: 2873961103464575584}
   damageText: {fileID: 7377475398479910142}
   rangeText: {fileID: 3540235023307206779}
-  fireRateText: {fileID: 8375151635891883135}
+  fireRateText: {fileID: 6902839187159323415}
   towerUpgradeCostText: {fileID: 8732953188221189611}
   upgradeButton: {fileID: 0}
   strategyText: {fileID: 8375151635891883135}
@@ -2095,6 +2095,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6902839187159323415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4369965690496538053, guid: 02e27835e0780764d9fe9bac6e0892b3, type: 3}
+  m_PrefabInstance: {fileID: 7164931300979623634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7377475398479910142 stripped
