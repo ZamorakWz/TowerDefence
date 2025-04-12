@@ -22,7 +22,6 @@ public class TowerPlacementManager : MonoBehaviour
 
     // Tower Rotation
     private Vector2 selectedTowerPrefabSize;
-    bool isRotated = false;
 
     private void Awake()
     {

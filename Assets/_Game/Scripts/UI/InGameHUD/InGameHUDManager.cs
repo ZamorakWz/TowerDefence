@@ -13,6 +13,8 @@ public class InGameHUDManager : MonoBehaviour, IInGameHUD
     [SerializeField] private TextMeshProUGUI timeToNextWave;
     [SerializeField] private TextMeshProUGUI goldText;
 
+    [SerializeField] private LevelDataSO currentLevelData;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,6 +25,11 @@ public class InGameHUDManager : MonoBehaviour, IInGameHUD
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        goldText.text = $"Gold: {currentLevelData.levelBeginnigGold}";
     }
 
     private void OnEnable()

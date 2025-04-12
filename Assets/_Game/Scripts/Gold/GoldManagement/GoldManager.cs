@@ -12,7 +12,7 @@ public class GoldManager : MonoBehaviour
     [SerializeField] private LevelDataSO currentLevelData;
 
     // public -> get, private set
-    public int currentGold { get; private set; }
+    public int CurrentGold { get; private set; }
 
     private void Awake()
     {
@@ -25,25 +25,25 @@ public class GoldManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        currentGold = currentLevelData.levelBeginnigGold;
+        CurrentGold = currentLevelData.levelBeginnigGold;
     }
 
     public void AddGold(int amount)
     {
-        currentGold += amount;
+        CurrentGold += amount;
 
-        OnGoldChanged?.Invoke(currentGold);
+        OnGoldChanged?.Invoke(CurrentGold);
     }
 
     public void RemoveGold(int amount)
     {
-        currentGold -= amount;
+        CurrentGold -= amount;
 
-        OnGoldChanged?.Invoke(currentGold);
+        OnGoldChanged?.Invoke(CurrentGold);
     }
 
     public int GetCurrentGold()
     {
-        return currentGold;
+        return CurrentGold;
     }
 }

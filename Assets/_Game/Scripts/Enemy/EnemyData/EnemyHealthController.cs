@@ -46,7 +46,7 @@ public class EnemyHealthController : MonoBehaviour, IAttackable, IHealthProvider
             Die();
         }
 
-        Debug.Log($"{amount} damage is taken!");
+        Debug.Log($"{amount} damage is taken to {gameObject.name}");
 
         OnHealthChanged?.Invoke(currentHealth);
     }

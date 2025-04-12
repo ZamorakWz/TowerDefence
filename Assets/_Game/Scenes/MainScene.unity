@@ -13499,7 +13499,7 @@ MonoBehaviour:
   - {fileID: 2585882846183241918, guid: a6178da1dd1b4374a83dc6bfb6488735, type: 3}
   - {fileID: 8051332872662278306, guid: e429be5e1cc136b4c9fd2b1f41ddf6df, type: 3}
   - {fileID: 8456647110531595709, guid: 309d0db495702d8429716342abae611f, type: 3}
-  bet: 20
+  bet: 5
   _offset: {x: 0, y: 0, z: 0}
   _matchingObjects: []
   _paycondition: []
@@ -13559,7 +13559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerButtonsUIManager: {fileID: 1465110273}
-  goldReward: 20
+  goldReward: 500
 --- !u!1 &1118502569
 GameObject:
   m_ObjectHideFlags: 0
@@ -16928,6 +16928,7 @@ MonoBehaviour:
   aliveEnemyCount: {fileID: 397335217}
   timeToNextWave: {fileID: 275913654}
   goldText: {fileID: 1902522382}
+  currentLevelData: {fileID: 11400000, guid: a53a8c30eac930a408ad8169c07fd5a7, type: 2}
 --- !u!114 &1465110273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30262,7 +30263,7 @@ GameObject:
   - component: {fileID: 1983793884}
   m_Layer: 0
   m_Name: BlueCastle
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

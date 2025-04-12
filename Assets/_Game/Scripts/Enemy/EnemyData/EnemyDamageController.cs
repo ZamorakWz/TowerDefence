@@ -8,8 +8,11 @@ public class EnemyDamageController : MonoBehaviour
     [SerializeField] private EnemyTypeSO _enemyTypeSO;
     private EnemyHealthController _healthController;
 
+    private EnemySpawnController enemySpawnController;
+
     private void Start()
     {
+        enemySpawnController = FindObjectOfType<EnemySpawnController>();
         _healthController = GetComponent<EnemyHealthController>();
         _damage = _enemyTypeSO.typeDamage;
     }
@@ -21,7 +24,17 @@ public class EnemyDamageController : MonoBehaviour
         {
             Debug.Log($"Base damaged! {gameObject.name}, {_damage}");
             damageable.TakeDamage(_damage);
-            _healthController.Die();
+
+            if (other.CompareTag("Base"))
+            {
+                gameObject.SetActive(false);
+
+                enemySpawnController.AliveEnemyCount--;
+            }
+            else
+            {
+                _healthController.Die();
+            }
         }
     }
 }
