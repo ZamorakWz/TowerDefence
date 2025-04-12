@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   LevelPrefab: {fileID: 0}
-  levelBeginnigGold: 50
+  levelBeginnigGold: 100000
   levelReward: 0
   levelBaseHealth: 75
   timeBetweenWaves: 15
@@ -22,23 +22,30 @@ MonoBehaviour:
     - enemyType: 0
       spawnCount: 8
       spawnInterval: 1.1
+      totalDifficultyLevel: 0
     - enemyType: 1
       spawnCount: 5
       spawnInterval: 1
+      totalDifficultyLevel: 0
     - enemyType: 2
       spawnCount: 3
       spawnInterval: 1.2
+      totalDifficultyLevel: 0
   - enemyConfigs:
     - enemyType: 0
       spawnCount: 8
       spawnInterval: 1.1
+      totalDifficultyLevel: 0
     - enemyType: 1
       spawnCount: 5
       spawnInterval: 1
+      totalDifficultyLevel: 0
   - enemyConfigs:
     - enemyType: 0
       spawnCount: 8
       spawnInterval: 1.1
+      totalDifficultyLevel: 0
     - enemyType: 1
       spawnCount: 5
       spawnInterval: 1
+      totalDifficultyLevel: 0

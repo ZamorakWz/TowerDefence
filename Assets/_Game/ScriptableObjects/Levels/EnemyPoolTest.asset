@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyPoolTest
   m_EditorClassIdentifier: 
   LevelPrefab: {fileID: 0}
-  levelBeginnigGold: 50
+  levelBeginnigGold: 10000
   levelReward: 0
   levelBaseHealth: 75
   timeBetweenWaves: 15

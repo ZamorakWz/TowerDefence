@@ -57,7 +57,7 @@ public class EnemySpawnController : MonoBehaviour
         {
             Array EnemyTypeLength = Enum.GetNames(typeof(EnemyObjectPool.EnemyType));
 
-            int randomEnemyTypeIndex = UnityEngine.Random.Range(0, EnemyTypeLength.Length - 1);
+            int randomEnemyTypeIndex = UnityEngine.Random.Range(0, EnemyTypeLength.Length);
 
             GameObject obj = _enemyObjectPool.GetPooledEnemy((EnemyObjectPool.EnemyType)randomEnemyTypeIndex);
 

@@ -22,6 +22,7 @@ public class TowerPlacementManager : MonoBehaviour
 
     // Tower Rotation
     private Vector2 selectedTowerPrefabSize;
+    bool isRotated = false;
 
     private void Awake()
     {
@@ -99,28 +100,12 @@ public class TowerPlacementManager : MonoBehaviour
             return;
         }
 
-
-
-        //Tower cost is needed to be checked before the player place the tower.
-        //Tower is destroyed when player has not enough gold
-        float selectedTowerCost = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().towerCost;
-        if (selectedTowerCost > GoldManager.Instance.currentGold)
-        {
-            Debug.Log("insufficient amount of gold");
-            Destroy(selectedTowerPrefab);
-            selectedTowerPrefab = null;
-            return;
-        }
-
-        GoldManager.Instance.RemoveGold((int)selectedTowerCost);
-        //
-
         if (isCanPlaceHere && TryGetPlacementPosition(out Vector3? hitPoint, out RaycastHit hitInfo))
         {
             if (selectedTowerPrefab != null)
             {
                 //selectedTowerPrefab.transform.position = hitPoint.Value;
-                selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+                //selectedTowerPrefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 
                 OnTowerPlaced?.Invoke(selectedTowerPrefab);
 
@@ -167,8 +152,18 @@ public class TowerPlacementManager : MonoBehaviour
     
     public Vector2 RotateTower()
     {
-        selectedTowerPrefabSize = new Vector2(selectedTowerPrefabSize.y, selectedTowerPrefabSize.x);
+        bool canRotate = selectedTowerPrefab.GetComponent<AbstractBaseTower>().GetTowerData().isLookAtTower;
 
+        if(selectedTowerPrefabSize.x != selectedTowerPrefabSize.y)
+        {
+            selectedTowerPrefabSize = new Vector2(selectedTowerPrefabSize.y, selectedTowerPrefabSize.x);
+        }
+        
+        if(!canRotate)
+        {
+            selectedTowerPrefab.transform.eulerAngles += new Vector3(0, 90, 0);
+        }
+        
         return selectedTowerPrefabSize;
     }
 
