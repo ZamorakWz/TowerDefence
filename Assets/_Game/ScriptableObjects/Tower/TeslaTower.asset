@@ -22,4 +22,5 @@ MonoBehaviour:
   towerBulletData:
     bulletPrefab: {fileID: 7416689835086876347, guid: 4a59078a80d5593469a429d3d22e4e2b, type: 3}
   isLookAtTower: 0
+  towerLevel: 1
   towerSize: {x: 2, y: 2}

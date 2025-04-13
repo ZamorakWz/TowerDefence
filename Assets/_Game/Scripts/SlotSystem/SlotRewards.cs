@@ -8,6 +8,7 @@ public class SlotRewards : MonoBehaviour
     [SerializeField]
     private TowerButtonsUIManager towerButtonsUIManager;
     private RewardConditioning rewardConditioning;
+    private AbstractBaseTower tower;
     private SlotManager slotManager;
     public int goldReward;
 
@@ -15,6 +16,7 @@ public class SlotRewards : MonoBehaviour
     {
         rewardConditioning = gameObject.GetComponent<RewardConditioning>();
         slotManager = gameObject.GetComponent<SlotManager>();
+        tower = GetComponent<AbstractBaseTower>();
     }
 
     public void rewardAssign() 
@@ -71,5 +73,10 @@ public class SlotRewards : MonoBehaviour
     {
         towerButtonsUIManager.CreateTowerButtons();
         Debug.Log("level one tower rewarded");
+    }
+    public void rewardleveltwotower()
+    {
+        towerButtonsUIManager.CreateTowerButtons();
+        Debug.Log("level two tower rewarded");
     }
 }

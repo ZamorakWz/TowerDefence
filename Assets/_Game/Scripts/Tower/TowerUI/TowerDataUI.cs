@@ -12,6 +12,7 @@ public class TowerDataUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rangeText;
     [SerializeField] private TextMeshProUGUI fireRateText;
     [SerializeField] private TextMeshProUGUI towerUpgradeCostText;
+    [SerializeField] private TextMeshProUGUI towerLevelText;
 
     [SerializeField] private Button upgradeButton;
 
@@ -71,6 +72,7 @@ public class TowerDataUI : MonoBehaviour
             rangeText.text = $"Range:{tower.towerRange.ToString("F1")}";
             fireRateText.text = $"Fire Rate:{tower.towerFireRate.ToString("F1")}";
             towerUpgradeCostText.text = $"Upgrade Cost:{towerUpgradeCost.ToString("F1")}";
+            towerLevelText.text = $"Tower Level:{tower.towerLevel.ToString()}";
 
             UpdateButton(upgradeButton, tower.upgradeLevel);
         }

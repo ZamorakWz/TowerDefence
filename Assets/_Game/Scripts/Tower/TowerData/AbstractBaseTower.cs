@@ -20,6 +20,8 @@ public abstract class AbstractBaseTower : MonoBehaviour
     public float towerFireRate { get; private set; }
     public float towerRange { get; private set; }
 
+    public int towerLevel;
+
     //TowerCost
     public float towerCost { get; private set; }
 
@@ -104,7 +106,9 @@ public abstract class AbstractBaseTower : MonoBehaviour
         if (GoldManager.Instance.GetCurrentGold() >= cost)
         {
             GoldManager.Instance.RemoveGold(cost);
-            upgradeLevel++;
+
+            towerLevel++;
+            upgradeLevel = towerLevel - 1;
             towerDamage *= 1.1f;
             towerRange *= 1.1f;
             towerFireRate *= 1.1f;
@@ -209,6 +213,7 @@ public abstract class AbstractBaseTower : MonoBehaviour
             towerDamage = towerData.towerDamage;
             towerFireRate = towerData.towerFireRate;
             towerRange = towerData.towerRange;
+            towerLevel = towerData.towerLevel;
 
             //Cost
             towerCost = towerData.towerCost;
